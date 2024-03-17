@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>アクション</value>
+</data>
+<data name="Add" xml:space="preserve">
+    <value>追加</value>
+</data>
+<data name="AddNewRecord" xml:space="preserve">
+    <value>新しいレコードを追加</value>
+</data>
+<data name="AddressInformation" xml:space="preserve">
+    <value>住所情報</value>
+</data>
+<data name="AddUser" xml:space="preserve">
+    <value>ユーザーを追加</value>
+</data>
+<data name="alreadyexists" xml:space="preserve">
+    <value>すでに存在します。</value>
+</data>
+<data name="AnAccount" xml:space="preserve">
+    <value>アカウント</value>
+</data>
+<data name="Anerroroccurred" xml:space="preserve">
+    <value>リクエストの処理中にエラーが発生しました。</value>
+</data>
+<data name="AreyouSureToDeleteThisRecord" xml:space="preserve">
+    <value>このレコードを削除してもよろしいですか？</value>
+</data>
+<data name="AttachmentType" xml:space="preserve">
+    <value>添付ファイルの種類</value>
+</data>
+<data name="Back" xml:space="preserve">
+    <value>戻る</value>
+</data>
+<data name="BackToList" xml:space="preserve">
+    <value>リストに戻る</value>
+</data>
+<data name="ByDefaultSystemAdminCanManageWhileNormalUserCant" xml:space="preserve">
+    <value>デフォルトでは、システム管理者はモジュールを管理できますが、通常のユーザーはモジュールを表示/追加/編集/削除できません。</value>
+</data>
+<data name="ChangePassword" xml:space="preserve">
+    <value>パスワードの変更</value>
+</data>
+<data name="ChangePasswordForUser" xml:space="preserve">
+    <value>ユーザーのパスワードを変更</value>
+</data>
+<data name="ClickHereToLogin" xml:space="preserve">
+    <value>ここをクリックしてログイン</value>
+</data>
+<data name="Clicktoseeerrordetail" xml:space="preserve">
+    <value>エラーの詳細を表示するにはクリックしてください。</value>
+</data>
+<data name="Close" xml:space="preserve">
+    <value>閉じる</value>
+</data>
+<data name="Column" xml:space="preserve">
+    <value>列</value>
+</data>
+<data name="ColumnsCountMismatch" xml:space="preserve">
+    <value>列の数が一致しません。</value>
+</data>
+<data name="ConfigurationError" xml:space="preserve">
+    <value>構成エラー</value>
+</data>
+<data name="ConfirmEmail" xml:space="preserve">
+    <value>メールを確認</value>
+</data>
+<data name="ConfirmNewPassword" xml:space="preserve">
+    <value>新しいパスワードを確認</value>
+</data>
+<data name="ConfirmPassword" xml:space="preserve">
+    <value>パスワードを確認</value>
+</data>
+<data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>パスワードの確認は必須です。</value>
+</data>
+<data name="Country" xml:space="preserve">
+    <value>国</value>
+</data>
+<data name="CountryNotFound" xml:space="preserve">
+    <value>国が見つかりません。</value>
+</data>
+<data name="CountryRequired" xml:space="preserve">
+    <value>国は必須項目です。</value>
+</data>
+<data name="CreatedBy" xml:space="preserve">
+    <value>作成者</value>
+</data>
+<data name="CreatedOn" xml:space="preserve">
+    <value>作成日時</value>
+</data>
+<data name="CurrentPassword" xml:space="preserve">
+    <value>現在のパスワード</value>
+</data>
+<data name="CurrentProfilePicture" xml:space="preserve">
+    <value>現在のプロフィール画像：</value>
+</data>
+<data name="DarkMode" xml:space="preserve">
+    <value>ダークモード</value>
+</data>
+<data name="Dashboard" xml:space="preserve">
+    <value>ダッシュボード</value>
+</data>
+<data name="DashboardRolePermissionDescription" xml:space="preserve">
+    <value>デフォルトでは、システム管理者はすべてのユーザーデータに関するダッシュボードを表示できますが、通常のユーザーは自分のデータに関するダッシュボードのみ表示できます。</value>
+</data>
+<data name="DateOfBirth" xml:space="preserve">
+    <value>生年月日</value>
+</data>
+<data name="Delete" xml:space="preserve">
+    <value>削除</value>
+</data>
+<data name="DemoAccountCannotBeDeleted" xml:space="preserve">
+    <value>デモアカウントは削除できません。</value>
+</data>
+<data name="DisplayOrder" xml:space="preserve">
+    <value>表示順序</value>
+</data>
+  <data name="Edit" xml:space="preserve">
+    <value>編集</value>
+</data>
+<data name="EditAttachments" xml:space="preserve">
+    <value>添付ファイルを編集：</value>
+</data>
+<data name="EditMyProfile" xml:space="preserve">
+    <value>自分のプロフィールを編集</value>
+</data>
+<data name="EditUser" xml:space="preserve">
+    <value>ユーザーを編集</value>
+</data>
+<data name="EditUserAttachment" xml:space="preserve">
+    <value>ユーザーの添付ファイルを編集</value>
+</data>
+<data name="EmailAddress" xml:space="preserve">
+    <value>電子メールアドレス</value>
+</data>
+<data name="EmailAddressTaken" xml:space="preserve">
+    <value>電子メールアドレスは既に使用されています。別の電子メールアドレスを使用して再試行してください。</value>
+</data>
+<data name="EnterTheDetails" xml:space="preserve">
+    <value>詳細を入力</value>
+</data>
+<data name="Error" xml:space="preserve">
+    <value>エラー</value>
+</data>
+<data name="ExporttoExcel" xml:space="preserve">
+    <value>Excelにエクスポート</value>
+</data>
+<data name="ExportToExcelNote" xml:space="preserve">
+    <value>ボタンをクリックする前に、エクスポートするコンテンツを制御できます。例えば、すべてのレコードをエクスポートしたい場合は、「すべて表示」ドロップダウンボタンをクリックしてから「Excelにエクスポート」をクリックしてください。</value>
+</data>
+<data name="ExporttoPdf" xml:space="preserve">
+    <value>PDFにエクスポート</value>
+</data>
+<data name="ExportToPDFNote" xml:space="preserve">
+    <value>ボタンをクリックする前に、PDFとしてエクスポートするコンテンツを制御できます。例えば、すべてのレコードをエクスポートしたい場合は、「すべて表示」ドロップダウンボタンをクリックしてから「PDFにエクスポート」をクリックしてください。</value>
+</data>
+<data name="FailedExceptionError" xml:space="preserve">
+    <value>例外エラーにより失敗しました。</value>
+</data>
+<data name="FailedOnlyJpgJpegPngCanBeSetAsProfilePicture" xml:space="preserve">
+    <value>失敗しました。プロフィール写真にはjpg、jpeg、およびpngファイルのみ設定できます。</value>
+</data>
+<data name="FailedToResetPassword" xml:space="preserve">
+    <value>パスワードのリセットに失敗しました。</value>
+</data>
+<data name="File" xml:space="preserve">
+    <value>ファイル</value>
+</data>
+<data name="FileName" xml:space="preserve">
+    <value>ファイル名</value>
+</data>
+<data name="FileURL" xml:space="preserve">
+    <value>ファイルURL</value>
+</data>
+<data name="FillInEmailAddressWeWillSendYouResetPasswordLink" xml:space="preserve">
+    <value>メールアドレスを入力してください。パスワードをリセットするリンクを送信します。</value>
+</data>
+<data name="FillInYourUsernameAndPasswordToSignIn" xml:space="preserve">
+    <value>サインインするにはユーザー名とパスワードを入力してください。</value>
+</data>
+<data name="FillYourDetailsToRegister" xml:space="preserve">
+    <value>登録するために詳細を入力してください。</value>
+</data>
+<data name="Filter" xml:space="preserve">
+    <value>フィルター</value>
+</data>
+<data name="FilterCountry" xml:space="preserve">
+    <value>国をフィルター</value>
+</data>
+<data name="FilterRole" xml:space="preserve">
+    <value>ロールをフィルター</value>
+</data>
+<data name="FilterStatus" xml:space="preserve">
+    <value>ユーザーステータスをフィルター</value>
+</data>
+<data name="FirstName" xml:space="preserve">
+    <value>名</value>
+</data>
+<data name="Forgot" xml:space="preserve">
+    <value>忘れる</value>
+</data>
+<data name="ForgotPassword" xml:space="preserve">
+    <value>パスワードを忘れた</value>
+</data>
+<data name="ForgotYourPassword" xml:space="preserve">
+    <value>パスワードをお忘れですか？</value>
+</data>
+<data name="FullAddress" xml:space="preserve">
+    <value>フルアドレス</value>
+</data>
+<data name="FullName" xml:space="preserve">
+    <value>フルネーム</value>
+</data>
+<data name="Gender" xml:space="preserve">
+    <value>性別</value>
+</data>
+<data name="GeneralSettings" xml:space="preserve">
+    <value>一般設定</value>
+</data>
+  <data name="HomeIndexTabTitle" xml:space="preserve">
+    <value>BDMPro- ASP.NET MVC C# Web アプリケーション入門テンプレート</value>
+</data>
+<data name="IDCardNumber" xml:space="preserve">
+    <value>身分証番号</value>
+</data>
+<data name="ImportFromExcel" xml:space="preserve">
+    <value>Excel からインポート</value>
+</data>
+<data name="ImportingDataFromExcelPleaseWait" xml:space="preserve">
+    <value>Excel からデータをインポート中... お待ちください...</value>
+</data>
+<data name="ImportUserFromExcel" xml:space="preserve">
+    <value>Excel からユーザーをインポート</value>
+</data>
+<data name="ImportUserFromExcelDescription" xml:space="preserve">
+    <value>以下のExcelテンプレートをダウンロードし、ユーザーデータを入力してください。追加の列は編集せずに残してください。追加の列はインポート時に無視されます。データ入力が完了したら、ファイルを保存し、以下のアップロードセクションを使用してアップロードしてください。</value>
+</data>
+<data name="Information" xml:space="preserve">
+    <value>情報</value>
+</data>
+<data name="InvalidEmailAddress" xml:space="preserve">
+    <value>無効なメールアドレスです。</value>
+</data>
+<data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>無効なログイン試行</value>
+</data>
+<data name="InvalidPassword" xml:space="preserve">
+    <value>パスワードは少なくとも6文字で、少なくとも1つの大文字、1つの小文字、1つの数字、1つの記号を含む必要があります。</value>
+</data>
+<data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>有効な電話番号を入力してください。</value>
+</data>
+<data name="InvalidPostalCode" xml:space="preserve">
+    <value>有効な郵便番号を入力してください。</value>
+</data>
+<data name="InvalidUsername" xml:space="preserve">
+    <value>無効なユーザー名です。ユーザー名は少なくとも4文字で、文字で始まり、特殊文字を含んではいけません。</value>
+</data>
+<data name="InvalidUserTemplate" xml:space="preserve">
+    <value>列が無効です。提供されたテンプレート（UserExcelTemplate.xlsx）を使用し、列を削除または編集しないようにしてください。</value>
+</data>
+<data name="LastName" xml:space="preserve">
+    <value>姓</value>
+</data>
+<data name="LightMode" xml:space="preserve">
+    <value>ライトモード</value>
+</data>
+<data name="ListofRoles" xml:space="preserve">
+    <value>ユーザーロールリスト</value>
+</data>
+<data name="ListofUserAttachments" xml:space="preserve">
+    <value>ユーザー添付ファイルリスト</value>
+</data>
+<data name="ListofUserAttachmentTypes" xml:space="preserve">
+    <value>ユーザー添付ファイルタイプリスト</value>
+</data>
+<data name="ListofUsers" xml:space="preserve">
+    <value>ユーザーリスト</value>
+</data>
+<data name="ListofUserStatus" xml:space="preserve">
+    <value>ユーザーステータスリスト</value>
+</data>
+<data name="ListOfUserWith" xml:space="preserve">
+    <value>ユーザーリスト</value>
+</data>
+<data name="Loading" xml:space="preserve">
+    <value>読み込み中...</value>
+</data>
+<data name="Lockedout" xml:space="preserve">
+    <value>ロックされました</value>
+</data>
+<data name="Login" xml:space="preserve">
+    <value>ログイン</value>
+</data>
+<data name="LoginDateTime" xml:space="preserve">
+    <value>ログイン日時</value>
+</data>
+<data name="LoginHistory" xml:space="preserve">
+    <value>ログイン履歴</value>
+</data>
+<data name="LoginHistoryRolePermissionDescription" xml:space="preserve">
+    <value>デフォルトでは、システム管理者はすべてのユーザーのログイン履歴を表示できますが、一般ユーザーは自分のログイン履歴しか表示できません。</value>
+</data>
+  <data name="ManageAttachmentsFor" xml:space="preserve">
+    <value>添付ファイルを管理：</value>
+</data>
+<data name="Management" xml:space="preserve">
+    <value>管理</value>
+</data>
+<data name="ManageUserAttachment" xml:space="preserve">
+    <value>ユーザー添付ファイルを管理</value>
+</data>
+<data name="MaxLength100" xml:space="preserve">
+    <value>許可される最大長は100文字です。</value>
+</data>
+<data name="MaxLength128" xml:space="preserve">
+    <value>許可される最大長は128文字です。</value>
+</data>
+<data name="MaxLength256" xml:space="preserve">
+    <value>許可される最大長は256文字です。</value>
+</data>
+<data name="MinLength6" xml:space="preserve">
+    <value>このフィールドの長さは少なくとも6文字である必要があります。</value>
+</data>
+<data name="ModifiedBy" xml:space="preserve">
+    <value>変更者</value>
+</data>
+<data name="ModifiedOn" xml:space="preserve">
+    <value>変更日時</value>
+</data>
+<data name="MostOfTheUsersAreWithThisStatus" xml:space="preserve">
+    <value>ほとんどのユーザーがこの状態です</value>
+</data>
+<data name="MyProfile" xml:space="preserve">
+    <value>マイプロフィール</value>
+</data>
+<data name="NA" xml:space="preserve">
+    <value>レコードがありません</value>
+</data>
+<data name="Name" xml:space="preserve">
+    <value>名前</value>
+</data>
+<data name="BDMPro" xml:space="preserve">
+    <value>BDMPro</value>
+</data>
+<data name="NewPassword" xml:space="preserve">
+    <value>新しいパスワード</value>
+</data>
+<data name="NewPasswordNotMatch" xml:space="preserve">
+    <value>新しいパスワードと確認用新しいパスワードが一致しません。</value>
+</data>
+<data name="NoDataAvailable" xml:space="preserve">
+    <value>利用可能なデータがありません</value>
+</data>
+<data name="NormalUserSystemAdminCannotBeDeleted" xml:space="preserve">
+    <value>一般ユーザーおよびシステム管理者ユーザーの身分は削除または編集できません。これらはログイン履歴のロードに使用されるため（管理者はすべてのユーザーのログイン履歴を見ることができますが、一般ユーザーは自分のみの履歴を見ることができます）。</value>
+</data>
+<data name="NotAllowToChangePasswordForDemoAccount" xml:space="preserve">
+    <value>デモアカウントのパスワードを変更することはできません。この機能を試すには、他のアカウントを登録してください。</value>
+</data>
+<data name="NoteSystemInformation" xml:space="preserve">
+    <value>注意：システム情報はシステム管理者のみが編集できます。</value>
+</data>
+<data name="notfoundormismatch" xml:space="preserve">
+    <value>見つかりませんでしたか、一致しませんでした。</value>
+</data>
+<data name="OnlyLettersAndNumbers" xml:space="preserve">
+    <value>文字と数字のみが許可されています。</value>
+</data>
+<data name="OnlyNumbers" xml:space="preserve">
+    <value>数字のみが許可されています。</value>
+</data>
+<data name="Oops" xml:space="preserve">
+    <value>おっと。</value>
+</data>
+<data name="OopsSomethingwrong" xml:space="preserve">
+    <value>問題が発生しました。</value>
+</data>
+<data name="OtherInformation" xml:space="preserve">
+    <value>その他の情報</value>
+</data>
+<data name="outof" xml:space="preserve">
+    <value>範囲外</value>
+</data>
+<data name="Page0OfPage0" xml:space="preserve">
+    <value>0ページの0ページ</value>
+</data>
+<data name="Password" xml:space="preserve">
+    <value>パスワード</value>
+</data>
+<data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>パスワードが正常に変更されました！</value>
+</data>
+<data name="PasswordNotMatch" xml:space="preserve">
+    <value>パスワードと確認用パスワードが一致しません。</value>
+</data>
+<data name="PasswordRequired" xml:space="preserve">
+    <value>パスワードフィールドは必須です。</value>
+</data>
+<data name="PasswordRequirementText" xml:space="preserve">
+    <value>少なくとも6文字。少なくとも1つの大文字、1つの小文字、1つの数字、1つの記号が必要です。</value>
+</data>
+<data name="PersonalInformation" xml:space="preserve">
+    <value>個人情報</value>
+</data>
+<data name="PhoneNumber" xml:space="preserve">
+    <value>電話番号</value>
+</data>
+<data name="Pleasefillinthefollowing" xml:space="preserve">
+    <value>以下を記入してください。</value>
+</data>
+<data name="PleaseInsertConnectionString" xml:space="preserve">
+    <value>この Web アプリケーションを実行するには、Web.config に connectionString を入力してください。</value>
+</data>
+<data name="PleaseSelect" xml:space="preserve">
+    <value>選択してください...</value>
+</data>
+<data name="Pleaseselectallthefilesthatyouwanttoupload" xml:space="preserve">
+    <value>アップロードしたいすべてのファイルを選択してください。</value>
+</data>
+<data name="Pleaseselectanexcelfile" xml:space="preserve">
+    <value>Excel ファイルを選択してください。</value>
+</data>
+<data name="PostalCode" xml:space="preserve">
+    <value>郵便番号</value>
+</data>
+<data name="ProfilePicture" xml:space="preserve">
+    <value>プロフィール写真</value>
+</data>
+<data name="ProfilePictureAttachmentTypeCannotBeEditedOrDeleted" xml:space="preserve">
+    <value>プロフィール写真添付タイプは編集または削除できません。これは、ユーザーがアップロードしたファイルがプロフィール写真として選択できるかどうかを確認するために使用されます。</value>
+</data>
+  <data name="RecordDeletedSuccessfully" xml:space="preserve">
+    <value>レコードが正常に削除されました！</value>
+</data>
+<data name="RecordSavedSuccessfully" xml:space="preserve">
+    <value>レコードが正常に保存されました！</value>
+</data>
+<data name="RecordsImportedSuccessfully" xml:space="preserve">
+    <value>レコードが正常にインポートされました！</value>
+</data>
+<data name="recordsuploaded" xml:space="preserve">
+    <value>レコードがアップロードされました</value>
+</data>
+<data name="Register" xml:space="preserve">
+    <value>登録</value>
+</data>
+<data name="RegisteredUserStatusCannotBeDeletedOrEdited" xml:space="preserve">
+    <value>登録済みユーザーステータスは削除または編集できません。これは、登録ユーザーに割り当てられたデフォルトの状態です。</value>
+</data>
+<data name="RegisterSuccessLoginNow" xml:space="preserve">
+    <value>登録が成功しました！今すぐログインしてください。</value>
+</data>
+<data name="Rememberme" xml:space="preserve">
+    <value>記憶する？</value>
+</data>
+<data name="Removeselectedfile" xml:space="preserve">
+    <value>選択したファイルを削除</value>
+</data>
+<data name="Reset" xml:space="preserve">
+    <value>リセット</value>
+</data>
+<data name="ResetPassword" xml:space="preserve">
+    <value>パスワードをリセット</value>
+</data>
+<data name="ResetPasswordEmailSent" xml:space="preserve">
+    <value>パスワードリセットのメールが正常に送信されました！</value>
+</data>
+<data name="Role" xml:space="preserve">
+    <value>役割</value>
+</data>
+<data name="RolebyNumberofUsers" xml:space="preserve">
+    <value>ユーザー数による役割</value>
+</data>
+<data name="RoleManagement" xml:space="preserve">
+    <value>役割管理</value>
+</data>
+<data name="RoleName" xml:space="preserve">
+    <value>役割名</value>
+</data>
+<data name="RoleNameAlreadyExist" xml:space="preserve">
+    <value>その役割名は既にシステムに存在しています。</value>
+</data>
+<data name="RolePermissionfor" xml:space="preserve">
+    <value>役割の権限</value>
+</data>
+<data name="RoleRequired" xml:space="preserve">
+    <value>役割フィールドは必須です。</value>
+</data>
+<data name="Save" xml:space="preserve">
+    <value>保存</value>
+</data>
+<data name="Search" xml:space="preserve">
+    <value>検索</value>
+</data>
+<data name="SearchDot" xml:space="preserve">
+    <value>検索...</value>
+</data>
+<data name="SelectAnImageFile" xml:space="preserve">
+    <value>画像ファイルを選択</value>
+</data>
+<data name="Selectmultiple" xml:space="preserve">
+    <value>複数選択...</value>
+</data>
+<data name="Show10Records" xml:space="preserve">
+    <value>10レコード表示</value>
+</data>
+<data name="Show25Records" xml:space="preserve">
+    <value>25レコード表示</value>
+</data>
+<data name="Show50Records" xml:space="preserve">
+    <value>50レコード表示</value>
+</data>
+<data name="ShowAll" xml:space="preserve">
+    <value>すべて表示</value>
+</data>
+<data name="Showing0Entries" xml:space="preserve">
+    <value>0エントリを表示中、合計0エントリ</value>
+</data>
+<data name="SignOut" xml:space="preserve">
+    <value>サインアウト</value>
+</data>
+<data name="SignUp" xml:space="preserve">
+    <value>サインアップ</value>
+</data>
+<data name="SomeRequiredFieldsAreEmpty" xml:space="preserve">
+    <value>一部の必須フィールドが空白です。すべての必須フィールドに入力してください。</value>
+</data>
+<data name="Status" xml:space="preserve">
+    <value>ステータス</value>
+</data>
+<data name="StatusRequired" xml:space="preserve">
+    <value>ステータスフィールドは必須です。</value>
+</data>
+<data name="Submit" xml:space="preserve">
+    <value>送信</value>
+</data>
+<data name="Success" xml:space="preserve">
+    <value>成功！</value>
+</data>
+<data name="SwitchToDarkMode" xml:space="preserve">
+    <value>ダークモードに切り替え</value>
+</data>
+<data name="SwitchToLightMode" xml:space="preserve">
+    <value>ライトモードに切り替え</value>
+</data>
+<data name="SystemInformation" xml:space="preserve">
+    <value>システム情報</value>
+</data>
+  <data name="TableIsStillLoading" xml:space="preserve">
+    <value>しばらくお待ちください。テーブルはまだ読み込み中です。テーブルが読み込まれたら、このボタンをクリックしてください。</value>
+</data>
+<data name="Theerrorsareasbelow" xml:space="preserve">
+    <value>以下のエラーがあります：</value>
+</data>
+<data name="Thisaccounthasbeenlockedout" xml:space="preserve">
+    <value>このアカウントはロックされています。後でもう一度お試しください。</value>
+</data>
+<data name="Thiscannotbeundone" xml:space="preserve">
+    <value>これは元に戻すことはできません！関連する他のレコードも影響を受けます。</value>
+</data>
+<data name="ThisRoleHasTheLeastNumberOfUser" xml:space="preserve">
+    <value>このユーザー権限は最も少ないユーザー数を持っています。この権限はシステム内のトップユーザー権限かもしれません。</value>
+</data>
+<data name="ToBDMPro" xml:space="preserve">
+    <value>BDMPro へ</value>
+</data>
+<data name="TopRole" xml:space="preserve">
+    <value>トップユーザー権限</value>
+</data>
+<data name="TopStatus" xml:space="preserve">
+    <value>最も多くのユーザーがこの状態を持っています</value>
+</data>
+<data name="TotalFileSizeCannotBeLargerThan50MB" xml:space="preserve">
+    <value>合計ファイルサイズは 50MB を超えることはできません。</value>
+</data>
+<data name="TotalNumberOfRolesInTheSystem" xml:space="preserve">
+    <value>システム内の総ユーザー権限数</value>
+</data>
+<data name="TotalNumberOfUsersInTheSystem" xml:space="preserve">
+    <value>システム内の総ユーザー数</value>
+</data>
+<data name="TotalRoles" xml:space="preserve">
+    <value>総ユーザー権限</value>
+</data>
+<data name="TotalUsers" xml:space="preserve">
+    <value>総ユーザー数</value>
+</data>
+<data name="TypetoSearch" xml:space="preserve">
+    <value>検索するには入力してください...</value>
+</data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>未承認</value>
+</data>
+<data name="UnauthorizedError" xml:space="preserve">
+    <value>このページにアクセスする権限がありません</value>
+</data>
+<data name="Upload" xml:space="preserve">
+    <value>アップロード</value>
+</data>
+<data name="UploadedBy" xml:space="preserve">
+    <value>アップロード者</value>
+</data>
+<data name="UploadedOn" xml:space="preserve">
+    <value>アップロード日時</value>
+</data>
+<data name="UploadExcel" xml:space="preserve">
+    <value>Excelをアップロード</value>
+</data>
+<data name="UploadFiles" xml:space="preserve">
+    <value>ファイルをアップロード</value>
+</data>
+<data name="UploadUserAttachment" xml:space="preserve">
+    <value>ユーザー添付ファイルをアップロード</value>
+</data>
+<data name="User" xml:space="preserve">
+    <value>ユーザー</value>
+</data>
+<data name="UserAttachment" xml:space="preserve">
+    <value>ユーザー添付ファイル</value>
+</data>
+<data name="UserAttachmentType" xml:space="preserve">
+    <value>ユーザー添付ファイルタイプ</value>
+</data>
+<data name="UserAttachmentTypeNameAlreadyExist" xml:space="preserve">
+    <value>ユーザー添付ファイルタイプ名はすでにシステムに存在します。</value>
+</data>
+<data name="UserbyStatusChart" xml:space="preserve">
+    <value>ユーザーステータスチャート</value>
+</data>
+<data name="UserInformation" xml:space="preserve">
+    <value>ユーザー情報</value>
+</data>
+<data name="UserManagement" xml:space="preserve">
+    <value>ユーザー管理</value>
+</data>
+<data name="Username" xml:space="preserve">
+    <value>ユーザー名</value>
+</data>
+<data name="UsernameTaken" xml:space="preserve">
+    <value>ユーザー名はすでに使用されています。別のユーザー名を使用して再試行してください。</value>
+</data>
+<data name="UserNotExist" xml:space="preserve">
+    <value>ユーザーがシステムに存在しません。</value>
+</data>
+<data name="UsersInTheRoleOf" xml:space="preserve">
+    <value>ユーザーの役割は</value>
+</data>
+<data name="UserStatus" xml:space="preserve">
+    <value>ユーザーステータス</value>
+</data>
+<data name="UserStatusNameAlreadyExist" xml:space="preserve">
+    <value>ユーザーステータス名はすでにシステムに存在します。</value>
+</data>
+<data name="View" xml:space="preserve">
+    <value>表示</value>
+</data>
+<data name="ViewList" xml:space="preserve">
+    <value>リストを表示</value>
+</data>
+<data name="ViewRole" xml:space="preserve">
+    <value>ユーザー役割を表示</value>
+</data>
+<data name="Viewroles" xml:space="preserve">
+    <value>ユーザー役割を表示</value>
+</data>
+<data name="Viewthisrole" xml:space="preserve">
+    <value>このユーザー役割を表示</value>
+</data>
+<data name="ViewUser" xml:space="preserve">
+    <value>ユーザーを表示</value>
+</data>
+<data name="Viewusers" xml:space="preserve">
+    <value>ユーザーを表示</value>
+</data>
+<data name="Viewuserstatus" xml:space="preserve">
+    <value>ユーザーステータスを表示</value>
+</data>
+<data name="YesDeleteIt" xml:space="preserve">
+    <value>はい、削除します！</value>
+</data>
+<data name="YouDontHavePermissionToAccess" xml:space="preserve">
+    <value>このページにアクセスする権限がありません。</value>
+</data>
+<data name="YourPassword" xml:space="preserve">
+    <value>あなたのパスワード</value>
+</data>
+<data name="YourPasswordResetSuccessfully" xml:space="preserve">
+    <value>パスワードが正常にリセットされました！</value>
+</data>
+</root>

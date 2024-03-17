@@ -1,0 +1,312 @@
+﻿@model BDMPro.Models.DashboardViewModel
+@using BDMPro.Models;
+@using BDMPro.Resources
+@inject Util util;
+@{
+    ViewBag.Title = Resource.Dashboard;
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+    CurrentUserPermission userStatusPermission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.UserStatus.ToString(),util);
+    CurrentUserPermission roleManagementPermission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.RoleManagement.ToString(),util);
+    CurrentUserPermission userManagementPermission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.UserManagement.ToString(),util);
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="pagetitle mb-sm-0 fw600">@Resource.Dashboard</h4>
+        </div>
+    </div>
+</div>
+
+<section class="section dashboard mt-3">
+    <div class="row justify-content-start align-items-start">
+        @if (userManagementPermission.ViewRight)
+        {
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-uppercase fw-medium text-muted text-truncate mb-0 fs-14">@Resource.TotalUsers</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="fs-14 mb-0 text-muted"><i class="fa-solid fa-circle-info align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.TotalNumberOfUsersInTheSystem"></i></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4">@Model.TotalUser</h4>
+                                <a href="@Url.Action("index","user")" class="text-decoration-underline fw-light text-muted fs-13 hover-color-secondarycolor">@Resource.Viewusers</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                <span class="avatar-title rounded fs-4" style="background-color: #f1f1fa;"><i class="fa-solid fa-user text-primary"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (roleManagementPermission.ViewRight)
+        {
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-uppercase fw-medium text-muted text-truncate mb-0 fs-14">@Resource.TotalRoles</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="fs-14 mb-0 text-muted"><i class="fa-solid fa-circle-info align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.TotalNumberOfRolesInTheSystem"></i></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-22 fw-semibold ff-secondary mb-4">@Model.TotalRole</h4>
+                                <a href="@Url.Action("index","role")" class="text-decoration-underline fw-light text-muted fs-13 hover-color-secondarycolor">@Resource.Viewroles</a>
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                <span class="avatar-title rounded fs-4" style="background-color: #edf8ea;"><i class="fa-solid fa-tags text-edit"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (userStatusPermission.ViewRight)
+        {
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-uppercase fw-medium text-muted text-truncate mb-0 fs-14">@Resource.TopStatus</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="fs-14 mb-0 text-muted"><i class="fa-solid fa-circle-info align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.MostOfTheUsersAreWithThisStatus"></i></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-18 fw-semibold ff-secondary mb-4">@Model.TopStatus</h4>
+                                @if (Model.TopStatus != "N/A")
+                                {
+                                    <a href="@Url.Action("viewrecord", "userstatus", new { Id= Model.TopStatusId})" class="text-decoration-underline fw-light text-muted fs-13 hover-color-secondarycolor">@Resource.Viewuserstatus</a>
+                                }
+                                else
+                                {
+                                    <span class="fw-light text-muted fs-13 ">@Resource.NA</span>
+                                }
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                <span class="avatar-title rounded fs-4" style="background-color: #e2effb;"><i class="fa-solid fa-signal text-info"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (roleManagementPermission.ViewRight)
+        {
+            <div class="col-md-6 col-lg-3">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-center">
+                            <div class="flex-grow-1 overflow-hidden">
+                                <p class="text-uppercase fw-medium text-muted text-truncate mb-0 fs-14">@Resource.TopRole</p>
+                            </div>
+                            <div class="flex-shrink-0">
+                                <div class="fs-14 mb-0 text-muted"><i class="fa-solid fa-circle-info align-middle" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.ThisRoleHasTheLeastNumberOfUser"></i></div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end justify-content-between mt-4">
+                            <div>
+                                <h4 class="fs-18 fw-semibold ff-secondary mb-4">@Model.TopRole</h4>
+                                @if (Model.TopRole != "N/A")
+                                {
+                                    <a href="@Url.Action("viewrecord", "role", new { Id= Model.TopRoleId})" class="text-decoration-underline fw-light text-muted fs-13 hover-color-secondarycolor">@Resource.Viewthisrole</a>
+                                }
+                                else
+                                {
+                                    <span class="text-decoration-underline fw-light text-muted fs-13 ">@Resource.NA</span>
+                                }
+                            </div>
+                            <div class="avatar-sm flex-shrink-0">
+                                <span class="avatar-title rounded fs-4" style="background-color: #fbf0e1;"><i class="fa-solid fa-briefcase text-warning"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row justify-content-start align-items-start mt-4">
+        @if (userManagementPermission.ViewRight)
+        {
+            <div class="col-lg-6">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="flex-grow-1 overflow-hidden">
+                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3 fs-14">@Resource.UserbyStatusChart</p>
+                        </div>
+                        <div class="p-5">
+                            <div id="userChart-spinner" class="spinner d-flex justify-content-center align-items-center text-center color-primarycolor py-5">
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div><strong> &nbsp; @Resource.Loading </strong>
+                            </div>
+                            <div id="userChart-nodata" class="text-center text-muted d-none">@Resource.NoDataAvailable</div>
+                            <canvas id="userChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @if (roleManagementPermission.ViewRight)
+        {
+            <div class="col-lg-6">
+                <div class="card card-animate border-0 shadow">
+                    <div class="card-body p-4">
+                        <div class="flex-grow-1 overflow-hidden">
+                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3 fs-14">@Resource.RolebyNumberofUsers</p>
+                        </div>
+                        <div class="p-5">
+                            <div id="roleChart-spinner" class="spinner d-flex justify-content-center align-items-center text-center color-primarycolor py-5">
+                                <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div><strong> &nbsp; @Resource.Loading </strong>
+                            </div>
+                            <div id="roleChart-nodata" class="text-center text-muted d-none">@Resource.NoDataAvailable</div>
+                            <canvas id="roleChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<!-- only include this when render charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+@section Scripts{
+    <script>
+        var setOfChartColors = [
+            '#E2EFFB',
+            '#FAF3D4',
+            '#FAE1D4',
+            '#D5D4FA',
+            '#DDFAD4',
+            '#D4DEFA'
+        ];
+        var dataLabel = [];
+        var dataValue = [];
+        var dataLabelRoleChart = [];
+        var dataValueRoleChart = [];
+
+        if ("@userManagementPermission.ViewRight" == "True")
+        {
+             $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetUserByStatus", "Dashboard")',
+                 success: function (chData) {
+                     let loading = document.getElementById("userChart-spinner");
+                     loading.classList.remove("d-flex");
+                     loading.classList.add("d-none");
+                     if (chData.length == 0) {
+                         let nodata = document.getElementById("userChart-nodata");
+                         nodata.classList.remove("d-none");
+                         nodata.classList.add("d-block");
+                     } else {
+                         for (var i = 0; i < chData.length; i++) {
+                             dataLabel.push(chData[i]['DataLabel']);
+                             dataValue.push(chData[i]['DataValue']);
+                         }
+                         const ctx = document.getElementById('userChart').getContext('2d');
+                         const myChart = new Chart(ctx, {
+                             type: 'pie',
+                             data:
+                             {
+                                 labels: dataLabel,
+                                 datasets:
+                                     [{
+                                         data: dataValue,
+                                         backgroundColor: setOfChartColors,
+                                         borderColor: [
+                                             'transparent'
+                                         ],
+                                         borderWidth: 1
+                                     }]
+                             },
+                             options: {
+                                 scales: {
+                                     y: {
+                                         display: false,
+                                         suggestedMin: 0,
+                                         ticks: {
+                                             display: false
+                                         },
+                                         grid:
+                                         {
+                                             display: false
+                                         }
+                                     }
+                                 }
+                             }
+                         });
+                     }
+                 }
+             });
+        }
+
+        if ("@roleManagementPermission.ViewRight" == "True")
+        {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetUserByRole", "Dashboard")',
+                success: function (chData) {
+                    let loading = document.getElementById("roleChart-spinner");
+                    loading.classList.remove("d-flex");
+                    loading.classList.add("d-none");
+                    if (chData.length == 0) {
+                        let nodata = document.getElementById("roleChart-nodata");
+                        nodata.classList.remove("d-none");
+                        nodata.classList.add("d-block");
+                    } else {
+                        for (var i = 0; i < chData.length; i++) {
+                            dataLabelRoleChart.push(chData[i]['DataLabel']);
+                            dataValueRoleChart.push(chData[i]['DataValue']);
+                        }
+                        const ctx = document.getElementById('roleChart').getContext('2d');
+                        const myChart = new Chart(ctx, {
+                            type: 'bar',
+                            data:
+                            {
+                                labels: dataLabelRoleChart,
+                                datasets:
+                                    [{
+                                        label: 'Number of Users',
+                                        data: dataValueRoleChart,
+                                        backgroundColor: setOfChartColors,
+                                        borderColor: [
+                                            'transparent'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                            },
+                            options:
+                            {
+                                scales:
+                                {
+                                    y:
+                                    {
+                                        suggestedMin: 0,
+                                        ticks:
+                                        {
+                                            stepSize: 2,
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    </script>
+}

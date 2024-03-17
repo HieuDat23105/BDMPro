@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Tindakan</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Tambah</value>
+  </data>
+  <data name="AddNewRecord" xml:space="preserve">
+    <value>Tambah Rekod Baharu</value>
+  </data>
+  <data name="AddressInformation" xml:space="preserve">
+    <value>Maklumat Alamat</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Tambah Pengguna</value>
+  </data>
+  <data name="alreadyexists" xml:space="preserve">
+    <value>sudah wujud.</value>
+  </data>
+  <data name="AnAccount" xml:space="preserve">
+    <value>Akaun</value>
+  </data>
+  <data name="Anerroroccurred" xml:space="preserve">
+    <value>Ralat berlaku semasa memproses permintaan anda.</value>
+  </data>
+  <data name="AreyouSureToDeleteThisRecord" xml:space="preserve">
+    <value>Adakah anda Pasti Akan Memadam Rekod Ini?</value>
+  </data>
+  <data name="AttachmentType" xml:space="preserve">
+    <value>Jenis Lampiran</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>belakang</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Kembali kepada senarai</value>
+  </data>
+  <data name="ByDefaultSystemAdminCanManageWhileNormalUserCant" xml:space="preserve">
+    <value>Secara lalai, pentadbir sistem boleh menguruskan modul ini, manakala pengguna biasa tidak mempunyai kebenaran untuk melihat/menambah/mengedit/memadam modul ini.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Tukar kata laluan</value>
+  </data>
+  <data name="ChangePasswordForUser" xml:space="preserve">
+    <value>Tukar Kata Laluan Untuk Pengguna</value>
+  </data>
+  <data name="ClickHereToLogin" xml:space="preserve">
+    <value>Klik di sini untuk Log masuk</value>
+  </data>
+  <data name="Clicktoseeerrordetail" xml:space="preserve">
+    <value>Klik untuk melihat butiran ralat.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>tutup</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Kolum</value>
+  </data>
+  <data name="ColumnsCountMismatch" xml:space="preserve">
+    <value>Lajur mengira ketidakpadanan.</value>
+  </data>
+  <data name="ConfigurationError" xml:space="preserve">
+    <value>Ralat Konfigurasi</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Sahkan E-mel</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Sahkan Kata Laluan Baharu</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Sahkan Kata Laluan</value>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Medan Sahkan Kata Laluan diperlukan.</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Negara</value>
+  </data>
+  <data name="CountryNotFound" xml:space="preserve">
+    <value>Negara tidak ditemui.</value>
+  </data>
+  <data name="CountryRequired" xml:space="preserve">
+    <value>Medan Negara diperlukan.</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Dicipta oleh</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Dicipta pada</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Kata Laluan Semasa</value>
+  </data>
+  <data name="CurrentProfilePicture" xml:space="preserve">
+    <value>Gambar Profil Semasa:</value>
+  </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Mod Gelap</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Papan pemuka</value>
+  </data>
+  <data name="DashboardRolePermissionDescription" xml:space="preserve">
+    <value>Secara lalai, pentadbir sistem boleh melihat papan pemuka berkenaan semua data pengguna, manakala pengguna biasa hanya boleh melihat papan pemuka berkenaan data mereka sendiri.</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Tarikh lahir</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Padam</value>
+  </data>
+  <data name="DemoAccountCannotBeDeleted" xml:space="preserve">
+    <value>Maaf, akaun demo tidak boleh dipadamkan.</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>Paparan Pesanan</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Sunting</value>
+  </data>
+  <data name="EditAttachments" xml:space="preserve">
+    <value>Edit Lampiran:</value>
+  </data>
+  <data name="EditMyProfile" xml:space="preserve">
+    <value>Edit Profil Saya</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit Pengguna</value>
+  </data>
+  <data name="EditUserAttachment" xml:space="preserve">
+    <value>Edit Lampiran Pengguna</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Alamat emel</value>
+  </data>
+  <data name="EmailAddressTaken" xml:space="preserve">
+    <value>Alamat E-mel sudah diambil. Sila cuba lagi dengan Alamat E-mel yang lain.</value>
+  </data>
+  <data name="EnterTheDetails" xml:space="preserve">
+    <value>Masukkan butiran</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>ralat</value>
+  </data>
+  <data name="ExporttoExcel" xml:space="preserve">
+    <value>Eksport ke Excel</value>
+  </data>
+  <data name="ExportToExcelNote" xml:space="preserve">
+    <value>Anda boleh mengawal perkara yang anda mahu eksport ke Excel sebelum mengklik ini. Sebagai contoh, jika anda ingin mengeksport semua rekod, klik "Tunjukkan Semua" pada butang lungsur di bawah sebelum mengklik "Eksport ke Excel."</value>
+  </data>
+  <data name="ExporttoPdf" xml:space="preserve">
+    <value>Eksport ke Pdf</value>
+  </data>
+  <data name="ExportToPDFNote" xml:space="preserve">
+    <value>Anda boleh mengawal perkara yang ingin anda eksport ke PDF sebelum mengklik ini. Sebagai contoh, jika anda ingin mengeksport semua rekod, klik "Tunjukkan Semua" pada butang lungsur di bawah sebelum mengklik "Eksport ke PDF."</value>
+  </data>
+  <data name="FailedExceptionError" xml:space="preserve">
+    <value>Gagal kerana ralat pengecualian.</value>
+  </data>
+  <data name="FailedOnlyJpgJpegPngCanBeSetAsProfilePicture" xml:space="preserve">
+    <value>gagal. Hanya fail jpg, jpeg dan png boleh ditetapkan sebagai Gambar Profil.</value>
+  </data>
+  <data name="FailedToResetPassword" xml:space="preserve">
+    <value>Gagal menetapkan semula kata laluan.</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Fail</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>Nama fail</value>
+  </data>
+  <data name="FileURL" xml:space="preserve">
+    <value>URL fail</value>
+  </data>
+  <data name="FillInEmailAddressWeWillSendYouResetPasswordLink" xml:space="preserve">
+    <value>Isikan alamat e-mel anda, dan kami akan menghantar pautan kepada anda untuk menetapkan semula kata laluan anda.</value>
+  </data>
+  <data name="FillInYourUsernameAndPasswordToSignIn" xml:space="preserve">
+    <value>Isikan nama pengguna dan kata laluan anda untuk log masuk.</value>
+  </data>
+  <data name="FillYourDetailsToRegister" xml:space="preserve">
+    <value>Isikan butiran anda untuk mendaftar.</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Menapis</value>
+  </data>
+  <data name="FilterCountry" xml:space="preserve">
+    <value>Menapis Negara</value>
+  </data>
+  <data name="FilterRole" xml:space="preserve">
+    <value>Menapis Peranan</value>
+  </data>
+  <data name="FilterStatus" xml:space="preserve">
+    <value>Menapis Status</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Nama pertama</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>terlupa</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Lupa kata laluan</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Terlupa kata laluan anda?</value>
+  </data>
+  <data name="FullAddress" xml:space="preserve">
+    <value>Alamat penuh</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nama penuh</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Jantina</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Tetapan umum</value>
+  </data>
+  <data name="HomeIndexTabTitle" xml:space="preserve">
+    <value>BDMPro- Templat Pemula Aplikasi Web ASP.NET MVC C#</value>
+  </data>
+  <data name="IDCardNumber" xml:space="preserve">
+    <value>Nombor Kad Pengenalan</value>
+  </data>
+  <data name="ImportFromExcel" xml:space="preserve">
+    <value>Import Dari Excel</value>
+  </data>
+  <data name="ImportingDataFromExcelPleaseWait" xml:space="preserve">
+    <value>Mengimport Data Dari Excel... Sila Tunggu...</value>
+  </data>
+  <data name="ImportUserFromExcel" xml:space="preserve">
+    <value>Import Pengguna Dari Excel</value>
+  </data>
+  <data name="ImportUserFromExcelDescription" xml:space="preserve">
+    <value>Sila muat turun templat excel di bawah dan masukkan data pengguna anda. Tolong jangan edit atau tambah lajur tambahan. Lajur tambahan akan diabaikan semasa mengimport data. Selepas selesai memasukkan data anda dalam fail excel, simpan dan muat naik melalui bahagian muat naik di bawah.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Maklumat</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Alamat email tidak sah.</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Percubaan log masuk tidak sah</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Kata laluan mestilah sekurang-kurangnya 6 aksara, termasuk sekurang-kurangnya satu huruf besar, satu huruf kecil, satu digit dan satu simbol.</value>
+  </data>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Sila masukkan Nombor Telefon yang sah.</value>
+  </data>
+  <data name="InvalidPostalCode" xml:space="preserve">
+    <value>Sila masukkan Poskod yang sah.</value>
+  </data>
+  <data name="InvalidUsername" xml:space="preserve">
+    <value>Nama pengguna tidak sah. Nama pengguna mesti mempunyai sekurang-kurangnya 4 aksara, mesti bermula dengan huruf dan tidak boleh mempunyai simbol khas.</value>
+  </data>
+  <data name="InvalidUserTemplate" xml:space="preserve">
+    <value>Lajur tidak sah. Sila gunakan templat yang disediakan (UserExcelTemplate.xlsx) dan pastikan lajur tidak dialih keluar atau diedit.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nama terakhir</value>
+  </data>
+  <data name="LightMode" xml:space="preserve">
+    <value>Mod Cahaya</value>
+  </data>
+  <data name="ListofRoles" xml:space="preserve">
+    <value>Senarai Peranan</value>
+  </data>
+  <data name="ListofUserAttachments" xml:space="preserve">
+    <value>Senarai Lampiran Pengguna</value>
+  </data>
+  <data name="ListofUserAttachmentTypes" xml:space="preserve">
+    <value>Senarai Jenis Lampiran Pengguna</value>
+  </data>
+  <data name="ListofUsers" xml:space="preserve">
+    <value>Senarai Pengguna</value>
+  </data>
+  <data name="ListofUserStatus" xml:space="preserve">
+    <value>Senarai Status Pengguna</value>
+  </data>
+  <data name="ListOfUserWith" xml:space="preserve">
+    <value>Senarai Pengguna Dengan</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Memuatkan...</value>
+  </data>
+  <data name="Lockedout" xml:space="preserve">
+    <value>Dikunci</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log masuk</value>
+  </data>
+  <data name="LoginDateTime" xml:space="preserve">
+    <value>Masa Tarikh Masuk</value>
+  </data>
+  <data name="LoginHistory" xml:space="preserve">
+    <value>Sejarah Log Masuk</value>
+  </data>
+  <data name="LoginHistoryRolePermissionDescription" xml:space="preserve">
+    <value>Secara lalai, pentadbir sistem boleh melihat sejarah log masuk semua pengguna, manakala pengguna biasa hanya boleh melihat sejarah log masuk mereka sendiri.</value>
+  </data>
+  <data name="ManageAttachmentsFor" xml:space="preserve">
+    <value>Urus Lampiran Untuk:</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Pengurusan</value>
+  </data>
+  <data name="ManageUserAttachment" xml:space="preserve">
+    <value>Urus Lampiran Pengguna</value>
+  </data>
+  <data name="MaxLength100" xml:space="preserve">
+    <value>Panjang maksimum yang dibenarkan ialah 100 aksara.</value>
+  </data>
+  <data name="MaxLength128" xml:space="preserve">
+    <value>Panjang maksimum yang dibenarkan ialah 128 aksara.</value>
+  </data>
+  <data name="MaxLength256" xml:space="preserve">
+    <value>Panjang maksimum yang dibenarkan ialah 256 aksara.</value>
+  </data>
+  <data name="MinLength6" xml:space="preserve">
+    <value>Panjang medan mestilah sekurang-kurangnya 6 aksara.</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Diubahsuai Oleh</value>
+  </data>
+  <data name="ModifiedOn" xml:space="preserve">
+    <value>Diubah suai Pada</value>
+  </data>
+  <data name="MostOfTheUsersAreWithThisStatus" xml:space="preserve">
+    <value>Kebanyakan pengguna mempunyai status ini.</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>Profil saya</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>T/A</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="BDMPro" xml:space="preserve">
+    <value>BDMPro</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Kata laluan baharu</value>
+  </data>
+  <data name="NewPasswordNotMatch" xml:space="preserve">
+    <value>Kata laluan baharu dan pengesahan kata laluan baharu tidak sepadan.</value>
+  </data>
+  <data name="NoDataAvailable" xml:space="preserve">
+    <value>Tiada Data Tersedia</value>
+  </data>
+  <data name="NormalUserSystemAdminCannotBeDeleted" xml:space="preserve">
+    <value>Peranan pengguna dan pentadbir sistem biasa tidak boleh dipadam atau diedit. kerana ia akan digunakan untuk menentukan pemuatan sejarah log masuk (Pentadbir boleh melihat semua sejarah log masuk pengguna, tetapi pengguna biasa hanya boleh melihat sejarah mereka sendiri).</value>
+  </data>
+  <data name="NotAllowToChangePasswordForDemoAccount" xml:space="preserve">
+    <value>Maaf, anda tidak dibenarkan menukar kata laluan untuk akaun demo. Sila daftar akaun lain untuk mencuba ciri ini.</value>
+  </data>
+  <data name="NoteSystemInformation" xml:space="preserve">
+    <value>Nota: Maklumat sistem hanya boleh diedit oleh Pentadbir Sistem.</value>
+  </data>
+  <data name="notfoundormismatch" xml:space="preserve">
+    <value>tidak ditemui atau tidak sepadan.</value>
+  </data>
+  <data name="OnlyLettersAndNumbers" xml:space="preserve">
+    <value>Hanya huruf dan nombor sahaja dibenarkan.</value>
+  </data>
+  <data name="OnlyNumbers" xml:space="preserve">
+    <value>Hanya nombor dibenarkan.</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Aduh.</value>
+  </data>
+  <data name="OopsSomethingwrong" xml:space="preserve">
+    <value>Aduh! Sesuatu yang tidak kena.</value>
+  </data>
+  <data name="OtherInformation" xml:space="preserve">
+    <value>Maklumat lain</value>
+  </data>
+  <data name="outof" xml:space="preserve">
+    <value>daripada</value>
+  </data>
+  <data name="Page0OfPage0" xml:space="preserve">
+    <value>Halaman 0 dari Halaman 0</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Kata laluan</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Kata Laluan Berjaya Ditukar!</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>Kata laluan dan kata laluan pengesahan tidak sepadan.</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>Medan Kata Laluan diperlukan.</value>
+  </data>
+  <data name="PasswordRequirementText" xml:space="preserve">
+    <value>Sekurang-kurangnya 6 aksara. Memerlukan sekurang-kurangnya satu huruf Besar, satu huruf kecil, satu Digit dan satu Simbol.</value>
+  </data>
+  <data name="PersonalInformation" xml:space="preserve">
+    <value>Maklumat peribadi</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Nombor telefon</value>
+  </data>
+  <data name="Pleasefillinthefollowing" xml:space="preserve">
+    <value>Sila isikan perkara berikut.</value>
+  </data>
+  <data name="PleaseInsertConnectionString" xml:space="preserve">
+    <value>Sila pergi ke Web.config dan masukkan nilai connectionString untuk menjalankan aplikasi web ini.</value>
+  </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>Sila Pilih...</value>
+  </data>
+  <data name="Pleaseselectallthefilesthatyouwanttoupload" xml:space="preserve">
+    <value>Sila pilih semua fail yang ingin anda muat naik.</value>
+  </data>
+  <data name="Pleaseselectanexcelfile" xml:space="preserve">
+    <value>Sila pilih fail excel.</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Poskod</value>
+  </data>
+  <data name="ProfilePicture" xml:space="preserve">
+    <value>Gambar profil</value>
+  </data>
+  <data name="ProfilePictureAttachmentTypeCannotBeEditedOrDeleted" xml:space="preserve">
+    <value>Jenis lampiran Gambar Profil tidak boleh diedit atau dipadamkan. Kerana ia digunakan untuk mengesahkan sama ada fail yang dimuat naik oleh pengguna boleh dipilih sebagai gambar profil.</value>
+  </data>
+  <data name="RecordDeletedSuccessfully" xml:space="preserve">
+    <value>Rekod berjaya dipadamkan!</value>
+  </data>
+  <data name="RecordSavedSuccessfully" xml:space="preserve">
+    <value>Rekod berjaya disimpan!</value>
+  </data>
+  <data name="RecordsImportedSuccessfully" xml:space="preserve">
+    <value>Rekod berjaya diimport!</value>
+  </data>
+  <data name="recordsuploaded" xml:space="preserve">
+    <value>rekod yang dimuat naik</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Daftar</value>
+  </data>
+  <data name="RegisteredUserStatusCannotBeDeletedOrEdited" xml:space="preserve">
+    <value>Status pengguna berdaftar tidak boleh dipadam atau diedit. Kerana ia adalah status lalai untuk diberikan kepada pengguna berdaftar.</value>
+  </data>
+  <data name="RegisterSuccessLoginNow" xml:space="preserve">
+    <value>Daftar kejayaan! Sila log masuk sekarang.</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Ingat saya?</value>
+  </data>
+  <data name="Removeselectedfile" xml:space="preserve">
+    <value>Alih keluar fail yang dipilih</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Tetapkan semula</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Menetapkan semula kata laluan</value>
+  </data>
+  <data name="ResetPasswordEmailSent" xml:space="preserve">
+    <value>Tetapkan semula kata laluan e-mel berjaya dihantar!</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Peranan</value>
+  </data>
+  <data name="RolebyNumberofUsers" xml:space="preserve">
+    <value>Peranan mengikut Bilangan Pengguna</value>
+  </data>
+  <data name="RoleManagement" xml:space="preserve">
+    <value>Pengurusan Peranan</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Nama Peranan</value>
+  </data>
+  <data name="RoleNameAlreadyExist" xml:space="preserve">
+    <value>Nama peranan sudah wujud dalam sistem.</value>
+  </data>
+  <data name="RolePermissionfor" xml:space="preserve">
+    <value>Kebenaran Peranan untuk</value>
+  </data>
+  <data name="RoleRequired" xml:space="preserve">
+    <value>Medan Peranan diperlukan.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Jimat</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Cari</value>
+  </data>
+  <data name="SearchDot" xml:space="preserve">
+    <value>Cari...</value>
+  </data>
+  <data name="SelectAnImageFile" xml:space="preserve">
+    <value>Pilih fail imej</value>
+  </data>
+  <data name="Selectmultiple" xml:space="preserve">
+    <value>Pilih berbilang...</value>
+  </data>
+  <data name="Show10Records" xml:space="preserve">
+    <value>Tunjukkan 10 Rekod</value>
+  </data>
+  <data name="Show25Records" xml:space="preserve">
+    <value>Tunjukkan 25 Rekod</value>
+  </data>
+  <data name="Show50Records" xml:space="preserve">
+    <value>Tunjukkan 50 Rekod</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Tunjukkan semua</value>
+  </data>
+  <data name="Showing0Entries" xml:space="preserve">
+    <value>Menunjukkan 0 hingga 0 daripada 0 entri</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Log Keluar</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Daftar</value>
+  </data>
+  <data name="SomeRequiredFieldsAreEmpty" xml:space="preserve">
+    <value>Beberapa medan yang diperlukan* kosong. Sila isi semua medan* yang diperlukan.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusRequired" xml:space="preserve">
+    <value>Medan Status diperlukan.</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Hantar</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Berjaya!</value>
+  </data>
+  <data name="SwitchToDarkMode" xml:space="preserve">
+    <value>Tukar kepada Mod Gelap</value>
+  </data>
+  <data name="SwitchToLightMode" xml:space="preserve">
+    <value>Tukar kepada Mod Cahaya</value>
+  </data>
+  <data name="SystemInformation" xml:space="preserve">
+    <value>Maklumat sistem</value>
+  </data>
+  <data name="TableIsStillLoading" xml:space="preserve">
+    <value>Sila tunggu. Jadual masih dimuatkan. Klik ini selepas jadual dimuatkan.</value>
+  </data>
+  <data name="Theerrorsareasbelow" xml:space="preserve">
+    <value>Ralat adalah seperti di bawah:</value>
+  </data>
+  <data name="Thisaccounthasbeenlockedout" xml:space="preserve">
+    <value>Akaun ini telah dikunci, sila cuba sebentar lagi.</value>
+  </data>
+  <data name="Thiscannotbeundone" xml:space="preserve">
+    <value>Perkara ini tidak boleh diubah! Rekod lain yang berkaitan juga akan terjejas.</value>
+  </data>
+  <data name="ThisRoleHasTheLeastNumberOfUser" xml:space="preserve">
+    <value>Peranan ini mempunyai bilangan pengguna paling sedikit, mungkin peranan ini mempunyai kebenaran teratas.</value>
+  </data>
+  <data name="ToNetStarter" xml:space="preserve">
+    <value>Kepada BDMPro</value>
+  </data>
+  <data name="TopRole" xml:space="preserve">
+    <value>Peranan Teratas</value>
+  </data>
+  <data name="TopStatus" xml:space="preserve">
+    <value>Status Teratas</value>
+  </data>
+  <data name="TotalFileSizeCannotBeLargerThan50MB" xml:space="preserve">
+    <value>Jumlah saiz fail tidak boleh lebih besar daripada 50MB.</value>
+  </data>
+  <data name="TotalNumberOfRolesInTheSystem" xml:space="preserve">
+    <value>Jumlah bilangan peranan dalam sistem.</value>
+  </data>
+  <data name="TotalNumberOfUsersInTheSystem" xml:space="preserve">
+    <value>Jumlah bilangan pengguna dalam sistem.</value>
+  </data>
+  <data name="TotalRoles" xml:space="preserve">
+    <value>Jumlah Peranan</value>
+  </data>
+  <data name="TotalUsers" xml:space="preserve">
+    <value>Jumlah Pengguna</value>
+  </data>
+  <data name="TypetoSearch" xml:space="preserve">
+    <value>Taip untuk Cari...</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>tanpa kebenaran</value>
+  </data>
+  <data name="UnauthorizedError" xml:space="preserve">
+    <value>Ralat Tanpa Kebenaran</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Muat naik</value>
+  </data>
+  <data name="UploadedBy" xml:space="preserve">
+    <value>Dimuat Naik Oleh</value>
+  </data>
+  <data name="UploadedOn" xml:space="preserve">
+    <value>Muat Naik Pada</value>
+  </data>
+  <data name="UploadExcel" xml:space="preserve">
+    <value>Muat naik Excel</value>
+  </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Memuat naik fail</value>
+  </data>
+  <data name="UploadUserAttachment" xml:space="preserve">
+    <value>Muat Naik Lampiran Pengguna</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>pengguna</value>
+  </data>
+  <data name="UserAttachment" xml:space="preserve">
+    <value>Lampiran Pengguna</value>
+  </data>
+  <data name="UserAttachmentType" xml:space="preserve">
+    <value>Jenis Lampiran Pengguna</value>
+  </data>
+  <data name="UserAttachmentTypeNameAlreadyExist" xml:space="preserve">
+    <value>Nama jenis lampiran pengguna sudah wujud dalam sistem.</value>
+  </data>
+  <data name="UserbyStatusChart" xml:space="preserve">
+    <value>Pengguna mengikut Carta Status</value>
+  </data>
+  <data name="UserInformation" xml:space="preserve">
+    <value>Maklumat Pengguna</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>Pengurusan pengguna</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nama pengguna</value>
+  </data>
+  <data name="UsernameTaken" xml:space="preserve">
+    <value>Nama pengguna sudah diambil. Sila cuba lagi dengan nama pengguna lain.</value>
+  </data>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>Pengguna tidak wujud dalam sistem.</value>
+  </data>
+  <data name="UsersInTheRoleOf" xml:space="preserve">
+    <value>Pengguna Dalam Peranan</value>
+  </data>
+  <data name="UserStatus" xml:space="preserve">
+    <value>Status Pengguna</value>
+  </data>
+  <data name="UserStatusNameAlreadyExist" xml:space="preserve">
+    <value>Nama status pengguna sudah wujud dalam sistem.</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Lihat</value>
+  </data>
+  <data name="ViewList" xml:space="preserve">
+    <value>Lihat Senarai</value>
+  </data>
+  <data name="ViewRole" xml:space="preserve">
+    <value>Lihat Peranan</value>
+  </data>
+  <data name="Viewroles" xml:space="preserve">
+    <value>Lihat peranan</value>
+  </data>
+  <data name="Viewthisrole" xml:space="preserve">
+    <value>Lihat peranan ini</value>
+  </data>
+  <data name="ViewUser" xml:space="preserve">
+    <value>Lihat Pengunna</value>
+  </data>
+  <data name="Viewusers" xml:space="preserve">
+    <value>Lihat pengguna</value>
+  </data>
+  <data name="Viewuserstatus" xml:space="preserve">
+    <value>Lihat status pengguna</value>
+  </data>
+  <data name="YesDeleteIt" xml:space="preserve">
+    <value>Ya, Padamkannya!</value>
+  </data>
+  <data name="YouDontHavePermissionToAccess" xml:space="preserve">
+    <value>Anda tidak mempunyai kebenaran untuk mengakses halaman ini.</value>
+  </data>
+  <data name="YourPassword" xml:space="preserve">
+    <value>Kata laluan Awak</value>
+  </data>
+  <data name="YourPasswordResetSuccessfully" xml:space="preserve">
+    <value>Kata laluan anda telah berjaya ditetapkan semula!</value>
+  </data>
+</root>

@@ -1,0 +1,30 @@
+﻿@using BDMPro.Resources
+@if (TempData["NotifySuccess"] != null)
+{
+    <div id="successtoast-container" class="position-fixed top-0 mx-auto p-4 toast-container">
+        <div id="successtoast" class="toast show mx-auto bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header justify-content-between bg-success border-bottom-0">
+                <i class="fa-solid fa-circle-check pe-1"></i> <strong class="me-auto">@Resource.Success</strong>
+                <button type="button" class="text-end border-0 bg-transparent fs-18 p-0 hover-opacity" data-bs-dismiss="toast" aria-label="Close">X</button>
+            </div>
+            <div class="toast-body bg-success text-black border-0">
+                @TempData["NotifySuccess"]
+            </div>
+        </div>
+    </div>
+}
+
+@if (TempData["NotifyFailed"] != null)
+{
+    <div id="failedtoast-container" class="position-fixed top-0 mx-auto p-4 toast-container">
+        <div id="failedtoast" class="toast show mx-auto bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header justify-content-between bg-danger border-bottom-0">
+                <i class="fa-solid fa-circle-check pe-1"></i> <strong class="me-auto">@Resource.OopsSomethingwrong</strong>
+                <button type="button" class="text-end border-0 bg-transparent fs-18 p-0 hover-opacity" data-bs-dismiss="toast" aria-label="Close">X</button>
+            </div>
+            <div class="toast-body bg-danger text-black border-0">
+                @Html.Raw(TempData["NotifyFailed"])
+            </div>
+        </div>
+    </div>
+}

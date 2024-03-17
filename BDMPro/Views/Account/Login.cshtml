@@ -1,0 +1,270 @@
+﻿@using BDMPro.Models
+@using BDMPro.Resources
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration;
+@model BDMPro.Models.LoginViewModel
+@{
+    ViewBag.Title = Resource.Login;
+}
+
+<style>
+#submit {
+    padding: 20px 60px;
+    background-color: #000;
+    border: none;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: 200ms;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#submit span {
+    color: #231e20;
+    position: relative;
+    transition: 200ms;
+    transition-delay: 200ms;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+#submit:before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    transition: 200ms;
+    transition-delay: 200ms;
+    background-color: #1fe2d5;
+    box-shadow: 0 0 10px #1fe2d5, 0 0 30px #1fe2d5, 0 0 50px #1fe2d5;
+}
+
+#submit div {
+    transition: 200ms;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 15px #1fe2d5, 0 0 30px #1fe2d5, 0 0 50px #1fe2d5;
+}
+
+#submit .top {
+    width: 15px;
+    height: 2px;
+    top: 0;
+    left: 0;
+}
+
+#submit .bottom {
+    width: 15px;
+    height: 2px;
+    bottom: 0;
+    right: 0;
+}
+
+#submit .left {
+    width: 2px;
+    height: 15px;
+    top: 0;
+    left: 0;
+}
+
+#submit .right {
+    width: 2px;
+    height: 15px;
+    bottom: 0;
+    right: 0;
+}
+
+#submit:hover {
+    color: #000;
+}
+
+#submit:hover span {
+    color: #000;
+}
+
+#submit:hover:before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#submit:hover .top,
+#submit:hover .bottom {
+    width: 100%;
+}
+
+#submit:hover .left,
+#submit:hover .right {
+    height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wrapper > * {
+  width: 100%;
+}
+
+.position-relative-w-100 {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .carousel-slide-w-100-h-100 {
+    z-index: 1;
+  }
+
+  .d-fluid-w-100-h-10 {
+    margin-top: 60px;
+  }
+
+  .py-10-px-3-px-sm-5 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  #form {
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
+  }
+  section {
+    padding: 50px;
+  }
+
+  .carousel-item img {
+    width: auto;
+    height: 800px;
+  }
+  </style>
+
+@await Html.PartialAsync("~/Views/Shared/_Notification.cshtml")
+<div class="my-5"></div>
+<div class="position-relative-w-100">
+    <div id="carouselExampleAutoplaying" class="carousel slide w-100 h-100 carousel-slide-w-100-h-100" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="~/assets/slide1.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 1">
+        </div>
+        @* <div class="carousel-item">
+          <img src="~/assets/slide2.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 2">
+        </div> *@
+        <div class="carousel-item">
+          <img src="~/assets/slide3.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="~/assets/slide4.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 4">
+        </div>
+        <div class="carousel-item">
+          <img src="~/assets/slide5.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 5">
+        </div>
+        <div class="carousel-item">
+          <img src="~/assets/slide6.jpg" class="d-fluid w-100 h-10 d-fluid-w-100-h-10" alt="Slide 6">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+    </div>
+</div>
+<section class="py-10 px-3 px-sm-5 py-10-px-3-px-sm-5">
+    <div class="container" id="form">
+        <div class="wrapper">
+                  <div class="col-lg-6 order-0 order-lg-1">
+                      <h1 class="fw600 pb-2 title-lg"><span class="color-primarycolor">@Resource.Login</span> @Resource.ToBDMPro</h1>
+                      <div class="pb-3">@Resource.FillInYourUsernameAndPasswordToSignIn</div>
+                    @if (Configuration.GetValue<string>("environment") == "prod")
+                      {
+                          <div class="pb-2 text-edit">
+                              Demo User Admin: <span class="fw600">uadmin</span>, Password: <span class="fw600">Uadmin@123</span>&nbsp;&nbsp;<i id="copyDemoBtn1" class="p-1 fa-solid fa-copy cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy"></i>
+                              <br>
+                              Demo System Admin: <span class="fw600">sadmin</span>, Password: <span class="fw600">Sadmin@123</span>&nbsp;&nbsp;<i id="copyDemoBtn2" class="p-1 fa-solid fa-copy cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="Copy"></i>
+                          </div>
+                      }
+                      @Html.ValidationSummary("", new { @class = "invalid-message" })
+                      @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, null, new { @class = "form-horizontal", role = "form" }))
+                      {
+                          @Html.AntiForgeryToken()
+                          <div class="mb-3 text-break">
+                              <div class="form-group">
+                                  @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "form-label required fw600" })
+                                  @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                                  @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "invalid-message" })
+                              </div>
+                          </div>
+                          <div class="mb-3 text-break">
+                              <div class="form-group">
+                                  @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "form-label required fw600" })
+                                  @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                  @Html.ValidationMessageFor(model => model.Password, "", new { @class = "invalid-message" })
+                              </div>
+                          </div>
+                          <div class="row gx-0 mb-4">
+                              <div class="col-md-6">
+                                  <div class="form-check">
+                                      @Html.CheckBoxFor(m => m.RememberMe, htmlAttributes: new { @class = "form-check-input", @type = "checkbox" })
+                                      @Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "form-check-label small fw-light" })
+                                  </div>
+                              </div>
+                              <div class="col-md-6 text-start text-md-end">
+                                  <a class="small fw500 color-secondarycolor hover-color-primarycolor" href="@Url.Action("ForgotPassword")">@Resource.ForgotYourPassword</a>
+                              </div>
+                          </div>
+                          @* <button id="submit" type="submit" class="btn form-btn btn-primary hover-boxshadow hover-moveup">@Resource.Submit</button> *@
+                              <button id="submit" type="submit" class="btn form-btn btn-primary hover-boxshadow hover-moveup">
+                                  <span>@Resource.Submit</span>
+                                  <div class="top"></div>
+                                  <div class="left"></div>
+                                  <div class="bottom"></div>
+                                  <div class="right"></div>
+                              </button>
+                      }
+                  </div>
+              </div>
+          </div>
+      </section>
+  </div>
+@section Scripts{
+    <script>
+      function copyCredentials(username, password) {
+        var inputUsername = document.querySelector("input#UserName");
+        var inputPassword = document.querySelector("input#Password");
+        inputUsername.value = username;
+        inputPassword.value = password;
+      }
+
+      var btn1 = document.querySelector("#copyDemoBtn1");
+      btn1.addEventListener("click", function() {
+        copyCredentials("uadmin", "Uadmin@123");
+      });
+
+      var btn2 = document.querySelector("#copyDemoBtn2");
+      btn2.addEventListener("click", function() {
+        copyCredentials("sadmin", "Sadmin@123");
+      });
+    </script>
+}

@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AnAccount" xml:space="preserve">
+    <value>Akaun</value>
+  </data>
+  <data name="AsManyAsYouWant" xml:space="preserve">
+    <value>Sebanyak Yang Anda Mahukan</value>
+  </data>
+  <data name="AsManyAsYouWantDescription" xml:space="preserve">
+    <value>Klonkan projek ini. Kemudian... Ya! Anda mempunyai beberapa projek sedia dengan beberapa ciri sedia ada.</value>
+  </data>
+  <data name="ASPNETMVCWebApplication" xml:space="preserve">
+    <value>Aplikasi Web ASP.NET MVC C#</value>
+  </data>
+  <data name="Benefits" xml:space="preserve">
+    <value>Faedah</value>
+  </data>
+  <data name="BootstrapHTMLWebsiteTemplates" xml:space="preserve">
+    <value>Templat Laman Web HTML Bootstrap</value>
+  </data>
+  <data name="Confirmpassword" xml:space="preserve">
+    <value>Sahkan kata laluan</value>
+  </data>
+  <data name="CRUDUsers" xml:space="preserve">
+    <value>Pengguna CRUD</value>
+  </data>
+  <data name="DetailedDocumentation" xml:space="preserve">
+    <value>Dokumentasi Terperinci</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mel</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Alamat emel</value>
+  </data>
+  <data name="EnvatoPortfolio" xml:space="preserve">
+    <value>Portfolio Envato</value>
+  </data>
+  <data name="FAQ" xml:space="preserve">
+    <value>Soalan Lazim</value>
+  </data>
+  <data name="FAQFourAnswer" xml:space="preserve">
+    <value>Ya, ia ada dalam rancangan kami, tetapi buat masa ini, kami tidak dapat menjamin masa keluaran.</value>
+  </data>
+  <data name="FAQFourQuestion" xml:space="preserve">
+    <value>Bolehkah anda mencipta versi .NET Core MVC?</value>
+  </data>
+  <data name="FAQOneAnswer" xml:space="preserve">
+    <value>Kami hanya menyediakan sokongan untuk membetulkan pepijat sedia ada dalam templat dan menjawab soalan mengenai ciri sedia ada. Panduan langkah demi langkah tentang cara melakukan pengubahsuaian tersuai anda, cara menyelesaikan pepijat selepas pengubahsuaian anda sendiri dan pemasangan terus bukan sebahagian daripada sokongan kami. Terima kasih banyak atas pemahaman anda. Kami akan menghabiskan masa kami untuk mencipta templat yang lebih hebat untuk anda.</value>
+  </data>
+  <data name="FAQOneQuestion" xml:space="preserve">
+    <value>Bagaimanakah dasar sokongan?</value>
+  </data>
+  <data name="FAQThreeAnswer" xml:space="preserve">
+    <value>Ya awak boleh. Pergi ke "/Views/Shared/_FooterBeforeLogin.cshtml" dan cari bahagian pengaki untuk mengedit atau mengalih keluar teks hak cipta.</value>
+  </data>
+  <data name="FAQThreeQuestion" xml:space="preserve">
+    <value>Bolehkah saya mengedit atau mengalih keluar teks Hak Cipta di pengaki?</value>
+  </data>
+  <data name="FAQTwoAnswerPartOne" xml:space="preserve">
+    <value>Jawapannya ialah: Sejurus selepas pembelian.</value>
+  </data>
+  <data name="FAQTwoAnswerPartTwo" xml:space="preserve">
+    <value>untuk mendapatkan maklumat lanjut, terdapat bahagian "Memuat turun item anda" di penghujung artikel ini.</value>
+  </data>
+  <data name="FAQTwoQuestion" xml:space="preserve">
+    <value>Bilakah saya boleh memuat turun fail selepas membeli item tersebut?</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>ciri-ciri</value>
+  </data>
+  <data name="FeaturesDescription" xml:space="preserve">
+    <value>Ciri Penting Penuh Diperlukan Untuk Memulakan Projek Apl Web MVC ASP.NET</value>
+  </data>
+  <data name="Fillyourdetailstoregister" xml:space="preserve">
+    <value>Isikan butiran anda untuk mendaftar.</value>
+  </data>
+  <data name="Fillyourusernameandpasswordtosignin" xml:space="preserve">
+    <value>Isikan nama pengguna dan kata laluan anda untuk log masuk.</value>
+  </data>
+  <data name="FollowUs" xml:space="preserve">
+    <value>Ikut kami</value>
+  </data>
+  <data name="FollowUsDescription" xml:space="preserve">
+    <value>Ikuti media sosial kami untuk mendapatkan kemas kini atau berita tentang projek.</value>
+  </data>
+  <data name="FooterCopyright" xml:space="preserve">
+    <value>Hak Cipta 2022 Hieu Dat. Hak cipta terpelihara.</value>
+  </data>
+  <data name="Forgotyourpassword" xml:space="preserve">
+    <value>Terlupa kata laluan anda?</value>
+  </data>
+  <data name="FrequentlyAskedQuestions" xml:space="preserve">
+    <value>Soalan Lazim</value>
+  </data>
+  <data name="FullSourceCode" xml:space="preserve">
+    <value>Kod Sumber Penuh</value>
+  </data>
+  <data name="FullyResponsive" xml:space="preserve">
+    <value>Responsif Sepenuhnya</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Rumah</value>
+  </data>
+  <data name="HomeDescription" xml:space="preserve">
+    <value>Ini ialah Aplikasi Web C# ASP.NET MVC dengan .NET Core 6. Ia membantu untuk memulakan projek anda dengan beberapa modul penting</value>
+  </data>
+  <data name="HomeIndexTabTitle" xml:space="preserve">
+    <value>BDMPro- Templat Pemula Aplikasi Web ASP.NET MVC C#</value>
+  </data>
+  <data name="HomeTitleOne" xml:space="preserve">
+    <value>Mulakan projek .net anda dengan mudah dengan</value>
+  </data>
+  <data name="HomeTitleTwo" xml:space="preserve">
+    <value>templat</value>
+  </data>
+  <data name="ImportAndExport" xml:space="preserve">
+    <value>Eksport import</value>
+  </data>
+  <data name="IncludeHomePage" xml:space="preserve">
+    <value>Sertakan Halaman Utama</value>
+  </data>
+  <data name="IncludeHomePageDescription" xml:space="preserve">
+    <value>Anda bukan sahaja akan mendapat papan pemuka pentadbir, tetapi juga reka bentuk halaman utama standard seperti ini.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log masuk</value>
+  </data>
+  <data name="NetStarterFAQArticles" xml:space="preserve">
+    <value>Artikel Soalan Lazim BDMPro</value>
+  </data>
+  <data name="OurProducts" xml:space="preserve">
+    <value>Produk kami</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Kata laluan</value>
+  </data>
+  <data name="RegisterAndLogin" xml:space="preserve">
+    <value>Daftar &amp; Log Masuk</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Ingat saya?</value>
+  </data>
+  <data name="RolePermission" xml:space="preserve">
+    <value>Kebenaran Peranan</value>
+  </data>
+  <data name="SaveYourTime" xml:space="preserve">
+    <value>Jimat Masa Anda</value>
+  </data>
+  <data name="SaveYourTimeDescription" xml:space="preserve">
+    <value>Masa adalah wang. BDMPro boleh menjimatkan masa dan wang anda dengan mempercepatkan proses pembangunan awal.</value>
+  </data>
+  <data name="SendingEmail" xml:space="preserve">
+    <value>Menghantar E-mel</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Daftar</value>
+  </data>
+  <data name="Specifications" xml:space="preserve">
+    <value>Spesifikasi</value>
+  </data>
+  <data name="SpecificationsDescription" xml:space="preserve">
+    <value>Dibangunkan Dengan Rangka Kerja Stabil Terkini Atau Perpustakaan</value>
+  </data>
+  <data name="StandardAdminPanel" xml:space="preserve">
+    <value>Panel Pentadbiran Standard</value>
+  </data>
+  <data name="StandardHomePage" xml:space="preserve">
+    <value>Halaman Utama Standard</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Hantar</value>
+  </data>
+  <data name="Supportfromdeveloper" xml:space="preserve">
+    <value>Sokongan daripada pembangun (Dasar sokongan digunakan)</value>
+  </data>
+  <data name="TheFollowingArticle" xml:space="preserve">
+    <value>artikel berikut</value>
+  </data>
+  <data name="ToNetStarter" xml:space="preserve">
+    <value>Kepada BDMPro</value>
+  </data>
+  <data name="UploadFile" xml:space="preserve">
+    <value>Muat Naik Fail</value>
+  </data>
+  <data name="UsefulLinks" xml:space="preserve">
+    <value>Pautan Berguna</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nama pengguna</value>
+  </data>
+  <data name="VariousCharts" xml:space="preserve">
+    <value>Pelbagai Carta</value>
+  </data>
+  <data name="VariousFormControls" xml:space="preserve">
+    <value>Pelbagai Kawalan Borang</value>
+  </data>
+  <data name="ViewMore" xml:space="preserve">
+    <value>Lihat Lagi</value>
+  </data>
+  <data name="WebAppTitle" xml:space="preserve">
+    <value>BDMPro</value>
+  </data>
+  <data name="Whatyouget" xml:space="preserve">
+    <value>Apa yang kamu dapat</value>
+  </data>
+  <data name="WhatyougetDescription" xml:space="preserve">
+    <value>Selepas Membeli, Anda Akan Mendapat Fail Zip Yang Mengandungi Perkara Berikut</value>
+  </data>
+  <data name="WhyNetStarter" xml:space="preserve">
+    <value>Mengapa BDMPro</value>
+  </data>
+  <data name="WhyNetStarterLargeTitle" xml:space="preserve">
+    <value>Mulakan Projek Anda Dengan Pengurusan Pengguna, Kebenaran Peranan &amp; Banyak Lagi</value>
+  </data>
+</root>

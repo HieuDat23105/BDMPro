@@ -1,0 +1,74 @@
+﻿@{
+    int PageIndex = ViewData["PageIndex"] != null ? Convert.ToInt32(ViewData["PageIndex"]) : 0;
+    int TotalPages = ViewData["TotalPages"] != null ? Convert.ToInt32(ViewData["TotalPages"]) : 0;
+    int TotalItems = ViewData["TotalItems"] != null ? Convert.ToInt32(ViewData["TotalItems"]) : 0;
+    int showingFrom = ViewData["ShowingFrom"] != null ? Convert.ToInt32(ViewData["ShowingFrom"]) : 0;
+    int showingTo = ViewData["ShowingTo"] != null ? Convert.ToInt32(ViewData["ShowingTo"]) : 0;
+    bool HasPreviousPage = ViewData["HasPreviousPage"] != null ? ViewData["HasPreviousPage"].ToString() == "True" ? true : false : false;
+    bool HasNextPage = ViewData["HasNextPage"] != null ? ViewData["HasNextPage"].ToString() == "True" ? true : false : false;
+    int previousPage = PageIndex - 1;
+    int nextPage = PageIndex + 1;
+}
+<!-- To validate the passed values -->
+@*<div class="row">
+    @ViewData["HasPreviousPage"].ToString()
+    @ViewData["HasNextPage"].ToString()
+    @PageIndex PageIndex
+    @TotalPages TotalPages
+    @TotalItems TotalItems
+    @showingFrom showingFrom
+    @showingTo showingTo
+    @HasPreviousPage HasPreviousPage
+    @HasNextPage HasNextPage
+</div>*@
+<div class="row justify-content-between align-items-center fs-14 mb-2">
+    <div class="col-md-6">
+        Showing @showingFrom to @showingTo of @TotalItems Records
+    </div>
+    <div class="col-md-6 text-end">
+        <nav class="d-inline-block" aria-label="Page navigation example">
+            <ul class="pagination m-0">
+                <li class="page-item">
+                    @if (HasPreviousPage)
+                    {
+                        <a onclick="changePage('@previousPage')" class="page-link cursor-pointer"><i class="fa-solid fa-chevron-left"></i></a>
+                    }
+                    else
+                    {
+                        <span class="page-link cursor-default disabled opacity-50"><i class="fa-solid fa-chevron-left"></i></span>
+                    }
+                </li>
+                @if (PageIndex > 3)
+                {
+                    <li class="page-item">
+                        <a onclick="changePage('1')" class="page-link cursor-pointer">1</a>
+                    </li>
+                    <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                }
+                @for (int i = Math.Max(1, PageIndex - 2); i <= Math.Min(TotalPages, PageIndex + 2); i++)
+                {
+                    <li class="page-item @(i == PageIndex ? "active" : "")">
+                        <a onclick="changePage('@i')" class="page-link cursor-pointer">@i</a>
+                    </li>
+                }
+                @if (PageIndex < TotalPages - 2)
+                {
+                    <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item">
+                        <a onclick="changePage('@TotalPages')" class="page-link cursor-pointer">@TotalPages</a>
+                    </li>
+                }
+                <li class="page-item">
+                    @if (HasNextPage)
+                    {
+                        <a onclick="changePage('@nextPage')" class="page-link cursor-pointer"><i class="fa-solid fa-chevron-right"></i></a>
+                    }
+                    else
+                    {
+                        <span class="page-link cursor-default disabled opacity-50"><i class="fa-solid fa-chevron-right"></i></span>
+                    }
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

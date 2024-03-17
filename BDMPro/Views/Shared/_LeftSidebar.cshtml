@@ -1,0 +1,243 @@
+﻿@using BDMPro.Models;
+@using BDMPro.Resources
+@inject Util util;
+@inject IConfiguration Configuration
+<!-- Call once, used in entire LeftSidebar.cshtml -->
+@{
+    CurrentUserPermission dashboardPermission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.Dashboard.ToString(), util);
+    CurrentUserPermission userStatusPermission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.UserStatus.ToString(), util);
+    CurrentUserPermission userAttachmentTypePermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.UserAttachmentType.ToString(), util);
+    CurrentUserPermission roleManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.RoleManagement.ToString(), util);
+    CurrentUserPermission userManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.UserManagement.ToString(), util);
+    CurrentUserPermission supplierManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.SupplierManagement.ToString(), util);
+    CurrentUserPermission deviceManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceManagement.ToString(), util);
+    CurrentUserPermission deviceTypeManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceTypeManagement.ToString(), util);
+    CurrentUserPermission repairManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.RepairManagement.ToString(), util);
+    CurrentUserPermission repairTypeManagementPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.RepairTypeManagement.ToString(), util);
+    CurrentUserPermission loginHistoryPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.LoginHistory.ToString(), util);
+}
+
+<!-- ======= Sidebar ======= -->
+<aside id="sidebar-default" class="sidebar d-none d-md-block" tabindex="-1">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        @if (dashboardPermission.ViewRight == true)
+        {
+            <li class="nav-item mt-3"><a
+                    class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "dashboard" && ViewContext.RouteData.Values["Action"].ToString().ToLower() == "index" ? "active" : "")"
+                    href="@Url.Action("index","dashboard")"><i
+                        class="fa-solid fa-chart-pie"></i><span>@Resource.Dashboard</span></a></li>
+        }
+        @if (userStatusPermission.ViewRight == true || userAttachmentTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "systemrole" ? "active" : "")"
+                    data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="fa-solid fa-gear"></i><span>@Resource.GeneralSettings</span><i
+                        class="fa-solid fa-caret-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    @if (userStatusPermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userstatus")"
+                                class="@(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userstatus" ? "active" : "")"><i
+                                    class="fa-solid fa-user-tag"></i><span>@Resource.UserStatus</span></a></li>
+                    }
+                    @if (userAttachmentTypePermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userattachmenttype")"
+                                class="@(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachmenttype" ? "active" : "")"><i
+                                    class="fa-solid fa-file"></i><span>@Resource.UserAttachmentType</span></a></li>
+                    }
+                </ul>
+            </li>
+        }
+        @if (roleManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "role" ? "active" : "")"
+                    href="@Url.Action("index","role")">
+                    <i class="fa-solid fa-users"></i> <span>@Resource.RoleManagement</span>
+                </a>
+            </li>
+        }
+        @if (userManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "user" || ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachment" ? "active" : "")"
+                    href="@Url.Action("index","user")">
+                    <i class="fa-solid fa-user-plus"></i> <span>@Resource.UserManagement</span>
+                </a>
+            </li>
+        }
+        @if (supplierManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "supplier" ? "active" : "")"
+                    href="@Url.Action("index","supplier")">
+                    <i class="fa-solid fa-user-plus"></i> <span>Supplier Management</span>
+                </a>
+            </li>
+        }
+        @if (loginHistoryPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "loginhistory" ? "active" : "")"
+                    href="@Url.Action("index","loginhistory")">
+                    <i class="fa-solid fa-clock-rotate-left"></i> <span>@Resource.LoginHistory</span>
+                </a>
+            </li>
+        }
+    </ul>
+</aside>
+
+<!-- ======= 'Only icon' sidebar ======= -->
+<aside id="sidebar-onlyicon" class="sidebar onlyicon d-none d-sm-block d-md-none">
+    <ul class="sidebar-nav" id="sidebar-nav">
+        @if (dashboardPermission.ViewRight == true)
+        {
+            <li class="nav-item mt-3"><a class="nav-link justify-content-center" href="index.html" data-bs-toggle="tooltip"
+                    data-bs-placement="right" title="Dashboard"><i class="fa-solid fa-chart-pie"></i></a></li>
+        }
+        @if (userStatusPermission.ViewRight == true || userAttachmentTypePermission.ViewRight == true)
+        {
+            <!-- Drop Down Example -->
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "systemrole" ? "active" : "")"
+                    data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="fa-solid fa-gear"></i><i class="fa-solid fa-caret-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                    @if (userStatusPermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userstatus")"
+                                class="py-3 nav-child @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userstatus" ? "active" : "")"
+                                data-bs-toggle="tooltip" data-bs-placement="right" title="User Status"><i
+                                    class="fa-solid fa-user-tag"></i></a></li>
+                    }
+                    @if (userAttachmentTypePermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userattachmenttype")"
+                                class="py-3 nav-child @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachmenttype" ? "active" : "")"
+                                data-bs-toggle="tooltip" data-bs-placement="right" title="User Attachment Type"><i
+                                    class="fa-solid fa-circle-chevron-down"></i></a></li>
+                    }
+                </ul>
+            </li>
+        }
+        @if (roleManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "role" ? "active" : "")"
+                    href="@Url.Action("index","role")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Role Management">
+                    <i class="fa-solid fa-users"></i>
+                </a>
+            </li>
+        }
+        @if (userManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "user" || ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachment" ? "active" : "")"
+                    href="@Url.Action("index","user")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="User Management">
+                    <i class="fa-solid fa-user-plus"></i>
+                </a>
+            </li>
+        }
+        @if (loginHistoryPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "loginhistory" ? "active" : "")"
+                    href="@Url.Action("index","loginhistory")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Login History">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+            </li>
+        }
+        <li class="nav-item">
+            <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "home" && ViewContext.RouteData.Values["Action"].ToString().ToLower() == "edit" ? "active" : "")"
+                href="@Url.Action("edit","home")" data-bs-toggle="tooltip" data-bs-placement="right"
+                title="Form Control Demo">
+                <i class="fa-solid fa-rectangle-list"></i>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<!-- ======= offcanvas Sidebar for Mobile phone device ======= -->
+<aside id="offcanvas" class="offcanvas offcanvas-start" tabindex="-1">
+    <div class="brandname ps-3">@Configuration.GetSection("PortalName").Value</div>
+    <ul class="sidebar-nav" id="sidebar-nav">
+        @if (dashboardPermission.ViewRight == true)
+        {
+            <li class="nav-item mt-3"><a class="nav-link " href="@Url.Action("index","dashboard")"><i
+                        class="fa-solid fa-chart-pie"></i><span>@Resource.Dashboard</span></a></li>
+        }
+        @if (userStatusPermission.ViewRight == true || userAttachmentTypePermission.ViewRight == true)
+        {
+            <!-- Drop down example -->
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "systemrole" ? "active" : "")"
+                    data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+                    <i class="fa-solid fa-gear"></i><span>@Resource.GeneralSettings</span><i
+                        class="fa-solid fa-caret-down ms-auto"></i>
+                </a>
+                <ul id="components-nav" class="nav-content collapse" data-bs-parent="#sidebar-nav">
+                    @if (userStatusPermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userstatus")"
+                                class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userstatus" ? "active" : "")"><i
+                                    class="fa-solid fa-user-tag"></i> @Resource.UserStatus</a></li>
+                    }
+                    @if (userAttachmentTypePermission.ViewRight == true)
+                    {
+                        <li><a href="@Url.Action("index","userattachmenttype")"
+                                class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "globaloptionset" ? "active" : "")"><i
+                                    class="fa-solid fa-file"></i> @Resource.UserAttachmentType</a></li>
+                    }
+                </ul>
+            </li>
+        }
+        @if (roleManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "role" ? "active" : "")"
+                    href="@Url.Action("index","role")">
+                    <i class="fa-solid fa-users"></i> <span>@Resource.RoleManagement</span>
+                </a>
+            </li>
+        }
+        @if (userManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "user" || ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachment" ? "active" : "")"
+                    href="@Url.Action("index","user")">
+                    <i class="fa-solid fa-user-plus"></i> <span>@Resource.UserManagement</span>
+                </a>
+            </li>
+        }
+        @if (loginHistoryPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "loginhistory" ? "active" : "")"
+                    href="@Url.Action("index","loginhistory")">
+                    <i class="fa-solid fa-clock-rotate-left"></i> <span>@Resource.LoginHistory</span>
+                </a>
+            </li>
+        }
+        <li class="nav-item d-inline-block d-sm-none">
+            <div class="ps-2">
+                @await Html.PartialAsync("~/Views/Shared/_LoginPartial.cshtml")
+            </div>
+        </li>
+    </ul>
+</aside>

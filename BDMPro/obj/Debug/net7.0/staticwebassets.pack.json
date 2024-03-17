@@ -1,0 +1,845 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\BDMPro.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BDMPro.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\1.0.0-mysql.sql",
+      "PackagePath": "staticwebassets\\SQL\\1.0.0-mysql.sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\1.0.0.sql",
+      "PackagePath": "staticwebassets\\SQL\\1.0.0.sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\2.0.0-mysql.sql",
+      "PackagePath": "staticwebassets\\SQL\\2.0.0-mysql.sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\2.0.0.sql",
+      "PackagePath": "staticwebassets\\SQL\\2.0.0.sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\BDMPro(1.0.0).sql",
+      "PackagePath": "staticwebassets\\SQL\\BDMPro(1.0.0).sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\SQL\\BDMPro(2.0.0).sql",
+      "PackagePath": "staticwebassets\\SQL\\BDMPro(2.0.0).sql"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\UploadedFiles\\IMG_0030_KoRYDblg8UknaLZbsSFng.jpeg",
+      "PackagePath": "staticwebassets\\UploadedFiles\\IMG_0030_KoRYDblg8UknaLZbsSFng.jpeg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\UploadedFiles\\dummy.jpg",
+      "PackagePath": "staticwebassets\\UploadedFiles\\dummy.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\UploadedFiles\\logo_ZlS7Q2L002GrVadY0CRVg.png",
+      "PackagePath": "staticwebassets\\UploadedFiles\\logo_ZlS7Q2L002GrVadY0CRVg.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\all.min.css",
+      "PackagePath": "staticwebassets\\all.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\UserExcelTemplate.xlsx",
+      "PackagePath": "staticwebassets\\assets\\UserExcelTemplate.xlsx"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\back.png",
+      "PackagePath": "staticwebassets\\assets\\back.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\bottompattern.svg",
+      "PackagePath": "staticwebassets\\assets\\bottompattern.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\default.jpg",
+      "PackagePath": "staticwebassets\\assets\\default.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\defaultProfilePicture.png",
+      "PackagePath": "staticwebassets\\assets\\defaultProfilePicture.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\forgotpassword.jpg",
+      "PackagePath": "staticwebassets\\assets\\forgotpassword.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\hero.png",
+      "PackagePath": "staticwebassets\\assets\\hero.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\heroback.svg",
+      "PackagePath": "staticwebassets\\assets\\heroback.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\heroback2.svg",
+      "PackagePath": "staticwebassets\\assets\\heroback2.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\left.svg",
+      "PackagePath": "staticwebassets\\assets\\left.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\login.jpg",
+      "PackagePath": "staticwebassets\\assets\\login.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\resetpassword.jpg",
+      "PackagePath": "staticwebassets\\assets\\resetpassword.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\right.svg",
+      "PackagePath": "staticwebassets\\assets\\right.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\signup.jpg",
+      "PackagePath": "staticwebassets\\assets\\signup.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\slide1.jpg",
+      "PackagePath": "staticwebassets\\assets\\slide1.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\slide3.jpg",
+      "PackagePath": "staticwebassets\\assets\\slide3.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\slide4.jpg",
+      "PackagePath": "staticwebassets\\assets\\slide4.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\slide5.jpg",
+      "PackagePath": "staticwebassets\\assets\\slide5.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\slide6.jpg",
+      "PackagePath": "staticwebassets\\assets\\slide6.jpg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\toppattern.svg",
+      "PackagePath": "staticwebassets\\assets\\toppattern.svg"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\video_banner.mp4",
+      "PackagePath": "staticwebassets\\assets\\video_banner.mp4"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\whatyouget.png",
+      "PackagePath": "staticwebassets\\assets\\whatyouget.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\whyus1.png",
+      "PackagePath": "staticwebassets\\assets\\whyus1.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\whyus2.png",
+      "PackagePath": "staticwebassets\\assets\\whyus2.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\assets\\whyus3.png",
+      "PackagePath": "staticwebassets\\assets\\whyus3.png"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\bootstrap-datepicker.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-datepicker.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\bootstrap.rtl.min.css.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\style-dark.css",
+      "PackagePath": "staticwebassets\\css\\style-dark.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\style-old.css",
+      "PackagePath": "staticwebassets\\css\\style-old.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-v4compatibility.ttf",
+      "PackagePath": "staticwebassets\\fa-v4compatibility.ttf"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\fa-v4compatibility.woff2",
+      "PackagePath": "staticwebassets\\fa-v4compatibility.woff2"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\bootstrap-datepicker.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-datepicker.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\chart.js\\chart.esm.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\chart.esm.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\chart.js\\chart.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\chart.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\chart.js\\chart.min.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\chart.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\chart.js\\chunks\\helpers.segment.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\chunks\\helpers.segment.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\chart.js\\helpers.esm.js",
+      "PackagePath": "staticwebassets\\js\\chart.js\\helpers.esm.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\dataTables.bootstrap5.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.bootstrap5.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\datatables.min.js",
+      "PackagePath": "staticwebassets\\js\\datatables.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\filevalidation.js",
+      "PackagePath": "staticwebassets\\js\\filevalidation.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.intellisense.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.intellisense.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.min.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.slim.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.slim.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.slim.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.slim.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery-3.6.0.slim.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery-3.6.0.slim.min.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.validate-vsdoc.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate-vsdoc.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\jszip.min.js",
+      "PackagePath": "staticwebassets\\js\\jszip.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\main.js",
+      "PackagePath": "staticwebassets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\modernizr-2.8.3.js",
+      "PackagePath": "staticwebassets\\js\\modernizr-2.8.3.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\js\\pdfmake.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\icons\\default\\icons.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\icons\\default\\icons.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\langs\\README.md",
+      "PackagePath": "staticwebassets\\js\\tinymce\\langs\\README.md"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\license.txt",
+      "PackagePath": "staticwebassets\\js\\tinymce\\license.txt"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\models\\dom\\model.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\models\\dom\\model.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\advlist\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\advlist\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\anchor\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\anchor\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\autolink\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\autolink\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\autoresize\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\autoresize\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\autosave\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\autosave\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\charmap\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\charmap\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\code\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\code\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\codesample\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\codesample\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\directionality\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\directionality\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\emoticons\\js\\emojiimages.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\emoticons\\js\\emojiimages.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\emoticons\\js\\emojiimages.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\emoticons\\js\\emojiimages.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\emoticons\\js\\emojis.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\emoticons\\js\\emojis.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\emoticons\\js\\emojis.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\emoticons\\js\\emojis.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\emoticons\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\emoticons\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\fullscreen\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\fullscreen\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\help\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\help\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\image\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\image\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\importcss\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\importcss\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\insertdatetime\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\insertdatetime\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\link\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\link\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\lists\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\lists\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\media\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\media\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\nonbreaking\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\nonbreaking\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\pagebreak\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\pagebreak\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\preview\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\preview\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\quickbars\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\quickbars\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\save\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\save\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\searchreplace\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\searchreplace\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\table\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\table\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\template\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\template\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\visualblocks\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\visualblocks\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\visualchars\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\visualchars\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\plugins\\wordcount\\plugin.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\plugins\\wordcount\\plugin.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\dark\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\default\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\default\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\document\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\document\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\tinymce-5-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\tinymce-5-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\tinymce-5\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\tinymce-5\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\content\\writer\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\content\\writer\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide-dark\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide-dark\\skin.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide-dark\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide\\skin.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide\\skin.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\oxide\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5-dark\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5\\content.inline.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5\\content.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5\\content.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5\\skin.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.min.css",
+      "PackagePath": "staticwebassets\\js\\tinymce\\skins\\ui\\tinymce-5\\skin.shadowdom.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\themes\\silver\\theme.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\themes\\silver\\theme.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\tinymce.d.ts",
+      "PackagePath": "staticwebassets\\js\\tinymce\\tinymce.d.ts"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\tinymce\\tinymce.min.js",
+      "PackagePath": "staticwebassets\\js\\tinymce\\tinymce.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\js\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\js\\vfs_fonts.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.BDMPro.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.BDMPro.props",
+      "PackagePath": "build\\BDMPro.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.BDMPro.props",
+      "PackagePath": "buildMultiTargeting\\BDMPro.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.BDMPro.props",
+      "PackagePath": "buildTransitive\\BDMPro.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

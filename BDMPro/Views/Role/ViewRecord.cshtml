@@ -1,0 +1,609 @@
+﻿@model BDMPro.Models.SystemRoleViewModel
+@using BDMPro.CustomHelper
+@using BDMPro.Models;
+@using BDMPro.Resources
+@inject Util util;
+@{
+    ViewBag.Title = Resource.ViewRole;
+    ViewBag.ModuleName = "Role";
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+    ViewBag.TableIdPrefix = "userinrole";
+    CurrentUserPermission permission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.RoleManagement.ToString(),util);
+    List<SelectListItem> pageSizeDropDownList = UserInRoleListConfig.PageSizeDropDownList;
+    string defaultPageSizeText = pageSizeDropDownList.Where(a => a.Selected == true).Select(a => a.Text).FirstOrDefault();
+    string defaultPageSizeValue = pageSizeDropDownList.Where(a => a.Selected == true).Select(a => a.Value).FirstOrDefault();
+}
+
+<div class="row">
+    <div class="col-12">
+        <div style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item fw-normal"><a class="color-primarycolor opacity-50" href="@Url.Action("index")">@ViewBag.ModuleName @Resource.Management</a></li>
+                <li class="breadcrumb-item fw-normal active">@ViewBag.Title</li>
+            </ol>
+        </div>
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between pt-2">
+            <h4 class="pagetitle mb-sm-0 fw600">@ViewBag.Title</h4>
+            <div class="d-flex">
+                @if (Model.SystemDefault == false && permission.EditRight == true)
+                {
+                    <span class="fs-19"><a href="@Url.Action("edit", new { Id = Model.Id })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a></span>
+                }
+                @if (Model.SystemDefault == false && permission.DeleteRight == true)
+                {
+                    <span class="fs-19">&nbsp; <i onclick="triggerDeleteConfirmationModal('@Html.Raw(Model.Name.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))', '@Url.Action("delete", new { id= Model.Id})')" class="fa-solid fa-trash-can text-delete cursor-pointer hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Delete"></i></span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.HiddenFor(m => m.Id)
+<section class="section mt-3">
+    <div class="bg-white rounded p-3 p-lg-4 p-xl-5 shadow">
+        <h2 class="fs-20 fw600 mb-4">@ViewBag.ModuleName @Resource.Information</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 text-break">
+                    <div>@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "fw600" })</div>
+                    <div>@Html.DisplayFor(model => model.Name, new { htmlAttributes = new { @class = "form-control d-block" } })</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white rounded p-3 p-lg-4 p-xl-5 shadow mt-4">
+        <h2 class="fs-20 fw600 mb-4">@Resource.OtherInformation</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 text-break">
+                    <div>@Html.LabelFor(model => model.CreatedAndModified.CreatedByName, htmlAttributes: new { @class = "fw600" })</div>
+                    <div>@Html.DisplayFor(model => model.CreatedAndModified.CreatedByName, new { htmlAttributes = new { @class = "form-control" } })</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 text-break">
+                    <div>@Html.LabelFor(model => model.CreatedAndModified.FormattedCreatedOn, htmlAttributes: new { @class = "fw600" })</div>
+                    <div class="datetimetext">@Html.DisplayFor(model => model.CreatedAndModified.FormattedCreatedOn, new { htmlAttributes = new { @class = "form-control" } })</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3 text-break">
+                    <div>@Html.LabelFor(model => model.CreatedAndModified.ModifiedByName, htmlAttributes: new { @class = "fw600" })</div>
+                    <div>@Html.DisplayFor(model => model.CreatedAndModified.ModifiedByName, new { htmlAttributes = new { @class = "form-control" } })</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3 text-break">
+                    <div>@Html.LabelFor(model => model.CreatedAndModified.FormattedModifiedOn, htmlAttributes: new { @class = "fw600" })</div>
+                    <div class="datetimetext">@Html.DisplayFor(model => model.CreatedAndModified.FormattedModifiedOn, new { htmlAttributes = new { @class = "form-control" } })</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white rounded p-3 p-lg-4 p-xl-5 shadow mt-4">
+        <h2 class="fs-20 fw600 mb-4">@Resource.RolePermissionfor <span class="color-primarycolor">@Html.DisplayFor(model => model.Name)</span></h2>
+
+        @* DashboardPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.DashboardPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.DashboardRolePermissionDescription"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DashboardPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.DashboardPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DashboardPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* UserStatusPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.UserStatusPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserStatusPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserStatusPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserStatusPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserStatusPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserStatusPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserStatusPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserStatusPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserStatusPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserStatusPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserStatusPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.UserStatusPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserStatusPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* UserAttachmentTypePermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.UserAttachmentTypePermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserAttachmentTypePermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserAttachmentTypePermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserAttachmentTypePermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserAttachmentTypePermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserAttachmentTypePermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserAttachmentTypePermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserAttachmentTypePermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserAttachmentTypePermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserAttachmentTypePermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserAttachmentTypePermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.UserAttachmentTypePermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserAttachmentTypePermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* RoleManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.RoleManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RoleManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.RoleManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RoleManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RoleManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.RoleManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RoleManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RoleManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.RoleManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RoleManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RoleManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.RoleManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RoleManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* UserManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.UserManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.UserManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.UserManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.UserManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.UserManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* LoginHistoryPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.LoginHistoryPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.LoginHistoryRolePermissionDescription"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.LoginHistoryPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.LoginHistoryPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.LoginHistoryPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* SupplierManagementPermission*@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.SupplierManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.SupplierManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.SupplierManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.SupplierManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.SupplierManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.SupplierManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.SupplierManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.SupplierManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.SupplierManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.SupplierManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.SupplierManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.SupplierManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.SupplierManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* DeviceManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.DeviceManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* DeviceTypeManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.DeviceTypeManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* RepairManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.RepairManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* RepairTypeManagementPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.RepairTypeManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypeManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypeManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypeManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypeManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+
+        @* StatisticalPermission *@
+
+        <div class="row justify-content-start align-items-start py-2">
+            <div class="col-md-12 col-xl-4">
+                @Html.LabelFor(m => m.StatisticalPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.StatisticalPermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.StatisticalPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.StatisticalPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.StatisticalPermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.StatisticalPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.StatisticalPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.StatisticalPermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.StatisticalPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.StatisticalPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-2">
+                <div class="form-check">
+                    @Html.HiddenFor(m => m.StatisticalPermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.StatisticalPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.StatisticalPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="bg-white rounded p-3 p-lg-4 p-xl-5 shadow mt-4 position-relative w-100 h-100">
+        <h2 class="fs-20 fw600 mb-4">@Resource.UsersInTheRoleOf <span class="color-primarycolor">@Html.DisplayFor(model => model.Name)</span></h2>
+        <div class="pb-2">
+            <span onclick="exportToExcel('@ViewBag.TableIdPrefix', '@Resource.TableIsStillLoading')" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ExportToExcelNote" class="btn form-btn btn-secondary hover-boxshadow cursor-pointer hover-moveup"><i class="fa-solid fa-file-excel pe-1"></i> @Resource.ExporttoExcel</span>
+            <span onclick="exportToPdf('@ViewBag.TableIdPrefix', '@Resource.TableIsStillLoading')" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ExportToPDFNote" class="btn form-btn btn-secondary hover-boxshadow cursor-pointer hover-moveup"><i class="fa-solid fa-file-pdf pe-1"></i> @Resource.ExporttoPdf</span>
+        </div>
+        <div class="spinner-container d-none">
+            <div class="spinner d-flex justify-content-center align-items-center text-center color-primarycolor py-5">
+                <div class="py-3">
+                    <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div><strong> &nbsp; @Resource.Loading </strong>
+                </div>
+            </div>
+        </div>
+        <div id="@ViewBag.TableIdPrefix-searchfilter">
+            <div class="row justify-content-between align-items-end gx-1 pb-1">
+                <div class="col-sm-7 col-xl-3">
+                    @CustomHelper.CustomDropDown("PageSizeDropDownList", pageSizeDropDownList, false, "onChangeTableLength", defaultPageSizeText , defaultPageSizeValue)
+                </div>
+                <div class="col-xl-3">
+                </div>
+                <div class="col-xl-6 pt-2 pt-sm-0">
+                    <div id="searchinput">
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="search" name="search" class="form-control" placeholder="@Resource.Search" />
+                            <a class="input-group-text bg-transparent hover-bg-primarycolor hover-color-white cursor-pointer"
+                               id="searchbtn"
+                               onclick="refreshTable()"><i class="fa-solid fa-magnifying-glass pe-1"></i> @Resource.Search</a>
+                            <a class="input-group-text bg-transparent hover-bg-primarycolor hover-color-white cursor-pointer" onclick="onResetButtonClicked()"><i class="fa-solid fa-rotate-left pe-1"></i> @Resource.Reset</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="@ViewBag.TableIdPrefix-mainwrapper">
+            <!-- display a dummy empty table while loading the data -->
+            <div class="table-responsive mb-5">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr><th class="thead"></th></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="py-4"></div>
+            <div class="dummyfooter row justify-content-between mt-5">
+                <div class="col-md-6">@Resource.Showing0Entries</div>
+                <div class="col-md-6 text-end">@Resource.Page0OfPage0</div>
+            </div>
+        </div>      
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <a class="btn form-btn btn-secondary hover-boxshadow me-1" href="@Url.Action("index")">@Resource.BackToList</a>
+            @if (Model.SystemDefault == false && permission.EditRight == true)
+            {
+                <a class="btn form-btn btn-primary hover-boxshadow me-1" href="@Url.Action("edit", new { Id = Model.Id})">@Resource.Edit @ViewBag.ModuleName</a>
+            }
+        </div>
+    </div>
+</section>
+
+@section scripts{
+    <script>
+        var tableIdPrefix = "@ViewBag.TableIdPrefix";
+        var fileName = "@Resource.UserAttachment"; //the file name for excel and pdf file (Export to excel, pdf feature)
+
+        var canView = "@permission.ViewRight";
+        var canAdd = "@permission.AddRight";
+        var canEdit = "@permission.EditRight";
+        var canDelete = "@permission.DeleteRight";
+
+        var loadTableUrl = getLoadTableUrl(tableIdPrefix);
+        var tableSearchFilter = getDefaultTableSearchFilter();
+
+        function getLoadTableUrl(tableIdPrefix) {
+            if (tableIdPrefix == "@ViewBag.TableIdPrefix") {
+                return "@Url.Action("GetPartialViewUserInRole", "Role", new {id= Model.Id })";
+            }
+            // if this page contains other tables, add load table value URL configuration here
+        }
+
+        function getDefaultTableSearchFilter() {
+            return {
+                //all tables
+                sort: "",
+                size: "",
+                search: "",
+                pg: ""
+            };
+        }
+
+        initDropdownlist();
+        $(".spinner-container").removeClass("d-none");
+        loadData(loadTableUrl, tableSearchFilter, tableIdPrefix);
+
+        function onResetButtonClicked() {
+            tableSearchFilter = getDefaultTableSearchFilter();
+            resetTable(tableIdPrefix);
+            loadData(loadTableUrl, tableSearchFilter, tableIdPrefix);
+        }
+
+        function refreshTable() {
+            $(".spinner-container").removeClass("d-none");
+            var searchinput = document.querySelector(`#${tableIdPrefix}-searchfilter input[name="search"]`);
+            if (searchinput != null) {
+                if (searchinput.value == null || searchinput.value == "") {
+                    tableSearchFilter.search = "";
+                } else {
+                    tableSearchFilter.search = searchinput.value;
+                }
+            }
+            loadData(loadTableUrl, tableSearchFilter, tableIdPrefix);
+        }
+
+        function onChangeTableLength(element) {
+            tableSearchFilter.size = $(element).attr('data-value');
+            refreshTable();
+        }
+
+        function changePage(targetPage) {
+            tableSearchFilter.pg = targetPage;
+            refreshTable();
+        }
+
+        function sortTable(order) {
+            tableSearchFilter.sort = order;
+            refreshTable();
+        }
+
+    </script>
+}

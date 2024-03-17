@@ -1,0 +1,810 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Hành động</value>
+</data>
+<data name="Add" xml:space="preserve">
+    <value>Thêm</value>
+</data>
+<data name="AddNewRecord" xml:space="preserve">
+    <value>Thêm bản ghi mới</value>
+</data>
+<data name="AddressInformation" xml:space="preserve">
+    <value>Thông tin địa chỉ</value>
+</data>
+<data name="AddUser" xml:space="preserve">
+    <value>Thêm người dùng</value>
+</data>
+<data name="alreadyexists" xml:space="preserve">
+    <value>đã tồn tại.</value>
+</data>
+<data name="AnAccount" xml:space="preserve">
+    <value>Một tài khoản</value>
+</data>
+<data name="Anerroroccurred" xml:space="preserve">
+    <value>Có lỗi xảy ra khi xử lý yêu cầu của bạn.</value>
+</data>
+<data name="AreyouSureToDeleteThisRecord" xml:space="preserve">
+    <value>Bạn có chắc chắn muốn xóa bản ghi này không?</value>
+</data>
+<data name="AttachmentType" xml:space="preserve">
+    <value>Loại tệp đính kèm</value>
+</data>
+<data name="Back" xml:space="preserve">
+    <value>Quay lại</value>
+</data>
+<data name="BackToList" xml:space="preserve">
+    <value>Quay lại danh sách</value>
+</data>
+<data name="ByDefaultSystemAdminCanManageWhileNormalUserCant" xml:space="preserve">
+    <value>Mặc định, quản trị viên hệ thống có thể quản lý mô-đun này, trong khi người dùng bình thường không được phép xem / thêm / sửa / xóa mô-đun này.</value>
+</data>
+<data name="ChangePassword" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+</data>
+<data name="ChangePasswordForUser" xml:space="preserve">
+    <value>Thay đổi mật khẩu cho người dùng</value>
+</data>
+<data name="ClickHereToLogin" xml:space="preserve">
+    <value>Click vào đây để đăng nhập</value>
+</data>
+<data name="Clicktoseeerrordetail" xml:space="preserve">
+    <value>Click để xem chi tiết lỗi.</value>
+</data>
+<data name="Close" xml:space="preserve">
+    <value>Đóng</value>
+</data>
+<data name="Column" xml:space="preserve">
+    <value>Cột</value>
+</data>
+<data name="ColumnsCountMismatch" xml:space="preserve">
+    <value>Số cột không khớp.</value>
+</data>
+<data name="ConfigurationError" xml:space="preserve">
+    <value>Lỗi cấu hình</value>
+</data>
+<data name="ConfirmEmail" xml:space="preserve">
+    <value>Xác nhận email</value>
+</data>
+<data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu mới</value>
+</data>
+<data name="ConfirmPassword" xml:space="preserve">
+    <value>Xác nhận mật khẩu</value>
+</data>
+<data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>Trường xác nhận mật khẩu là bắt buộc.</value>
+</data>
+<data name="Country" xml:space="preserve">
+    <value>Quốc gia</value>
+</data>
+<data name="CountryNotFound" xml:space="preserve">
+    <value>Không tìm thấy quốc gia.</value>
+</data>
+<data name="CountryRequired" xml:space="preserve">
+    <value>Trường quốc gia là bắt buộc.</value>
+</data>
+<data name="CreatedBy" xml:space="preserve">
+    <value>Được tạo bởi</value>
+</data>
+<data name="CreatedOn" xml:space="preserve">
+    <value>Được tạo vào</value>
+</data>
+<data name="CurrentPassword" xml:space="preserve">
+    <value>Mật khẩu hiện tại</value>
+</data>
+<data name="CurrentProfilePicture" xml:space="preserve">
+    <value>Hình ảnh hồ sơ hiện tại của bạn:</value>
+</data>
+<data name="DarkMode" xml:space="preserve">
+    <value>Chế độ tối</value>
+</data>
+<data name="Dashboard" xml:space="preserve">
+    <value>Bảng điều khiển</value>
+</data>
+<data name="DashboardRolePermissionDescription" xml:space="preserve">
+    <value>Mặc định, quản trị viên hệ thống có thể xem bảng điều khiển về tất cả dữ liệu người dùng, trong khi người dùng bình thường chỉ có thể xem bảng điều khiển về dữ liệu của chính họ.</value>
+</data>
+<data name="DateOfBirth" xml:space="preserve">
+    <value>Ngày sinh</value>
+</data>
+<data name="Delete" xml:space="preserve">
+    <value>Xóa</value>
+</data>
+<data name="DemoAccountCannotBeDeleted" xml:space="preserve">
+    <value>Xin lỗi, không thể xóa tài khoản demo.</value>
+</data>
+<data name="DisplayOrder" xml:space="preserve">
+    <value>Thứ tự hiển thị</value>
+</data>
+  <data name="Edit" xml:space="preserve">
+    <value>Chỉnh sửa</value>
+</data>
+<data name="EditAttachments" xml:space="preserve">
+    <value>Chỉnh sửa tệp đính kèm:</value>
+</data>
+<data name="EditMyProfile" xml:space="preserve">
+    <value>Chỉnh sửa hồ sơ của tôi</value>
+</data>
+<data name="EditUser" xml:space="preserve">
+    <value>Chỉnh sửa người dùng</value>
+</data>
+<data name="EditUserAttachment" xml:space="preserve">
+    <value>Chỉnh sửa tệp đính kèm của người dùng</value>
+</data>
+<data name="EmailAddress" xml:space="preserve">
+    <value>Địa chỉ email</value>
+</data>
+<data name="EmailAddressTaken" xml:space="preserve">
+    <value>Địa chỉ email đã được sử dụng. Vui lòng sử dụng địa chỉ email khác và thử lại.</value>
+</data>
+<data name="EnterTheDetails" xml:space="preserve">
+    <value>Nhập chi tiết</value>
+</data>
+<data name="Error" xml:space="preserve">
+    <value>Lỗi</value>
+</data>
+<data name="ExporttoExcel" xml:space="preserve">
+    <value>Xuất ra Excel</value>
+</data>
+<data name="ExportToExcelNote" xml:space="preserve">
+    <value>Trước khi nhấn nút này, bạn có thể kiểm soát nội dung muốn xuất ra Excel. Ví dụ, nếu bạn muốn xuất tất cả các bản ghi, hãy nhấn vào "Hiển thị tất cả" dưới đây và sau đó nhấn "Xuất ra Excel".</value>
+</data>
+<data name="ExporttoPdf" xml:space="preserve">
+    <value>Xuất ra PDF</value>
+</data>
+<data name="ExportToPDFNote" xml:space="preserve">
+    <value>Trước khi nhấn nút này, bạn có thể kiểm soát nội dung muốn xuất ra PDF. Ví dụ, nếu bạn muốn xuất tất cả các bản ghi, hãy nhấn vào "Hiển thị tất cả" dưới đây và sau đó nhấn "Xuất ra PDF".</value>
+</data>
+<data name="FailedExceptionError" xml:space="preserve">
+    <value>Thất bại do lỗi ngoại lệ.</value>
+</data>
+<data name="FailedOnlyJpgJpegPngCanBeSetAsProfilePicture" xml:space="preserve">
+    <value>Thất bại. Chỉ có tệp jpg, jpeg và png mới có thể được thiết lập là hình đại diện.</value>
+</data>
+<data name="FailedToResetPassword" xml:space="preserve">
+    <value>Không thể đặt lại mật khẩu.</value>
+</data>
+<data name="File" xml:space="preserve">
+    <value>Tệp</value>
+</data>
+<data name="FileName" xml:space="preserve">
+    <value>Tên tệp</value>
+</data>
+<data name="FileURL" xml:space="preserve">
+    <value>URL tệp</value>
+</data>
+<data name="FillInEmailAddressWeWillSendYouResetPasswordLink" xml:space="preserve">
+    <value>Nhập địa chỉ email của bạn, chúng tôi sẽ gửi cho bạn một liên kết để đặt lại mật khẩu.</value>
+</data>
+<data name="FillInYourUsernameAndPasswordToSignIn" xml:space="preserve">
+    <value>Nhập tên người dùng và mật khẩu của bạn để đăng nhập.</value>
+</data>
+<data name="FillYourDetailsToRegister" xml:space="preserve">
+    <value>Nhập thông tin chi tiết của bạn để đăng ký.</value>
+</data>
+<data name="Filter" xml:space="preserve">
+    <value>Bộ lọc</value>
+</data>
+<data name="FilterCountry" xml:space="preserve">
+    <value>Lọc theo quốc gia</value>
+</data>
+<data name="FilterRole" xml:space="preserve">
+    <value>Lọc theo quyền</value>
+</data>
+<data name="FilterStatus" xml:space="preserve">
+    <value>Lọc theo trạng thái người dùng</value>
+</data>
+<data name="FirstName" xml:space="preserve">
+    <value>Tên</value>
+</data>
+<data name="Forgot" xml:space="preserve">
+    <value>Quên</value>
+</data>
+<data name="ForgotPassword" xml:space="preserve">
+    <value>Quên mật khẩu</value>
+</data>
+<data name="ForgotYourPassword" xml:space="preserve">
+    <value>Bạn đã quên mật khẩu chưa?</value>
+</data>
+<data name="FullAddress" xml:space="preserve">
+    <value>Địa chỉ đầy đủ</value>
+</data>
+<data name="FullName" xml:space="preserve">
+    <value>Họ và tên</value>
+</data>
+  <data name="Gender" xml:space="preserve">
+    <value>Giới tính</value>
+</data>
+<data name="GeneralSettings" xml:space="preserve">
+    <value>Cài đặt chung</value>
+</data>
+<data name="HomeIndexTabTitle" xml:space="preserve">
+    <value>BDMPro- Mẫu ứng dụng Web ASP.NET MVC C# Giới thiệu</value>
+</data>
+<data name="IDCardNumber" xml:space="preserve">
+    <value>Số CMND</value>
+</data>
+<data name="ImportFromExcel" xml:space="preserve">
+    <value>Nhập từ Excel</value>
+</data>
+<data name="ImportingDataFromExcelPleaseWait" xml:space="preserve">
+    <value>Đang nhập dữ liệu từ Excel... Vui lòng đợi...</value>
+</data>
+<data name="ImportUserFromExcel" xml:space="preserve">
+    <value>Nhập người dùng từ Excel</value>
+</data>
+<data name="ImportUserFromExcelDescription" xml:space="preserve">
+    <value>Vui lòng tải xuống mẫu Excel dưới đây và nhập dữ liệu người dùng của bạn. Đừng chỉnh sửa hoặc thêm cột bổ sung. Dữ liệu bổ sung sẽ bị bỏ qua khi nhập. Khi hoàn thành, nhập dữ liệu của bạn vào tệp excel, lưu và tải lên thông qua phần tải lên dưới đây.</value>
+</data>
+<data name="Information" xml:space="preserve">
+    <value>Thông tin</value>
+</data>
+<data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Địa chỉ email không hợp lệ.</value>
+</data>
+<data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Thử đăng nhập không hợp lệ</value>
+</data>
+<data name="InvalidPassword" xml:space="preserve">
+    <value>Mật khẩu phải chứa ít nhất 6 ký tự, bao gồm ít nhất 1 chữ cái hoa, 1 chữ cái thường, 1 chữ số và 1 ký tự đặc biệt.</value>
+</data>
+<data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Vui lòng nhập một số điện thoại hợp lệ.</value>
+</data>
+<data name="InvalidPostalCode" xml:space="preserve">
+    <value>Vui lòng nhập mã bưu điện hợp lệ.</value>
+</data>
+<data name="InvalidUsername" xml:space="preserve">
+    <value>Tên người dùng không hợp lệ. Tên người dùng phải có ít nhất 4 ký tự, phải bắt đầu bằng chữ cái, không được có ký tự đặc biệt.</value>
+</data>
+<data name="InvalidUserTemplate" xml:space="preserve">
+    <value>Cột không hợp lệ. Vui lòng sử dụng mẫu được cung cấp (UserExcelTemplate.xlsx) và đảm bảo không xóa hoặc chỉnh sửa cột.</value>
+</data>
+<data name="LastName" xml:space="preserve">
+    <value>Họ</value>
+</data>
+<data name="LightMode" xml:space="preserve">
+    <value>Chế độ sáng</value>
+</data>
+<data name="ListofRoles" xml:space="preserve">
+    <value>Danh sách các vai trò người dùng</value>
+</data>
+<data name="ListofUserAttachments" xml:space="preserve">
+    <value>Danh sách các tệp đính kèm người dùng</value>
+</data>
+<data name="ListofUserAttachmentTypes" xml:space="preserve">
+    <value>Danh sách các loại tệp đính kèm người dùng</value>
+</data>
+<data name="ListofUsers" xml:space="preserve">
+    <value>Danh sách người dùng</value>
+</data>
+<data name="ListofUserStatus" xml:space="preserve">
+    <value>Danh sách trạng thái người dùng</value>
+</data>
+<data name="ListOfUserWith" xml:space="preserve">
+    <value>Danh sách người dùng với</value>
+</data>
+<data name="Loading" xml:space="preserve">
+    <value>Đang tải...</value>
+</data>
+<data name="Lockedout" xml:space="preserve">
+    <value>Bị khóa</value>
+</data>
+<data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+</data>
+<data name="LoginDateTime" xml:space="preserve">
+    <value>Ngày giờ đăng nhập</value>
+</data>
+<data name="LoginHistory" xml:space="preserve">
+    <value>Lịch sử đăng nhập</value>
+</data>
+<data name="LoginHistoryRolePermissionDescription" xml:space="preserve">
+    <value>Mặc định, quản trị viên hệ thống có thể xem lịch sử đăng nhập của tất cả người dùng, trong khi người dùng thông thường chỉ có thể xem lịch sử đăng nhập của chính họ.</value>
+</data>
+ <data name="ManageAttachmentsFor" xml:space="preserve">
+    <value>Quản lý tệp đính kèm cho</value>
+</data>
+<data name="Management" xml:space="preserve">
+    <value>Quản lý</value>
+</data>
+<data name="ManageUserAttachment" xml:space="preserve">
+    <value>Quản lý tệp đính kèm người dùng</value>
+</data>
+<data name="MaxLength100" xml:space="preserve">
+    <value>Chiều dài tối đa cho phép là 100 ký tự.</value>
+</data>
+<data name="MaxLength128" xml:space="preserve">
+    <value>Chiều dài tối đa cho phép là 128 ký tự.</value>
+</data>
+<data name="MaxLength256" xml:space="preserve">
+    <value>Chiều dài tối đa cho phép là 256 ký tự.</value>
+</data>
+<data name="MinLength6" xml:space="preserve">
+    <value>Chiều dài của trường này phải ít nhất là 6 ký tự.</value>
+</data>
+<data name="ModifiedBy" xml:space="preserve">
+    <value>Đã sửa đổi bởi</value>
+</data>
+<data name="ModifiedOn" xml:space="preserve">
+    <value>Đã sửa đổi vào</value>
+</data>
+<data name="MostOfTheUsersAreWithThisStatus" xml:space="preserve">
+    <value>Hầu hết người dùng có trạng thái này</value>
+</data>
+<data name="MyProfile" xml:space="preserve">
+    <value>Hồ sơ của tôi</value>
+</data>
+<data name="NA" xml:space="preserve">
+    <value>Không có dữ liệu</value>
+</data>
+<data name="Name" xml:space="preserve">
+    <value>Tên</value>
+</data>
+<data name="BDMPro" xml:space="preserve">
+    <value>BDMPro</value>
+</data>
+<data name="NewPassword" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+</data>
+<data name="NewPasswordNotMatch" xml:space="preserve">
+    <value>Mật khẩu mới và xác nhận mật khẩu mới không khớp.</value>
+</data>
+<data name="NoDataAvailable" xml:space="preserve">
+    <value>Không có dữ liệu có sẵn</value>
+</data>
+<data name="NormalUserSystemAdminCannotBeDeleted" xml:space="preserve">
+    <value>Không thể xóa hoặc chỉnh sửa người dùng thông thường và người quản trị hệ thống. Vì chúng sẽ được sử dụng để xác định lịch sử đăng nhập (người quản trị có thể xem lịch sử đăng nhập của tất cả người dùng, nhưng người dùng thông thường chỉ có thể xem lịch sử của họ).</value>
+</data>
+<data name="NotAllowToChangePasswordForDemoAccount" xml:space="preserve">
+    <value>Xin lỗi, bạn không thể thay đổi mật khẩu tài khoản thử nghiệm. Vui lòng đăng ký tài khoản khác để thử tính năng này.</value>
+</data>
+<data name="NoteSystemInformation" xml:space="preserve">
+    <value>Lưu ý: Thông tin hệ thống chỉ có thể được chỉnh sửa bởi người quản trị hệ thống.</value>
+</data>
+<data name="notfoundormismatch" xml:space="preserve">
+    <value>Không tìm thấy hoặc không khớp.</value>
+</data>
+<data name="OnlyLettersAndNumbers" xml:space="preserve">
+    <value>Chỉ cho phép chữ cái và số.</value>
+</data>
+<data name="OnlyNumbers" xml:space="preserve">
+    <value>Chỉ cho phép số.</value>
+</data>
+<data name="Oops" xml:space="preserve">
+    <value>Xin lỗi.</value>
+</data>
+<data name="OopsSomethingwrong" xml:space="preserve">
+    <value>Xin lỗi, có lỗi xảy ra.</value>
+</data>
+<data name="OtherInformation" xml:space="preserve">
+    <value>Thông tin khác</value>
+</data>
+<data name="outof" xml:space="preserve">
+    <value>Ngoài phạm vi</value>
+</data>
+  <data name="Page0OfPage0" xml:space="preserve">
+    <value>Trang 0 của 0 trang</value>
+</data>
+<data name="Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+</data>
+<data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Đổi mật khẩu thành công!</value>
+</data>
+<data name="PasswordNotMatch" xml:space="preserve">
+    <value>Mật khẩu và xác nhận mật khẩu không khớp.</value>
+</data>
+<data name="PasswordRequired" xml:space="preserve">
+    <value>Trường mật khẩu là bắt buộc.</value>
+</data>
+<data name="PasswordRequirementText" xml:space="preserve">
+    <value>Ít nhất 6 ký tự. Phải có ít nhất một chữ hoa, một chữ thường, một số và một ký tự đặc biệt.</value>
+</data>
+<data name="PersonalInformation" xml:space="preserve">
+    <value>Thông tin cá nhân</value>
+</data>
+<data name="PhoneNumber" xml:space="preserve">
+    <value>Số điện thoại</value>
+</data>
+<data name="Pleasefillinthefollowing" xml:space="preserve">
+    <value>Vui lòng điền vào các trường sau.</value>
+</data>
+<data name="PleaseInsertConnectionString" xml:space="preserve">
+    <value>Vui lòng chuyển đến Web.config và nhập connectionString để chạy ứng dụng Web này.</value>
+</data>
+<data name="PleaseSelect" xml:space="preserve">
+    <value>Vui lòng chọn...</value>
+</data>
+<data name="Pleaseselectallthefilesthatyouwanttoupload" xml:space="preserve">
+    <value>Vui lòng chọn tất cả các tệp mà bạn muốn tải lên.</value>
+</data>
+<data name="Pleaseselectanexcelfile" xml:space="preserve">
+    <value>Vui lòng chọn một tệp excel.</value>
+</data>
+<data name="PostalCode" xml:space="preserve">
+    <value>Mã bưu chính</value>
+</data>
+<data name="ProfilePicture" xml:space="preserve">
+    <value>Ảnh đại diện</value>
+</data>
+<data name="ProfilePictureAttachmentTypeCannotBeEditedOrDeleted" xml:space="preserve">
+    <value>Loại tệp đính kèm ảnh đại diện không thể chỉnh sửa hoặc xóa. Vì nó được sử dụng để xác minh xem tệp mà người dùng tải lên có thể được chọn làm ảnh đại diện hay không.</value>
+</data>
+<data name="RecordDeletedSuccessfully" xml:space="preserve">
+    <value>Đã xóa bản ghi thành công!</value>
+</data>
+<data name="RecordSavedSuccessfully" xml:space="preserve">
+    <value>Đã lưu bản ghi thành công!</value>
+</data>
+<data name="RecordsImportedSuccessfully" xml:space="preserve">
+    <value>Đã nhập bản ghi thành công!</value>
+</data>
+<data name="recordsuploaded" xml:space="preserve">
+    <value>Bản ghi đã được tải lên</value>
+</data>
+<data name="Register" xml:space="preserve">
+    <value>Đăng ký</value>
+</data>
+<data name="RegisteredUserStatusCannotBeDeletedOrEdited" xml:space="preserve">
+    <value>Trạng thái người dùng đã đăng ký không thể bị xóa hoặc chỉnh sửa. Vì nó là trạng thái mặc định được gán cho người dùng đã đăng ký.</value>
+</data>
+<data name="RegisterSuccessLoginNow" xml:space="preserve">
+    <value>Đăng ký thành công! Vui lòng đăng nhập ngay bây giờ.</value>
+</data>
+<data name="Rememberme" xml:space="preserve">
+    <value>Nhớ tôi?</value>
+</data>
+<data name="Removeselectedfile" xml:space="preserve">
+    <value>Xóa tệp đã chọn</value>
+</data>
+<data name="Reset" xml:space="preserve">
+    <value>Đặt lại</value>
+</data>
+<data name="ResetPassword" xml:space="preserve">
+    <value>Đặt lại mật khẩu</value>
+</data>
+<data name="ResetPasswordEmailSent" xml:space="preserve">
+    <value>Email đặt lại mật khẩu đã được gửi thành công!</value>
+</data>
+<data name="Role" xml:space="preserve">
+    <value>Quyền</value>
+</data>
+<data name="RolebyNumberofUsers" xml:space="preserve">
+    <value>Quyền theo số lượng người dùng</value>
+</data>
+<data name="RoleManagement" xml:space="preserve">
+    <value>Quản lý quyền</value>
+</data>
+<data name="RoleName" xml:space="preserve">
+    <value>Tên quyền</value>
+</data>
+<data name="RoleNameAlreadyExist" xml:space="preserve">
+    <value>Tên quyền này đã tồn tại trong hệ thống.</value>
+</data>
+<data name="RolePermissionfor" xml:space="preserve">
+    <value>Quyền hạn của vai trò</value>
+</data>
+<data name="RoleRequired" xml:space="preserve">
+    <value>Trường vai trò là bắt buộc.</value>
+</data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+</data>
+<data name="Search" xml:space="preserve">
+    <value>Tìm kiếm</value>
+</data>
+<data name="SearchDot" xml:space="preserve">
+    <value>Tìm kiếm...</value>
+</data>
+<data name="SelectAnImageFile" xml:space="preserve">
+    <value>Chọn tệp hình ảnh</value>
+</data>
+<data name="Selectmultiple" xml:space="preserve">
+    <value>Chọn nhiều...</value>
+</data>
+<data name="Show10Records" xml:space="preserve">
+    <value>Hiển thị 10 bản ghi</value>
+</data>
+<data name="Show25Records" xml:space="preserve">
+    <value>Hiển thị 25 bản ghi</value>
+</data>
+<data name="Show50Records" xml:space="preserve">
+    <value>Hiển thị 50 bản ghi</value>
+</data>
+<data name="ShowAll" xml:space="preserve">
+    <value>Hiển thị tất cả</value>
+</data>
+<data name="Showing0Entries" xml:space="preserve">
+    <value>Hiển thị từ 0 đến 0 của 0 mục</value>
+</data>
+<data name="SignOut" xml:space="preserve">
+    <value>Đăng xuất</value>
+</data>
+<data name="SignUp" xml:space="preserve">
+    <value>Đăng ký</value>
+</data>
+<data name="SomeRequiredFieldsAreEmpty" xml:space="preserve">
+    <value>Một số trường bắt buộc (*) đang trống. Vui lòng điền vào tất cả các trường bắt buộc (*)</value>
+</data>
+<data name="Status" xml:space="preserve">
+    <value>Trạng thái</value>
+</data>
+<data name="StatusRequired" xml:space="preserve">
+    <value>Trường trạng thái là bắt buộc</value>
+</data>
+<data name="Submit" xml:space="preserve">
+    <value>Gửi</value>
+</data>
+<data name="Success" xml:space="preserve">
+    <value>Thành công!</value>
+</data>
+<data name="SwitchToDarkMode" xml:space="preserve">
+    <value>Chuyển sang chế độ tối</value>
+</data>
+<data name="SwitchToLightMode" xml:space="preserve">
+    <value>Chuyển sang chế độ sáng</value>
+</data>
+<data name="SystemInformation" xml:space="preserve">
+    <value>Thông tin hệ thống</value>
+</data>
+<data name="TableIsStillLoading" xml:space="preserve">
+    <value>Vui lòng đợi. Bảng đang được tải. Nhấn nút này sau khi bảng được tải xong.</value>
+</data>
+<data name="Theerrorsareasbelow" xml:space="preserve">
+    <value>Các lỗi như sau:</value>
+</data>
+<data name="Thisaccounthasbeenlockedout" xml:space="preserve">
+    <value>Tài khoản này đã bị khóa. Vui lòng thử lại sau.</value>
+</data>
+<data name="Thiscannotbeundone" xml:space="preserve">
+    <value>Hành động này không thể hoàn tác! Các bản ghi liên quan khác cũng sẽ bị ảnh hưởng.</value>
+</data>
+<data name="ThisRoleHasTheLeastNumberOfUser" xml:space="preserve">
+    <value>Vai trò này có số lượng người dùng ít nhất. Vai trò này có thể là vai trò hàng đầu trong hệ thống.</value>
+</data>
+<data name="ToBDMPro" xml:space="preserve">
+    <value>Đến BDMPro</value>
+</data>
+<data name="TopRole" xml:space="preserve">
+    <value>Vai trò hàng đầu</value>
+</data>
+<data name="TopStatus" xml:space="preserve">
+    <value>Trạng thái hàng đầu</value>
+</data>
+<data name="TotalFileSizeCannotBeLargerThan50MB" xml:space="preserve">
+    <value>Tổng kích thước tệp không được lớn hơn 50MB</value>
+</data>
+<data name="TotalNumberOfRolesInTheSystem" xml:space="preserve">
+    <value>Tổng số vai trò trong hệ thống</value>
+</data>
+<data name="TotalNumberOfUsersInTheSystem" xml:space="preserve">
+    <value>Tổng số người dùng trong hệ thống</value>
+</data>
+<data name="TotalRoles" xml:space="preserve">
+    <value>Tổng số vai trò</value>
+</data>
+<data name="TotalUsers" xml:space="preserve">
+    <value>Tổng số người dùng</value>
+</data>
+<data name="TypetoSearch" xml:space="preserve">
+    <value>Nhập để tìm kiếm...</value>
+</data>
+ <data name="Unauthorized" xml:space="preserve">
+    <value>Không được ủy quyền</value>
+</data>
+<data name="UnauthorizedError" xml:space="preserve">
+    <value>Bạn không được ủy quyền truy cập trang này</value>
+</data>
+<data name="Upload" xml:space="preserve">
+    <value>Tải lên</value>
+</data>
+<data name="UploadedBy" xml:space="preserve">
+    <value>Tải lên bởi</value>
+</data>
+<data name="UploadedOn" xml:space="preserve">
+    <value>Tải lên vào</value>
+</data>
+<data name="UploadExcel" xml:space="preserve">
+    <value>Tải lên Excel</value>
+</data>
+<data name="UploadFiles" xml:space="preserve">
+    <value>Tải lên tệp</value>
+</data>
+<data name="UploadUserAttachment" xml:space="preserve">
+    <value>Tải lên tệp đính kèm của người dùng</value>
+</data>
+<data name="User" xml:space="preserve">
+    <value>Người dùng</value>
+</data>
+<data name="UserAttachment" xml:space="preserve">
+    <value>Tệp đính kèm của người dùng</value>
+</data>
+<data name="UserAttachmentType" xml:space="preserve">
+    <value>Loại tệp đính kèm của người dùng</value>
+</data>
+<data name="UserAttachmentTypeNameAlreadyExist" xml:space="preserve">
+    <value>Tên loại tệp đính kèm của người dùng đã tồn tại trong hệ thống.</value>
+</data>
+<data name="UserbyStatusChart" xml:space="preserve">
+    <value>Biểu đồ trạng thái người dùng</value>
+</data>
+<data name="UserInformation" xml:space="preserve">
+    <value>Thông tin người dùng</value>
+</data>
+<data name="UserManagement" xml:space="preserve">
+    <value>Quản lý người dùng</value>
+</data>
+<data name="Username" xml:space="preserve">
+    <value>Tên người dùng</value>
+</data>
+<data name="UsernameTaken" xml:space="preserve">
+    <value>Tên người dùng đã được sử dụng. Vui lòng thử lại với tên người dùng khác.</value>
+</data>
+<data name="UserNotExist" xml:space="preserve">
+    <value>Người dùng không tồn tại trong hệ thống.</value>
+</data>
+<data name="UsersInTheRoleOf" xml:space="preserve">
+    <value>Người dùng ở vai trò của</value>
+</data>
+<data name="UserStatus" xml:space="preserve">
+    <value>Trạng thái người dùng</value>
+</data>
+<data name="UserStatusNameAlreadyExist" xml:space="preserve">
+    <value>Tên trạng thái người dùng đã tồn tại trong hệ thống.</value>
+</data>
+<data name="View" xml:space="preserve">
+    <value>Xem</value>
+</data>
+<data name="ViewList" xml:space="preserve">
+    <value>Xem danh sách</value>
+</data>
+<data name="ViewRole" xml:space="preserve">
+    <value>Xem vai trò người dùng</value>
+</data>
+<data name="Viewroles" xml:space="preserve">
+    <value>Xem vai trò người dùng</value>
+</data>
+<data name="Viewthisrole" xml:space="preserve">
+    <value>Xem vai trò này</value>
+</data>
+<data name="ViewUser" xml:space="preserve">
+    <value>Xem người dùng</value>
+</data>
+<data name="Viewusers" xml:space="preserve">
+    <value>Xem người dùng</value>
+</data>
+<data name="Viewuserstatus" xml:space="preserve">
+    <value>Xem trạng thái người dùng</value>
+</data>
+<data name="YesDeleteIt" xml:space="preserve">
+    <value>Có, xóa đi!</value>
+</data>
+<data name="YouDontHavePermissionToAccess" xml:space="preserve">
+    <value>Bạn không có quyền truy cập trang này.</value>
+</data>
+<data name="YourPassword" xml:space="preserve">
+    <value>Mật khẩu của bạn</value>
+</data>
+<data name="YourPasswordResetSuccessfully" xml:space="preserve">
+    <value>Mật khẩu của bạn đã được đặt lại thành công!</value>
+</data>
+</root>
