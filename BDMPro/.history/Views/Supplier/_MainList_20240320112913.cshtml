@@ -1,0 +1,23 @@
+@model IQueryable<SupplierViewModel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Supplier Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
+        {
+            <tr>
+                <td>@supplier.SupplierName</td>
+                <td>@supplier.Email</td>
+                <td>@supplier.Phone</td>
+                <td>@supplier.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>

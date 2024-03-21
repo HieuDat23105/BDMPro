@@ -28,9 +28,11 @@
           "MySql.Data": "8.0.32.1",
           "MySql.EntityFrameworkCore": "7.0.0",
           "Newtonsoft.Json": "13.0.3",
+          "PagedList.Mvc": "4.5.0",
           "System.ComponentModel.Annotations": "5.0.0",
           "System.Configuration.ConfigurationManager": "7.0.0",
-          "System.Data.DataSetExtensions": "4.5.0"
+          "System.Data.DataSetExtensions": "4.5.0",
+          "System.Linq": "4.3.0"
         },
         "runtime": {
           "BDMPro.dll": {}
@@ -1342,22 +1344,22 @@
           "runtimes/win-arm/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-arm64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x86/native/Microsoft.Data.SqlClient.SNI.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "5.0.1.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1823,27 +1825,27 @@
           "runtimes/win-x64/native/comerr64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/gssapi64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/k5sprt64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/krb5_64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.1.0.0"
+            "fileVersion": "0.0.0.0"
           },
           "runtimes/win-x64/native/krbcc64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.1.0.0"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -2025,6 +2027,25 @@
           "lib/netstandard2.0/NuGet.Versioning.dll": {
             "assemblyVersion": "6.6.1.2",
             "fileVersion": "6.6.1.2"
+          }
+        }
+      },
+      "PagedList/1.17.0": {
+        "runtime": {
+          "lib/net40/PagedList.dll": {
+            "assemblyVersion": "1.17.0.0",
+            "fileVersion": "1.17.0.0"
+          }
+        }
+      },
+      "PagedList.Mvc/4.5.0": {
+        "dependencies": {
+          "PagedList": "1.17.0"
+        },
+        "runtime": {
+          "lib/net40/PagedList.Mvc.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.0.0"
           }
         }
       },
@@ -3943,6 +3964,20 @@
       "sha512": "sha512-Wm/AOFICTIrCgbVxv9dNWusraTzcggbo5W4ao7hD8NNVq911an9TGwW+uNuYc8I5PkpTeMuSXneV2u6hbi1P4w==",
       "path": "nuget.versioning/6.6.1",
       "hashPath": "nuget.versioning.6.6.1.nupkg.sha512"
+    },
+    "PagedList/1.17.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Ou6F3WKXh49hOo0TxWM+SkIGuKllYPuPPvnSYOlQ1sTrtuEyuDUhYbSJd5Sdb06i/sWUJZTjiUecEs3Ht/Hx3g==",
+      "path": "pagedlist/1.17.0",
+      "hashPath": "pagedlist.1.17.0.nupkg.sha512"
+    },
+    "PagedList.Mvc/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D0M4qW2g4a9cwG8ozIKUnJheCrm5GpFTceqUl63AXWaAVnTgk+TysZYUOGMsBRuzid8aF+/E8b0bXM6+90jiEw==",
+      "path": "pagedlist.mvc/4.5.0",
+      "hashPath": "pagedlist.mvc.4.5.0.nupkg.sha512"
     },
     "Portable.BouncyCastle/1.9.0": {
       "type": "package",

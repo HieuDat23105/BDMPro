@@ -1,32 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\BDMPro.csproj": {}
+    "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj": {}
   },
   "projects": {
-    "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\BDMPro.csproj": {
+    "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\BDMPro.csproj",
+        "projectUniqueName": "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj",
         "projectName": "BDMPro",
-        "projectPath": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\BDMPro.csproj",
-        "packagesPath": "C:\\Users\\Hieud\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkHome\\GitHub\\BDMPro\\BDMPro\\obj\\",
+        "projectPath": "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj",
+        "packagesPath": "/Users/hieu_dat/.nuget/packages/",
+        "outputPath": "/Users/hieu_dat/WorkHome/BDMPro/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Hieud\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/hieu_dat/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "/usr/local/share/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -134,6 +128,10 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
             "System.ComponentModel.Annotations": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -145,6 +143,10 @@
             "System.Data.DataSetExtensions": {
               "target": "Package",
               "version": "[4.5.0, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -158,24 +160,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.16, 7.0.16]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -184,7 +168,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }

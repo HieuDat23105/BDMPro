@@ -1,0 +1,105 @@
+@model PaginatedList<BDMPro.Models.SupplierViewModel>
+@using BDMPro.CustomHelper
+@using BDMPro.Resources
+@{
+    string sort = ViewData["CurrentSort"].ToString();
+    int calculatedFrom = (Model.PageIndex - 1) * Model.PageSize + 1;
+    int calculatedTo = (Model.PageIndex - 1) * Model.PageSize + Model.PageSize;
+    int displayFrom = Model.TotalItems == 0 ? 0 : calculatedFrom;
+    int displayTo = (calculatedTo) > Model.TotalItems ? Model.TotalItems : (calculatedTo);
+    string lockedColumnWidth = "100px";
+}
+
+<div id="-table-wrapper">
+    <div class="table-responsive overflow-auto">
+        <table id="-table" class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    @foreach (var item in Model.ColumnHeaders)
+                    {
+                        if (item.Key != "Actions")
+                        {
+                            <th class="thead @(item.Key == "SupplierName" ? "locked-column" : "")">
+                                <a class="d-flex justify-content-between align-items-center cursor-pointer" onclick="sortTable('@item.OrderAction')">
+                                    <span style="@(item.Key == "SupplierName" ? $"min-width:{lockedColumnWidth};max-width:{lockedColumnWidth};"
+                                    : item.Key == "Email" ? "min-width:200px;"
+                                    : item.Key == "PhoneNumber" ? "min-width:200px;"
+                                    : item.Key == "Address" ? "min-width:280px;"
+                                    : item.Key == "CreatedOn" ? $"min-width:{ListUtil.DateTimeColumnWidth};"
+                                    : "")">@item.Title</span>
+                                    <i class="fa-solid fs-12 text-muted @(sort.Contains(item.Key.ToString())? sort.Contains("asc")? "fa-arrow-up-wide-short": sort.Contains("desc")? "fa-arrow-down-wide-short": "": "")"></i>
+                                </a>
+                            </th>
+                        }
+                        else
+                        {
+                            <th class="thead notexport actioncol"><div class="d-flex justify-content-between align-items-center"><span>@item.Title</span></div></th>
+                        }
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.TotalItems == 0)
+                {
+                    <tr>
+                        <td class="text-center" colspan="@Model.ColumnHeaders.Count">@Resource.NoDataAvailable</td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr onclick="openHintToast('@Html.Raw(item.SupplierName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))')">
+                            <td class="locked-column"><a class="fw600 color-primarycolor hover-color-secondarycolor locked-column-text" style="max-width:@lockedColumnWidth" href="@Url.Action("ViewRecord", new { Id = item.SupplierId })" title="@item.SupplierName">@item.SupplierName</a></td>
+                            <td>@item.Email</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.Address</td>
+                            <td class="datetimetext">@item.IsoUtcCreatedOn</td>
+                            <td>@item.SupplierStatusName</td>
+                            <td>
+                                <div class="d-flex text-breakspaces">
+                                    <span class="fs-20 canedit"><a href="@Url.Action("Edit", new { Id = item.SupplierId })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a> &nbsp;</span>
+                                    <span class="fs-20 canedit"><a href="@Url.Action("Index","UserAttachment", new { Id = item.SupplierId })"><i class="fa-solid fa-file text-attachment hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.ManageUserAttachment"></i></a> &nbsp;</span>
+                                    <span class="fs-20 canedit"><a href="@Url.Action("AdminChangePassword", new { Id = item.SupplierId })"><i class="fa-solid fa-key text-resetpassword hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.ResetPassword"></i></a> &nbsp;</span>
+                                    <span class="fs-20 candelete" onclick="triggerDeleteConfirmationModal('@Html.Raw(item.SupplierName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))','@Url.Action("Delete", new { id = item.SupplierId })')"><i class="fa-solid fa-trash-can text-delete hover-color-secondarycolor cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Delete"></i></span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+    @await Html.PartialAsync("~/Views/Shared/_Paging.cshtml", new ViewDataDictionary(ViewData) {
+    { "ShowingFrom", displayFrom }, { "ShowingTo", displayTo },
+    { "TotalItems", Model.TotalItems }, { "HasPreviousPage", Model.HasPreviousPage }, { "PageIndex", Model.PageIndex },
+    { "TotalPages", Model.TotalPages }, { "HasNextPage", Model.HasNextPage }
+    })
+</div>
+
+<script>
+    var tableWrapper = document.getElementById("-table-wrapper");
+    var table = document.getElementById("-table");
+    var tableDropDown = document.getElementById("-tableDropDown");
+    if (tableWrapper != null) {
+        tableWrapper.id = tableIdPrefix + "-table-wrapper";
+    }
+    if (table != null) {
+        table.id = tableIdPrefix + "-table";
+    }
+    if (tableDropDown != null) {
+        tableDropDown.id = tableIdPrefix + "-tableDropDown";
+    }
+
+    if (canEdit == 'False') {
+        $('#' + tableIdPrefix + '-table .canedit').hide();
+    }
+    if (canDelete == 'False') {
+        $('#' + tableIdPrefix + '-table .candelete').hide();
+    }
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    });
+</script>

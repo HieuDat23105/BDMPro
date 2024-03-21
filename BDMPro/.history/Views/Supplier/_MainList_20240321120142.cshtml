@@ -1,0 +1,53 @@
+@model PaginatedList<BDMPro.Models.SupplierViewModel>
+@using BDMPro.CustomHelper
+@using BDMPro.Resources
+@{
+    string sort = ViewData["CurrentSort"].ToString();
+    int calculatedFrom = (Model.PageIndex - 1) * Model.PageSize + 1;
+    int calculatedTo = (Model.PageIndex - 1) * Model.PageSize + Model.PageSize;
+    int displayFrom = Model.TotalItems == 0 ? 0 : calculatedFrom;
+    int displayTo = (calculatedTo) > Model.TotalItems ? Model.TotalItems : (calculatedTo);
+    string lockedColumnWidth = "100px";
+}
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var header in Model.ColumnHeaders)
+            {
+                <th>
+                    <a asp-action="Index" asp-route-sortOrder="@header.Value">@header.Key</a>
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.SupplierId)</td>
+                <td>@Html.DisplayFor(modelItem => item.SupplierName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td>@Html.DisplayFor(modelItem => item.ContactId)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedOn)</td>
+                <td>@Html.DisplayFor(modelItem => item.CreatedOnIsoUtc)</td>
+                <td>@Html.DisplayFor(modelItem => item.SupplierStatusName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Notes)</td>
+                <td>@Html.DisplayFor(modelItem => item.ModifiedBy)</td>
+                <td>@Html.DisplayFor(modelItem => item.IsoUtcCreatedOn)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SupplierId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SupplierId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SupplierId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pagination">
+    <span>@Model.PageIndex <sub>of</sub> @Model.TotalPages</span>
+    <a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex - 1)" asp-route-sortOrder="@ViewData["CurrentSort"]" class="@(Model.HasPreviousPage ? "" : "disabled")">Previous</a>
+    <a asp-action="Index" asp-route-pageIndex="@(Model.PageIndex + 1)" asp-route-sortOrder="@ViewData["CurrentSort"]" class="@(Model.HasNextPage ? "" : "disabled")">Next</a>
+</div>

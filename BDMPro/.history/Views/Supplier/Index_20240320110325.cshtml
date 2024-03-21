@@ -1,0 +1,36 @@
+﻿
+
+@{
+    ViewData["Title"] = "Supplier Management";
+}
+
+<h1>Supplier Management</h1>
+
+<div id="supplierList">
+    <!-- Partial view _MainList.cshtml will be loaded here -->
+</div>
+
+@section Scripts {
+    <script>
+        // Function to load supplier list via AJAX
+        function loadSupplierList() {
+            $.ajax({
+                url: '@Url.Action("GetPartialViewSupplier", "Supplier")',
+                type: 'POST',
+                contentType: 'application/json',
+                success: function (data) {
+                    $('#supplierList').html(data);
+                },
+                error: function (xhr, status, error) {
+                    console.error(xhr.responseText);
+                    $('#supplierList').html('<p>Error loading supplier list. Please try again later.</p>');
+                }
+            });
+        }
+
+        // Call the function to load supplier list on page load
+        $(document).ready(function () {
+            loadSupplierList();
+        });
+    </script>
+}
