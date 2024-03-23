@@ -12823,11 +12823,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj",
+      "projectUniqueName": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/BDMPro.csproj",
       "projectName": "BDMPro",
-      "projectPath": "/Users/hieu_dat/WorkHome/BDMPro/BDMPro.csproj",
+      "projectPath": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/BDMPro.csproj",
       "packagesPath": "/Users/hieu_dat/.nuget/packages/",
-      "outputPath": "/Users/hieu_dat/WorkHome/BDMPro/obj/",
+      "outputPath": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hieu_dat/.nuget/NuGet/NuGet.Config"

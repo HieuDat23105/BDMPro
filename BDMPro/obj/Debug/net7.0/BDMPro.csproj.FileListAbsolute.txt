@@ -929,3 +929,5 @@ D:/WorkHome/GitHub/BDMPro/BDMPro/obj/Debug/net7.0/zh/BDMPro.resources.cs
 /Users/hieu_dat/WorkHome/BDMPro/obj/Debug/net7.0/ref/BDMPro.dll
 /Users/hieu_dat/WorkHome/BDMPro/bin/Debug/net7.0/PagedList.dll
 /Users/hieu_dat/WorkHome/BDMPro/bin/Debug/net7.0/PagedList.Mvc.dll
+/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/bin/Debug/net7.0/PagedList.dll
+/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/bin/Debug/net7.0/PagedList.Mvc.dll

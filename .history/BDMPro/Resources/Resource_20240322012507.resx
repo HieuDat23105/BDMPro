@@ -1,0 +1,876 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddNewRecord" xml:space="preserve">
+    <value>Add New Record</value>
+  </data>
+  <data name="AddressInformation" xml:space="preserve">
+    <value>Address Information</value>
+  </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Add User</value>
+  </data>
+    <data name="AddSupplier" xml:space="preserve">
+    <value>Add Supplier</value>
+  </data>
+  <data name="alreadyexists" xml:space="preserve">
+    <value>already exists.</value>
+  </data>
+  <data name="AnAccount" xml:space="preserve">
+    <value>An Account</value>
+  </data>
+  <data name="Anerroroccurred" xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="AreyouSureToDeleteThisRecord" xml:space="preserve">
+    <value>Are you Sure To Delete This Record?</value>
+  </data>
+  <data name="AttachmentType" xml:space="preserve">
+    <value>Attachment Type</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back To List</value>
+  </data>
+  <data name="ByDefaultSystemAdminCanManageWhileNormalUserCant" xml:space="preserve">
+    <value>By default, system admin can manage this module, while normal user does not have permission to view/add/edit/delete this module.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ChangePasswordForUser" xml:space="preserve">
+    <value>Change Password For User</value>
+  </data>
+  <data name="ClickHereToLogin" xml:space="preserve">
+    <value>Click here to Log in</value>
+  </data>
+  <data name="Clicktoseeerrordetail" xml:space="preserve">
+    <value>Click to see error detail.</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Column" xml:space="preserve">
+    <value>Column</value>
+  </data>
+  <data name="ColumnsCountMismatch" xml:space="preserve">
+    <value>Columns count mismatch.</value>
+  </data>
+  <data name="ConfigurationError" xml:space="preserve">
+    <value>Configuration Error</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Confirm Email</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="ConfirmPasswordRequired" xml:space="preserve">
+    <value>The Confirm Password field is required.</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="CountryNotFound" xml:space="preserve">
+    <value>Country not found.</value>
+  </data>
+  <data name="CountryRequired" xml:space="preserve">
+    <value>The Country field is required.</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreatedOn" xml:space="preserve">
+    <value>Created On</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="CurrentProfilePicture" xml:space="preserve">
+    <value>Current Profile Picture:</value>
+  </data>
+  <data name="DarkMode" xml:space="preserve">
+    <value>Dark Mode</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="DashboardRolePermissionDescription" xml:space="preserve">
+    <value>By default, system admin can view a dashboard regarding all users' data, while normal user can only view a dashboard regarding their own data.</value>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Date Of Birth</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DemoAccountCannotBeDeleted" xml:space="preserve">
+    <value>Sorry, demo account cannot be deleted.</value>
+  </data>
+  <data name="DisplayOrder" xml:space="preserve">
+    <value>Display Order</value>
+  </data>
+  <data name="DeviceTypeManagement" xml:space="preserve">
+    <value>Device Type Management</value>
+  </data>
+  <data name="Device" xml:space="preserve">
+    <value>Device</value>
+  </data>
+  <data name="RepairTypeManagement" xml:space="preserve">
+    <value>Repair Type Management</value>
+  </data>
+  <data name="RepairManagement" xml:space="preserve">
+    <value>Repair Management</value>
+  </data>
+  <data name="Statistical" xml:space="preserve">
+    <value>Statistical</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditAttachments" xml:space="preserve">
+    <value>Edit Attachments:</value>
+  </data>
+  <data name="EditMyProfile" xml:space="preserve">
+    <value>Edit My Profile</value>
+  </data>
+  <data name="EditUser" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="EditUserAttachment" xml:space="preserve">
+    <value>Edit User Attachment</value>
+  </data>
+  <data name="EmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+  <data name="EmailAddressTaken" xml:space="preserve">
+    <value>Email Address already taken. Please try again with other Email Address.</value>
+  </data>
+  <data name="EnterTheDetails" xml:space="preserve">
+    <value>Enter the details</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="ExporttoExcel" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="ExportToExcelNote" xml:space="preserve">
+    <value>You can control what you want to export to Excel before clicking this. For example, if you wish to export all the records, click "Show All" at the drop-down button below before clicking "Export to Excel."</value>
+  </data>
+  <data name="ExporttoPdf" xml:space="preserve">
+    <value>Export to Pdf</value>
+  </data>
+  <data name="ExportToPDFNote" xml:space="preserve">
+    <value>You can control what you want to export to PDF before clicking this. For example, if you wish to export all the records, click "Show All" at the drop-down button below before clicking "Export to PDF."</value>
+  </data>
+  <data name="FailedExceptionError" xml:space="preserve">
+    <value>Failed due to exception error.</value>
+  </data>
+  <data name="FailedOnlyJpgJpegPngCanBeSetAsProfilePicture" xml:space="preserve">
+    <value>Failed. Only jpg, jpeg and png file can be set as Profile Picture.</value>
+  </data>
+  <data name="FailedToResetPassword" xml:space="preserve">
+    <value>Failed to reset password.</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="FileURL" xml:space="preserve">
+    <value>File URL</value>
+  </data>
+  <data name="FillInEmailAddressWeWillSendYouResetPasswordLink" xml:space="preserve">
+    <value>Fill in your email address, and we will send you a link to reset your password.</value>
+  </data>
+  <data name="FillInYourUsernameAndPasswordToSignIn" xml:space="preserve">
+    <value>Fill your username and password to sign in.</value>
+  </data>
+  <data name="FillYourDetailsToRegister" xml:space="preserve">
+    <value>Fill your details to register.</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="FilterCountry" xml:space="preserve">
+    <value>Filter Country</value>
+  </data>
+  <data name="FilterRole" xml:space="preserve">
+    <value>Filter Role</value>
+  </data>
+  <data name="FilterStatus" xml:space="preserve">
+    <value>Filter Status</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>Forgot</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot Password</value>
+  </data>
+  <data name="ForgotYourPassword" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name="FullAddress" xml:space="preserve">
+    <value>Full Address</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>General Settings</value>
+  </data>
+  <data name="HomeIndexTabTitle" xml:space="preserve">
+    <value>BDMPro- ASP.NET MVC C# Web Application Starter Template</value>
+  </data>
+  <data name="IDCardNumber" xml:space="preserve">
+    <value>ID Card Number</value>
+  </data>
+  <data name="ImportFromExcel" xml:space="preserve">
+    <value>Import From Excel</value>
+  </data>
+  <data name="ImportingDataFromExcelPleaseWait" xml:space="preserve">
+    <value>Importing Data From Excel... Please Wait...</value>
+  </data>
+  <data name="ImportUserFromExcel" xml:space="preserve">
+    <value>Import User From Excel</value>
+  </data>
+  <data name="ImportUserFromExcelDescription" xml:space="preserve">
+    <value>Please download the excel template below and insert your user data. Please don't edit or add extra columns. Extra columns will be ignored while importing data. After completing insert your data in the excel file, save it and upload it through the upload section below.</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="InvalidEmailAddress" xml:space="preserve">
+    <value>Invalid Email Address.</value>
+  </data>
+  <data name="InvalidLoginAttempt" xml:space="preserve">
+    <value>Invalid login attempt</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Password must be at least 6 characters, including at least one uppercase letter, one lowercase letter, one digit, and one symbol.</value>
+  </data>
+  <data name="InvalidPhoneNumber" xml:space="preserve">
+    <value>Please enter a valid Phone Number.</value>
+  </data>
+  <data name="InvalidPostalCode" xml:space="preserve">
+    <value>Please enter a valid Postal Code.</value>
+  </data>
+  <data name="InvalidUsername" xml:space="preserve">
+    <value>Username is invalid. Username must have at least 4 characters, must start with a letter, and cannot have special symbols.</value>
+  </data>
+    <data name="Invalidsupliername" xml:space="preserve">
+    <value>Username is invalid. Username must have at least 4 characters, must start with a letter, and cannot have special symbols.</value>
+  </data>
+    <data name="InvalidAddress" xml:space="preserve">
+    <value>Username is invalid. Username must have at least 4 characters, must start with a letter, and cannot have special symbols.</value>
+  </data>
+  <data name="InvalidUserTemplate" xml:space="preserve">
+    <value>Columns are invalid. Please use the provided template (UserExcelTemplate.xlsx) and make sure the columns are not removed or edited.</value>
+  </data>
+  <data name="InvalidSupplierTemplate" xml:space="preserve">
+    <value>Columns are invalid. Please use the provided template (SupplierExcelTemplate.xlsx) and make sure the columns are not removed or edited.</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="LightMode" xml:space="preserve">
+    <value>Light Mode</value>
+  </data>
+  <data name="ListofRoles" xml:space="preserve">
+    <value>List of Roles</value>
+  </data>
+  <data name="ListofUserAttachments" xml:space="preserve">
+    <value>List of User Attachments</value>
+  </data>
+  <data name="ListofUserAttachmentTypes" xml:space="preserve">
+    <value>List of User Attachment Types</value>
+  </data>
+  <data name="ListofUsers" xml:space="preserve">
+    <value>List of Users</value>
+  </data>
+  <data name="ListofUserStatus" xml:space="preserve">
+    <value>List of User Status</value>
+  </data>
+  <data name="ListOfUserWith" xml:space="preserve">
+    <value>List Of User With</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="Lockedout" xml:space="preserve">
+    <value>Locked out</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="LoginDateTime" xml:space="preserve">
+    <value>Login Date Time</value>
+  </data>
+  <data name="LoginHistory" xml:space="preserve">
+    <value>Login History</value>
+  </data>
+  <data name="LoginHistoryRolePermissionDescription" xml:space="preserve">
+    <value>By default, system admin can view all users' login histories, while normal user can only view their own login histories.</value>
+  </data>
+  <data name="ManageAttachmentsFor" xml:space="preserve">
+    <value>Manage Attachments For:</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="ManageUserAttachment" xml:space="preserve">
+    <value>Manage User Attachment</value>
+  </data>
+  <data name="MaxLength100" xml:space="preserve">
+    <value>Maximum length allowed is 100 characters.</value>
+  </data>
+  <data name="MaxLength128" xml:space="preserve">
+    <value>Maximum length allowed is 128 characters.</value>
+  </data>
+  <data name="MaxLength256" xml:space="preserve">
+    <value>Maximum length allowed is 256 characters.</value>
+  </data>
+  <data name="MinLength6" xml:space="preserve">
+    <value>The field must be at least 6 characters long.</value>
+  </data>
+  <data name="ModifiedBy" xml:space="preserve">
+    <value>Modified By</value>
+  </data>
+  <data name="ModifiedOn" xml:space="preserve">
+    <value>Modified On</value>
+  </data>
+  <data name="MostOfTheUsersAreWithThisStatus" xml:space="preserve">
+    <value>Most of the users are with this status.</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="BDMPro" xml:space="preserve">
+    <value>BDMPro</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="NewPasswordNotMatch" xml:space="preserve">
+    <value>The new password and confirmation new password do not match.</value>
+  </data>
+  <data name="NoDataAvailable" xml:space="preserve">
+    <value>No Data Available</value>
+  </data>
+  <data name="NormalUserSystemAdminCannotBeDeleted" xml:space="preserve">
+    <value>Normal user and system admin roles cannot be deleted or edited. because they will be used to determine the loading of login histories (Admin can see all users' login histories, but a normal user can only see their own history).</value>
+  </data>
+  <data name="NotAllowToChangePasswordForDemoAccount" xml:space="preserve">
+    <value>Sorry, you are not allowed to change password for demo account. Please sign up other account to try this feature.</value>
+  </data>
+  <data name="NoteSystemInformation" xml:space="preserve">
+    <value>Note: System information can only be edited by User Admin.</value>
+  </data>
+  <data name="notfoundormismatch" xml:space="preserve">
+    <value>not found or mismatch.</value>
+  </data>
+  <data name="OnlyLettersAndNumbers" xml:space="preserve">
+    <value>Only letters and numbers are allowed.</value>
+  </data>
+  <data name="OnlyNumbers" xml:space="preserve">
+    <value>Only numbers are allowed.</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Oops.</value>
+  </data>
+  <data name="OopsSomethingwrong" xml:space="preserve">
+    <value>Oops! Something wrong.</value>
+  </data>
+  <data name="OtherInformation" xml:space="preserve">
+    <value>Other Information</value>
+  </data>
+  <data name="outof" xml:space="preserve">
+    <value>out of</value>
+  </data>
+  <data name="Page0OfPage0" xml:space="preserve">
+    <value>Page 0 of Page 0</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Password Changed Successfully!</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="PasswordRequired" xml:space="preserve">
+    <value>The Password field is required.</value>
+  </data>
+  <data name="PasswordRequirementText" xml:space="preserve">
+    <value>At least 6 characters. Requires at least one Uppercase letter, one Lowercase letter, one Digit, and one Symbol.</value>
+  </data>
+  <data name="PersonalInformation" xml:space="preserve">
+    <value>Personal Information</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Pleasefillinthefollowing" xml:space="preserve">
+    <value>Please fill in the following.</value>
+  </data>
+  <data name="PleaseInsertConnectionString" xml:space="preserve">
+    <value>Please go to Web.config and insert connectionString value to run this web application.</value>
+  </data>
+  <data name="PleaseSelect" xml:space="preserve">
+    <value>Please Select...</value>
+  </data>
+  <data name="Pleaseselectallthefilesthatyouwanttoupload" xml:space="preserve">
+    <value>Please select all the files that you want to upload.</value>
+  </data>
+  <data name="Pleaseselectanexcelfile" xml:space="preserve">
+    <value>Please select an excel file.</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+  </data>
+  <data name="ProfilePicture" xml:space="preserve">
+    <value>Profile Picture</value>
+  </data>
+  <data name="ProfilePictureAttachmentTypeCannotBeEditedOrDeleted" xml:space="preserve">
+    <value>The Profile Picture attachment type cannot be edited or deleted. Because it is used to validate whether a file uploaded by the user can be selected as a profile picture.</value>
+  </data>
+  <data name="RecordDeletedSuccessfully" xml:space="preserve">
+    <value>Record deleted successfully!</value>
+  </data>
+  <data name="RecordSavedSuccessfully" xml:space="preserve">
+    <value>Record saved successfully!</value>
+  </data>
+  <data name="RecordsImportedSuccessfully" xml:space="preserve">
+    <value>Records imported successfully!</value>
+  </data>
+  <data name="recordsuploaded" xml:space="preserve">
+    <value>records uploaded</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisteredUserStatusCannotBeDeletedOrEdited" xml:space="preserve">
+    <value>Registered user status cannot be deleted or edited. Because it's default status to assign to the registered user.</value>
+  </data>
+  <data name="RegisterSuccessLoginNow" xml:space="preserve">
+    <value>Register success! Please login now.</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Removeselectedfile" xml:space="preserve">
+    <value>Remove selected file(s)</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ResetPassword" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+  <data name="ResetPasswordEmailSent" xml:space="preserve">
+    <value>Reset password email sent successfully!</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="RolebyNumberofUsers" xml:space="preserve">
+    <value>Role by Number of Users</value>
+  </data>
+  <data name="RoleManagement" xml:space="preserve">
+    <value>Role Management</value>
+  </data>
+  <data name="RoleName" xml:space="preserve">
+    <value>Role Name</value>
+  </data>
+  <data name="RoleNameAlreadyExist" xml:space="preserve">
+    <value>The role name already exist in the system.</value>
+  </data>
+  <data name="RolePermissionfor" xml:space="preserve">
+    <value>Role Permission for</value>
+  </data>
+  <data name="RoleRequired" xml:space="preserve">
+    <value>The Role field is required.</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchDot" xml:space="preserve">
+    <value>Search...</value>
+  </data>
+  <data name="SelectAnImageFile" xml:space="preserve">
+    <value>Select an image file</value>
+  </data>
+  <data name="Selectmultiple" xml:space="preserve">
+    <value>Select multiple...</value>
+  </data>
+  <data name="Show10Records" xml:space="preserve">
+    <value>Show 10 Records</value>
+  </data>
+  <data name="Show25Records" xml:space="preserve">
+    <value>Show 25 Records</value>
+  </data>
+  <data name="Show50Records" xml:space="preserve">
+    <value>Show 50 Records</value>
+  </data>
+  <data name="ShowAll" xml:space="preserve">
+    <value>Show All</value>
+  </data>
+  <data name="Showing0Entries" xml:space="preserve">
+    <value>Showing 0 to 0 of 0 entries</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="SignUp" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="SomeRequiredFieldsAreEmpty" xml:space="preserve">
+    <value>Some required* fields are empty. Please fill in all the required* fields.</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="StatusRequired" xml:space="preserve">
+    <value>The Status field is required.</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Success!</value>
+  </data>
+  <data name="SwitchToDarkMode" xml:space="preserve">
+    <value>Switch to Dark Mode</value>
+  </data>
+  <data name="SwitchToLightMode" xml:space="preserve">
+    <value>Switch to Light Mode</value>
+  </data>
+  <data name="SystemInformation" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="SupplierManagement" xml:space="preserve">
+    <value>Supplier Management</value>
+  </data>
+  <data name="TableIsStillLoading" xml:space="preserve">
+    <value>Please wait. Table is still loading. Click this after table is loaded.</value>
+  </data>
+  <data name="Theerrorsareasbelow" xml:space="preserve">
+    <value>The errors are as below:</value>
+  </data>
+  <data name="Thisaccounthasbeenlockedout" xml:space="preserve">
+    <value>This account has been locked out, please try again later.</value>
+  </data>
+  <data name="Thiscannotbeundone" xml:space="preserve">
+    <value>This cannot be undone! Other related records will also be affected.</value>
+  </data>
+  <data name="ThisRoleHasTheLeastNumberOfUser" xml:space="preserve">
+    <value>This role has the least number of user, perhaps it's a role with top permission.</value>
+  </data>
+  <data name="ToBDMPro" xml:space="preserve">
+    <value>To BDMPro</value>
+  </data>
+  <data name="TopRole" xml:space="preserve">
+    <value>Top Role</value>
+  </data>
+  <data name="TopStatus" xml:space="preserve">
+    <value>Top Status</value>
+  </data>
+  <data name="TotalFileSizeCannotBeLargerThan50MB" xml:space="preserve">
+    <value>Total file size cannot be larger than 50MB.</value>
+  </data>
+  <data name="TotalNumberOfRolesInTheSystem" xml:space="preserve">
+    <value>Total number of roles in the system.</value>
+  </data>
+  <data name="TotalNumberOfUsersInTheSystem" xml:space="preserve">
+    <value>Total number of users in the system.</value>
+  </data>
+  <data name="TotalRoles" xml:space="preserve">
+    <value>Total Roles</value>
+  </data>
+  <data name="TotalUsers" xml:space="preserve">
+    <value>Total Users</value>
+  </data>
+  <data name="TypetoSearch" xml:space="preserve">
+    <value>Type to Search...</value>
+  </data>
+  <data name="Unauthorized" xml:space="preserve">
+    <value>Unauthorized</value>
+  </data>
+  <data name="UnauthorizedError" xml:space="preserve">
+    <value>Unauthorized Error</value>
+  </data>
+  <data name="Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="UploadedBy" xml:space="preserve">
+    <value>Uploaded By</value>
+  </data>
+  <data name="UploadedOn" xml:space="preserve">
+    <value>Uploaded On</value>
+  </data>
+  <data name="UploadExcel" xml:space="preserve">
+    <value>Upload Excel</value>
+  </data>
+  <data name="UploadFiles" xml:space="preserve">
+    <value>Upload Files</value>
+  </data>
+  <data name="UploadUserAttachment" xml:space="preserve">
+    <value>Upload User Attachment</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserAttachment" xml:space="preserve">
+    <value>User Attachment</value>
+  </data>
+  <data name="UserAttachmentType" xml:space="preserve">
+    <value>User Attachment Type</value>
+  </data>
+  <data name="UserAttachmentTypeNameAlreadyExist" xml:space="preserve">
+    <value>The user attachment type name already exist in the system.</value>
+  </data>
+  <data name="UserbyStatusChart" xml:space="preserve">
+    <value>User by Status Chart</value>
+  </data>
+  <data name="UserInformation" xml:space="preserve">
+    <value>User Information</value>
+  </data>
+  <data name="UserManagement" xml:space="preserve">
+    <value>User Management</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="UsernameTaken" xml:space="preserve">
+    <value>Username already taken. Please try again with other username.</value>
+  </data>
+  <data name="UserNotExist" xml:space="preserve">
+    <value>User does not exist in the system.</value>
+  </data>
+  <data name="UsersInTheRoleOf" xml:space="preserve">
+    <value>Users In The Role Of</value>
+  </data>
+  <data name="UserStatus" xml:space="preserve">
+    <value>User Status</value>
+  </data>
+    <data name="DeviceType" xml:space="preserve">
+    <value>Device Type</value>
+  </data>
+  <data name="UserStatusNameAlreadyExist" xml:space="preserve">
+    <value>The user status name already exist in the system.</value>
+  </data>
+    <data name="DeviceTypeNameAlreadyExist" xml:space="preserve">
+    <value>The device type name already exist in the system.</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ViewList" xml:space="preserve">
+    <value>View List</value>
+  </data>
+  <data name="ViewRole" xml:space="preserve">
+    <value>View Role</value>
+  </data>
+  <data name="Viewroles" xml:space="preserve">
+    <value>View roles</value>
+  </data>
+  <data name="Viewthisrole" xml:space="preserve">
+    <value>View this role</value>
+  </data>
+  <data name="ViewUser" xml:space="preserve">
+    <value>View User</value>
+  </data>
+  <data name="Viewusers" xml:space="preserve">
+    <value>View users</value>
+  </data>
+  <data name="Viewuserstatus" xml:space="preserve">
+    <value>View user status</value>
+  </data>
+  <data name="YesDeleteIt" xml:space="preserve">
+    <value>Yes, Delete It!</value>
+  </data>
+  <data name="YouDontHavePermissionToAccess" xml:space="preserve">
+    <value>You don’t have permission to access this page.</value>
+  </data>
+  <data name="YourPassword" xml:space="preserve">
+    <value>Your Password</value>
+  </data>
+  <data name="YourPasswordResetSuccessfully" xml:space="preserve">
+    <value>Your password has been reset successfully!</value>
+  </data>
+  <data name="SupplierNameRequired" xml:space="preserve">
+    <value>The Supplier Name field is required.</value>
+  </data>
+  <data name="ContactIdRequired" xml:space="preserve">
+    <value>The Contact Id field is required.</value>
+  </data>
+  <data name="AddressRequired" xml:space="preserve">
+    <value>The Address field is required.</value>
+  </data>
+  <data name="PhoneRequired" xml:space="preserve">
+    <value>The Phone field is required.</value>
+  </data>
+  <data name="Supplier" xml:space="preserve">
+    <value>Supplier</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="ViewSupplier" xml:space="preserve">
+    <value>View Supplier</value>
+  </data>
+  <data name="Viewsuppliers" xml:space="preserve">
+    <value>View suppliers</value>
+  </data>
+  <data name="EditSupplier" xml:space="preserve">
+    <value>Edit Supplier</value>
+  </data>
+  <data name="SupplierDetails" xml:space="preserve">
+    <value>Supplier Details</value>
+  </data>
+</root>

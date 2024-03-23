@@ -82,6 +82,7 @@ namespace BDMPro.Models
         [Display(Name = "ActiveInactive", ResourceType = typeof(Resource))]
         public string IsActive { get; set; }
         public List<SelectListItem> ActiveInactiveSelectlist { get; set; }
+        
         [Display(Name = "Status", ResourceType = typeof(Resource))]
         public string SupplierStatus { get; set; }
         [Display(Name = "Contact", ResourceType = typeof(Resource))]

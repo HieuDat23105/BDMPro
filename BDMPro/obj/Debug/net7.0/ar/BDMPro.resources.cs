@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BDMPro")]
 [assembly: System.Reflection.AssemblyCopyrightAttribute(" ")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a4d593e907e83a07b751e68cc8b7e9c89ce6448c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+146dcd5519c5d493f1eef37847d3800e05a47688")]
 [assembly: System.Reflection.AssemblyProductAttribute("BDMPro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BDMPro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
