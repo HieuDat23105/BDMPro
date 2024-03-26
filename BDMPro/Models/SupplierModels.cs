@@ -30,9 +30,6 @@ namespace BDMPro.Models
         [MaxLength(1000)]
         public string Address { get; set; }
 
-        [MaxLength(128)]
-        public string ContactId { get; set; }
-
         [MaxLength(1000)]
         public string Notes { get; set; }
 
@@ -82,9 +79,14 @@ namespace BDMPro.Models
         [Display(Name = "Status", ResourceType = typeof(Resource))]
         public string SupplierStatus { get; set; }
         [Display(Name = "Contact", ResourceType = typeof(Resource))]
-        public string ContactId { get; set; }
+        public List<SelectListItem> SupplierContactSelectList { get; set; }
         [Display(Name = "Contact", ResourceType = typeof(Resource))]
-        public string ContactName { get; set; }
+        public string SupplierContactName { get; set; }
+        [Required]
+        [Display(Name = "Contact", ResourceType = typeof(Resource))]
+        public List<string> SupplierContactIdList { get; set; }
+        [Display(Name = "Contact", ResourceType = typeof(Resource))]
+        public List<string> SupplierContactNameList { get; set; }
         public string CreatedBy { get; set; }
         [Display(Name = "Actions", ResourceType = typeof(Resource))]
         public string Actions { get; set; }
@@ -103,11 +105,12 @@ namespace BDMPro.Models
         public string IsoUtcCreatedOn { get; set; }
         public string IsoUtcModifiedOn { get; set; }
         public CreatedAndModifiedViewModel CreatedAndModified { get; set; }
-        public bool SystemDefault { get; set; }
     }
 
     public class SupplierListing
     {
+        public List<SelectListItem> ContactSelectList { get; set; }
+
         public List<SupplierViewModel> Listing { get; set; }
     }
 

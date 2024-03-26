@@ -104,7 +104,14 @@ namespace BDMPro.Resources {
                 return ResourceManager.GetString("AddressInformation", resourceCulture);
             }
         }
-        
+                /// <summary>
+        ///   Looks up a localized string similar to Address Information.
+        /// </summary>
+        public static string SupplierInformation {
+            get {
+                return ResourceManager.GetString("SupplierInformation", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to The Address field is required..
         /// </summary>
@@ -1886,7 +1893,14 @@ namespace BDMPro.Resources {
                 return ResourceManager.GetString("SystemInformation", resourceCulture);
             }
         }
-        
+                /// <summary>
+        ///   Looks up a localized string similar to System Information.
+        /// </summary>
+        public static string ContactInformation {
+            get {
+                return ResourceManager.GetString("ContactInformation", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to Please wait. Table is still loading. Click this after table is loaded..
         /// </summary>
@@ -2172,6 +2186,15 @@ namespace BDMPro.Resources {
         public static string UsernameTaken {
             get {
                 return ResourceManager.GetString("UsernameTaken", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to Username already taken. Please try again with other username..
+        /// </summary>
+        public static string SupplierNameTaken {
+            get {
+                return ResourceManager.GetString("SupplierNameTaken", resourceCulture);
             }
         }
         

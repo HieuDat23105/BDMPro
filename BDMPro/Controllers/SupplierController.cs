@@ -24,6 +24,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
 using BDMPro.Services;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace BDMPro.Controllers
 {
@@ -54,6 +55,7 @@ namespace BDMPro.Controllers
         public IActionResult Index()
         {
             ViewData["StatusSelectList"] = util.GetDataForDropDownList("", db.GlobalOptionSets, a => a.DisplayName, a => a.DisplayName, a => a.Type == "SupplierStatus");
+            ViewData["ContactSelectList"] = util.GetDataForDropDownList("", db.Contacts, a => a.ContactName, a => a.ContactName);
             return View();
         }
 
@@ -99,9 +101,8 @@ namespace BDMPro.Controllers
         public IQueryable<SupplierViewModel> ReadSupplierList()
         {
             var supplierList = from t1 in db.Suppliers.AsNoTracking()
-                               let t3 = db.GlobalOptionSets.FirstOrDefault(g => g.Id == t1.SupplierStatusId)
+                               let t2 = db.GlobalOptionSets.FirstOrDefault(g => g.Id == t1.SupplierStatusId)
                                where t1.IsDeleted == false
-                               let t2 = db.Contacts.FirstOrDefault(c => c.ContactId == t1.ContactId)
                                select new SupplierViewModel
                                {
                                    SupplierId = t1.SupplierId,
@@ -111,10 +112,13 @@ namespace BDMPro.Controllers
                                    Address = t1.Address,
                                    CreatedOn = t1.CreatedOn,
                                    IsoUtcCreatedOn = t1.IsoUtcCreatedOn,
-                                   SupplierStatusName = t3 != null ? t3.DisplayName : "",
-                                   ContactId = t2 != null ? t2.ContactName : ""
+                                   SupplierStatusName = t2 != null ? t2.DisplayName : "",
+                                   SupplierContactNameList = (from t3 in db.SupplierContacts
+                                                              join t4 in db.Contacts on t3.ContactId equals t4.ContactId
+                                                              where t3.SupplierId == t1.SupplierId
+                                                              orderby t4.ContactName
+                                                              select t4.ContactName).Distinct().ToList()
                                };
-
             return supplierList;
         }
 
@@ -125,15 +129,14 @@ namespace BDMPro.Controllers
             try
             {
                 model = (from t1 in db.Suppliers
+                         where t1.SupplierId == Id
                          select new SupplierViewModel
                          {
                              SupplierId = t1.SupplierId,
+                             SupplierName = t1.SupplierName,
                              EmailAddress = t1.Email,
                              PhoneNumber = t1.PhoneNumber,
                              Address = t1.Address,
-                             ContactId = t1.ContactId,
-                             SupplierName = t1.SupplierName,
-                             Notes = t1.Notes,
                              SupplierStatusId = t1.SupplierStatusId,
                              CreatedBy = t1.CreatedBy,
                              ModifiedBy = t1.ModifiedBy,
@@ -143,6 +146,11 @@ namespace BDMPro.Controllers
                              IsoUtcModifiedOn = t1.IsoUtcModifiedOn,
                          }).FirstOrDefault();
                 model.SupplierStatusName = db.GlobalOptionSets.Where(a => a.Id == model.SupplierStatusId).Select(a => a.DisplayName).FirstOrDefault();
+                model.SupplierContactIdList = (from t1 in db.SupplierContacts
+                                               join t2 in db.Contacts on t1.ContactId equals t2.ContactId
+                                               where t1.SupplierId == model.SupplierId
+                                               select t2.ContactName).ToList();
+                model.SupplierContactName = String.Join(", ", model.SupplierContactIdList);
                 if (type == "View")
                 {
                     model.CreatedAndModified = util.GetCreatedAndModified(model.CreatedBy, model.IsoUtcCreatedOn, model.ModifiedBy, model.IsoUtcModifiedOn);
@@ -155,9 +163,10 @@ namespace BDMPro.Controllers
             return model;
         }
 
-        public void SetupSelectLists(SupplierViewModel model)
+        public void SetupSupplierSelectLists(SupplierViewModel model)
         {
             model.SupplierStatusSelectList = util.GetDataForDropDownList(model.SupplierStatusId, db.GlobalOptionSets, a => a.DisplayName, a => a.Id, a => a.Type == "SupplierStatus", a => a.OptionOrder, "asc");
+            model.SupplierContactSelectList = util.GetContactsForMultiSelect(model.SupplierContactIdList);
         }
 
         [CustomAuthorizeFilter(ProjectEnum.ModuleCode.SupplierManagement, "", "true", "true", "")]
@@ -223,7 +232,7 @@ namespace BDMPro.Controllers
 
                         errors = util.ValidateColumns(columns, new List<string>
                         {
-                            "Supplier Name","Email Address Address","PhoneNumber","Address","Contact",
+                            "Supplier Name","Email Address","PhoneNumber","Address",
                         });
 
                         if (errors.Count == 0)
@@ -233,15 +242,13 @@ namespace BDMPro.Controllers
                                 try
                                 {
                                     string supplierName = dt.Rows[i].Field<string>("Supplier Name");
-                                    string email = dt.Rows[i].Field<string>("Email Address Address");
+                                    string email = dt.Rows[i].Field<string>("Email Address");
                                     object phoneNumberObject = dt.Rows[i]["Phone Number"];
                                     string phone = Convert.ToString(phoneNumberObject);
                                     string address = dt.Rows[i].Field<string>("Address");
-                                    string contactId = dt.Rows[i].Field<string>("Contact");
 
                                     upModel.SupplierName = supplierName;
                                     upModel.EmailAddress = email;
-                                    upModel.ContactId = contactId;
                                     upModel.Address = address;
                                     upModel.PhoneNumber = phone;
 
@@ -255,13 +262,13 @@ namespace BDMPro.Controllers
                                         errorsList.Add(importFromExcelError);
                                         continue;
                                     }
+
                                     Supplier supplier = new Supplier();
                                     supplier.SupplierId = Guid.NewGuid().ToString();
                                     supplier.SupplierName = supplierName;
                                     supplier.Email = email;
                                     supplier.PhoneNumber = phone;
                                     supplier.Address = address;
-                                    supplier.ContactId = contactId;
                                     supplier.SupplierStatusId = util.GetGlobalOptionSetId(ProjectEnum.SupplierStatus.Active.ToString(), "SupplierStatus");
                                     supplier.CreatedBy = _userManager.GetUserId(User);
                                     supplier.CreatedOn = util.GetSystemTimeZoneDateTimeNow();
@@ -311,8 +318,10 @@ namespace BDMPro.Controllers
             {
                 model = GetSupplierViewModel(Id, "Edit");
             }
+            SetupSupplierSelectLists(model);
             return View(model);
         }
+
         [CustomAuthorizeFilter(ProjectEnum.ModuleCode.SupplierManagement, "true", "", "", "")]
         public IActionResult ViewRecord(string Id)
         {
@@ -329,11 +338,11 @@ namespace BDMPro.Controllers
         {
             try
             {
-                ValidateSupplierModel(model);
+                ValidateModel(model);
 
                 if (!ModelState.IsValid)
                 {
-                    SetupSelectLists(model);
+                    SetupSupplierSelectLists(model);
                     return View(model);
                 }
 
@@ -356,11 +365,16 @@ namespace BDMPro.Controllers
             return RedirectToAction("index", "supplier");
         }
 
-        public void ValidateSupplierModel(SupplierViewModel model)
+        public void ValidateModel(SupplierViewModel model)
         {
             if (model != null)
             {
+                bool suppliernameExist = util.SupplierNameExists(model.SupplierName, model.SupplierId);
                 bool emailExist = util.EmailExists(model.EmailAddress, model.SupplierId);
+                if (suppliernameExist)
+                {
+                    ModelState.AddModelError("SupplierName", Resource.SupplierNameTaken);
+                }
                 if (emailExist)
                 {
                     ModelState.AddModelError("Email Address", Resource.EmailAddressTaken);
@@ -369,10 +383,10 @@ namespace BDMPro.Controllers
                 {
                     ModelState.AddModelError("SupplierName", Resource.SupplierNameRequired);
                 }
-                if (string.IsNullOrEmpty(model.ContactId))
-                {
-                    ModelState.AddModelError("ContactId", Resource.ContactIdRequired);
-                }
+                // if (string.IsNullOrEmpty(model.ContactId))
+                // {
+                //     ModelState.AddModelError("ContactId", Resource.ContactIdRequired);
+                // }
                 if (string.IsNullOrEmpty(model.Address))
                 {
                     ModelState.AddModelError("Address", Resource.AddressRequired);
@@ -380,6 +394,10 @@ namespace BDMPro.Controllers
                 if (string.IsNullOrEmpty(model.PhoneNumber))
                 {
                     ModelState.AddModelError("PhoneNumber", Resource.PhoneRequired);
+                }
+                if (model.SupplierStatusId == null || model.SupplierStatusId == "null")
+                {
+                    ModelState.AddModelError("SupplierStatusId", Resource.StatusRequired);
                 }
             }
         }
@@ -389,8 +407,6 @@ namespace BDMPro.Controllers
             supplier.SupplierName = model.SupplierName;
             supplier.PhoneNumber = model.PhoneNumber;
             supplier.Address = model.Address;
-            supplier.ContactId = model.ContactId;
-            supplier.Email = model.EmailAddress;
             supplier.Notes = model.Notes;
             supplier.SupplierStatusId = string.IsNullOrEmpty(model.SupplierStatusId) ? util.GetGlobalOptionSetId(SupplierStatus.Active.ToString(), "SupplierStatus") : model.SupplierStatusId;
             if (model.SupplierId == null)
@@ -407,43 +423,86 @@ namespace BDMPro.Controllers
             }
         }
 
-        public async Task<bool> SaveRecord(SupplierViewModel model)
+ public async Task<bool> SaveRecord(SupplierViewModel model)
+{
+    bool result = true;
+    if (model != null)
+    {
+        string supplierId = "";
+        string type = "";
+        try
         {
-            if (model == null)
-                return false;
-
-            try
+            model.CreatedBy = _userManager.GetUserId(User);
+            model.ModifiedBy = _userManager.GetUserId(User);
+            if (model.SupplierId != null)
             {
-                // Kiểm tra xem model có ID không
-                if (!string.IsNullOrEmpty(model.SupplierId))
+                type = "update";
+                Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == model.SupplierId);
+                AssignSupplierValues(supplier, model);
+                db.Entry(supplier).State = EntityState.Modified;
+                db.SaveChanges();
+                supplierId = supplier.SupplierId;
+
+                if (model.SupplierContactNameList != null)
                 {
-                    // Cập nhật thông tin nhà cung cấp đã tồn tại
-                    Supplier existingSupplier = await db.Suppliers.FirstOrDefaultAsync(s => s.SupplierId == model.SupplierId);
-                    if (existingSupplier != null)
+                    var existingContacts = db.SupplierContacts.Where(a => a.SupplierId == supplierId);
+                    db.SupplierContacts.RemoveRange(existingContacts);
+                    foreach (var contactName in model.SupplierContactNameList)
                     {
-                        AssignSupplierValues(existingSupplier, model);
-                        db.Entry(existingSupplier).State = EntityState.Modified;
+                        var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
+                        if (contact != null)
+                        {
+                            db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                        }
+                    }
+                    await db.SaveChangesAsync();
+                }
+            }
+            else
+            {
+                type = "create";
+                Supplier supplier = new Supplier();
+                AssignSupplierValues(supplier, model);
+                supplier.SupplierId = Guid.NewGuid().ToString();
+                db.Suppliers.Add(supplier);
+                db.SaveChanges();
+                supplierId = supplier.SupplierId;
+
+                if (model.SupplierContactNameList != null)
+                {
+                    foreach (var contactName in model.SupplierContactNameList)
+                    {
+                        var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
+                        if (contact != null)
+                        {
+                            db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                        }
+                    }
+                    await db.SaveChangesAsync();
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            if (type == "create")
+            {
+                if (!string.IsNullOrEmpty(supplierId))
+                {
+                    Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == supplierId);
+                    if (supplier != null)
+                    {
+                        db.Suppliers.Remove(supplier);
                         await db.SaveChangesAsync();
                     }
                 }
-                else
-                {
-                    // Tạo mới nhà cung cấp
-                    Supplier newSupplier = new Supplier();
-                    AssignSupplierValues(newSupplier, model);
-                    db.Suppliers.Add(newSupplier);
-                    await db.SaveChangesAsync();
-                }
-
-                return true;
             }
-            catch (Exception ex)
-            {
-                // Xử lý ngoại lệ
-                // Ở đây bạn có thể ghi nhật ký, hoặc thực hiện rollback
-                return false;
-            }
+            _logger.LogError(ex, $"{GetType().Name} Controller - {MethodBase.GetCurrentMethod().Name} Method");
+            return false;
         }
+    }
+    return result;
+}
+
 
         [CustomAuthorizeFilter(ProjectEnum.ModuleCode.SupplierManagement, "", "", "", "true")]
         public IActionResult Delete(string Id)
@@ -455,15 +514,13 @@ namespace BDMPro.Controllers
                     Supplier supplier = db.Suppliers.Where(a => a.SupplierId == Id).FirstOrDefault();
                     if (supplier != null)
                     {
-                        supplier.IsDeleted = true; // Đặt cột dữ liệu "IsDeleted" thành true
+                        supplier.IsDeleted = true;
 
-                        // Tìm Id của SupplierStatus "Inactive"
                         var inactiveStatusId = db.GlobalOptionSets
                                                  .Where(a => a.Type == "SupplierStatus" && a.Code == "Inactive")
                                                  .Select(a => a.Id)
                                                  .FirstOrDefault();
 
-                        // Đặt SupplierStatusId thành Id của "Inactive"
                         supplier.SupplierStatusId = inactiveStatusId;
 
                         db.SaveChanges();

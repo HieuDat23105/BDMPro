@@ -1,0 +1,67 @@
+﻿@model BDMPro.Models.SupplierViewModel
+@using BDMPro.CustomHelper
+@using BDMPro.Models
+@using BDMPro.Resources
+@inject Util util;
+@{
+    ViewBag.Title = Resource.ViewSupplier;
+    Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
+    CurrentUserPermission permission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.SupplierManagement.ToString(), util);
+}
+
+<div class="row">
+    <div class="col-12">
+        <div style="--bs-breadcrumb-divider: '>';">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item fw-normal"><a class="color-primarycolor opacity-50" href="@Url.Action("index")">@Resource.SupplierManagement</a></li>
+                <li class="breadcrumb-item fw-normal active">@ViewBag.Title</li>
+            </ol>
+        </div>
+        <div class="page-title-box d-sm-flex align-items-center justify-content-between pt-2">
+            <div class="pagetitle mb-sm-0 fw600">
+                @ViewBag.Title
+            </div>
+            <div class="d-flex">
+                @if (permission.EditRight == true)
+                {
+                    <span class="fs-19"><a href="@Url.Action("edit", new { Id = Model.SupplierId })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a></span>
+                }
+                @if (permission.DeleteRight == true)
+                {
+                    <span class="fs-19">&nbsp; <i onclick="triggerDeleteConfirmationModal('@Html.Raw(Model.SupplierName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))','@Url.Action("delete", new { id = Model.SupplierId })')" class="fa-solid fa-trash-can text-delete cursor-pointer hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Delete"></i></span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section mt-3">
+    <div class="bg-white rounded p-3 p-lg-4 p-xl-5 shadow mb-4">
+        <h2 class="fs-20 fw600 mb-4 text-capitalize">@Resource.SupplierDetails</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>@Resource.Name:</strong> @Model.SupplierName</p>
+                <p><strong>@Resource.EmailAddress:</strong> @Model.EmailAddress</p>
+                <p><strong>@Resource.PhoneNumber:</strong> @Model.PhoneNumber</p>
+                <p><strong>@Resource.AddressInformation:</strong> @Model.Address</p>
+                <p><strong>@Resource.Contact:</strong> @Model.ContactId</p>
+            </div>
+            <div class="col-md-6">
+                <p><strong>@Resource.CreatedBy:</strong> @Model.CreatedBy</p>
+                <p><strong>@Resource.CreatedOn:</strong> @Model.CreatedOn</p>
+                <p><strong>@Resource.ModifiedBy:</strong> @Model.ModifiedBy</p>
+                <p><strong>@Resource.ModifiedOn:</strong> @Model.ModifiedOn</p>
+                <p
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <a class="btn form-btn btn-secondary hover-boxshadow me-1" href="@Url.Action("index")">@Resource.BackToList</a>
+            @if (permission.EditRight == true)
+            {
+                <a class="btn form-btn btn-primary hover-boxshadow me-1" href="@Url.Action("edit", new { Id = Model.SupplierId})">@Resource.EditSupplier</a>
+            }
+        </div>
+    </div>
+</section>

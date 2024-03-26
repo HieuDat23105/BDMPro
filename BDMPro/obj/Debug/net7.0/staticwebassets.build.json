@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ciqq6b9eUW9WMtsgALBkqAwyJ4GlJEXum7kaIJJQp7Y=",
+  "Hash": "qTrTyudkAAKiIgSQjTL8R0RcKNzBPo0o+AbcvI49Low=",
   "Source": "BDMPro",
   "BasePath": "_content/BDMPro",
   "Mode": "Default",
@@ -1269,6 +1269,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/default.jpg"
+    },
+    {
+      "Identity": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/wwwroot/assets/defaultProfilePicture.jpg",
+      "SourceId": "BDMPro",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/wwwroot/",
+      "BasePath": "_content/BDMPro",
+      "RelativePath": "assets/defaultProfilePicture.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/defaultProfilePicture.jpg"
     },
     {
       "Identity": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/wwwroot/assets/forgotpassword.jpg",

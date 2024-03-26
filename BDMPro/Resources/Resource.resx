@@ -129,6 +129,12 @@
   <data name="AddressInformation" xml:space="preserve">
     <value>Address Information</value>
   </data>
+    <data name="SupplierInformation" xml:space="preserve">
+    <value>Supplier Information</value>
+  </data>
+      <data name="ContactInformation" xml:space="preserve">
+    <value>Contact Information</value>
+  </data>
   <data name="AddUser" xml:space="preserve">
     <value>Add User</value>
   </data>
@@ -794,6 +800,9 @@
   </data>
   <data name="UsernameTaken" xml:space="preserve">
     <value>Username already taken. Please try again with other username.</value>
+  </data>
+    <data name="SupplierNameTaken" xml:space="preserve">
+    <value>Supplier name already taken. Please try again with other supplier name.</value>
   </data>
   <data name="UserNotExist" xml:space="preserve">
     <value>User does not exist in the system.</value>

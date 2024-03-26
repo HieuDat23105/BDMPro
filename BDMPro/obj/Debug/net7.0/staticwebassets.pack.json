@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets/assets/default.jpg"
     },
     {
+      "Id": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/wwwroot/assets/defaultProfilePicture.jpg",
+      "PackagePath": "staticwebassets/assets/defaultProfilePicture.jpg"
+    },
+    {
       "Id": "/Users/hieu_dat/WorkHome/GitHub/BDMPro/BDMPro/wwwroot/assets/forgotpassword.jpg",
       "PackagePath": "staticwebassets/assets/forgotpassword.jpg"
     },

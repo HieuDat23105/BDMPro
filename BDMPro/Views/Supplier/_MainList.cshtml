@@ -22,7 +22,7 @@
                     <span style="@(item.Key == "SupplierName" ? $"min-width:{lockedColumnWidth};max-width:{lockedColumnWidth};"
                     : item.Key == "EmailAddress" ? "min-width:200px;"
                     : item.Key == "Address" ? "min-width:280px;"
-                    : item.Key == "ContactId" ? "min-width:150px;"
+                    : item.Key == "Contact" ? "min-width:150px;"
                     : item.Key == "CreatedOn" ? $"min-width:{ListUtil.DateTimeColumnWidth};"
                     : "")">@item.Title</span>
                     <i class="fa-solid fs-12 text-muted @(sort.Contains(item.Key.ToString())? sort.Contains("asc")? "fa-arrow-up-wide-short": sort.Contains("desc")? "fa-arrow-down-wide-short": "": "")"></i>
@@ -48,7 +48,6 @@
                             <td>@item.EmailAddress</td>
                             <td>@item.PhoneNumber</td>
                             <td>@item.Address</td>
-                            <td>@item.ContactId</td>
                             <td>@item.SupplierStatusName</td>
                             <td class="datetimetext">@item.IsoUtcCreatedOn</td>
                             <td>
