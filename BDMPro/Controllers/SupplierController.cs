@@ -110,6 +110,7 @@ namespace BDMPro.Controllers
                                    EmailAddress = t1.Email,
                                    PhoneNumber = t1.PhoneNumber,
                                    Address = t1.Address,
+                                   Notes = t1.Notes,
                                    CreatedOn = t1.CreatedOn,
                                    IsoUtcCreatedOn = t1.IsoUtcCreatedOn,
                                    SupplierStatusName = t2 != null ? t2.DisplayName : "",
@@ -137,6 +138,7 @@ namespace BDMPro.Controllers
                              EmailAddress = t1.Email,
                              PhoneNumber = t1.PhoneNumber,
                              Address = t1.Address,
+                             Notes = t1.Notes,
                              SupplierStatusId = t1.SupplierStatusId,
                              CreatedBy = t1.CreatedBy,
                              ModifiedBy = t1.ModifiedBy,
@@ -150,7 +152,19 @@ namespace BDMPro.Controllers
                                                join t2 in db.Contacts on t1.ContactId equals t2.ContactId
                                                where t1.SupplierId == model.SupplierId
                                                select t2.ContactName).ToList();
-                model.SupplierContactName = String.Join(", ", model.SupplierContactIdList);
+                model.SupplierContactName = String.Join(",", model.SupplierContactIdList);
+                model.SupplierContactNameList = (from t1 in db.SupplierContacts
+                                                 join t2 in db.Contacts on t1.ContactId equals t2.ContactId
+                                                 where t1.SupplierId == model.SupplierId
+                                                 select t2.ContactName).ToList();
+                model.SupplierContactEmail = (from t1 in db.SupplierContacts
+                                              join t2 in db.Contacts on t1.ContactId equals t2.ContactId
+                                              where t1.SupplierId == model.SupplierId
+                                              select t2.Email).ToList();
+                model.SupplierContactPhone = (from t1 in db.SupplierContacts
+                                              join t2 in db.Contacts on t1.ContactId equals t2.ContactId
+                                              where t1.SupplierId == model.SupplierId
+                                              select t2.Phone).ToList();
                 if (type == "View")
                 {
                     model.CreatedAndModified = util.GetCreatedAndModified(model.CreatedBy, model.IsoUtcCreatedOn, model.ModifiedBy, model.IsoUtcModifiedOn);
@@ -423,85 +437,85 @@ namespace BDMPro.Controllers
             }
         }
 
- public async Task<bool> SaveRecord(SupplierViewModel model)
-{
-    bool result = true;
-    if (model != null)
-    {
-        string supplierId = "";
-        string type = "";
-        try
+        public async Task<bool> SaveRecord(SupplierViewModel model)
         {
-            model.CreatedBy = _userManager.GetUserId(User);
-            model.ModifiedBy = _userManager.GetUserId(User);
-            if (model.SupplierId != null)
+            bool result = true;
+            if (model != null)
             {
-                type = "update";
-                Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == model.SupplierId);
-                AssignSupplierValues(supplier, model);
-                db.Entry(supplier).State = EntityState.Modified;
-                db.SaveChanges();
-                supplierId = supplier.SupplierId;
-
-                if (model.SupplierContactNameList != null)
+                string supplierId = "";
+                string type = "";
+                try
                 {
-                    var existingContacts = db.SupplierContacts.Where(a => a.SupplierId == supplierId);
-                    db.SupplierContacts.RemoveRange(existingContacts);
-                    foreach (var contactName in model.SupplierContactNameList)
+                    model.CreatedBy = _userManager.GetUserId(User);
+                    model.ModifiedBy = _userManager.GetUserId(User);
+                    if (model.SupplierId != null)
                     {
-                        var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
-                        if (contact != null)
+                        type = "update";
+                        Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == model.SupplierId);
+                        AssignSupplierValues(supplier, model);
+                        db.Entry(supplier).State = EntityState.Modified;
+                        db.SaveChanges();
+                        supplierId = supplier.SupplierId;
+
+                        if (model.SupplierContactIdList != null)
                         {
-                            db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                            var existingContacts = db.SupplierContacts.Where(a => a.SupplierId == supplierId);
+                            db.SupplierContacts.RemoveRange(existingContacts);
+                            foreach (var contactName in model.SupplierContactIdList)
+                            {
+                                var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
+                                if (contact != null)
+                                {
+                                    db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                                }
+                            }
+                            await db.SaveChangesAsync();
                         }
                     }
-                    await db.SaveChangesAsync();
-                }
-            }
-            else
-            {
-                type = "create";
-                Supplier supplier = new Supplier();
-                AssignSupplierValues(supplier, model);
-                supplier.SupplierId = Guid.NewGuid().ToString();
-                db.Suppliers.Add(supplier);
-                db.SaveChanges();
-                supplierId = supplier.SupplierId;
-
-                if (model.SupplierContactNameList != null)
-                {
-                    foreach (var contactName in model.SupplierContactNameList)
+                    else
                     {
-                        var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
-                        if (contact != null)
+                        type = "create";
+                        Supplier supplier = new Supplier();
+                        AssignSupplierValues(supplier, model);
+                        supplier.SupplierId = Guid.NewGuid().ToString();
+                        db.Suppliers.Add(supplier);
+                        db.SaveChanges();
+                        supplierId = supplier.SupplierId;
+
+                        if (model.SupplierContactIdList != null)
                         {
-                            db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                            foreach (var contactName in model.SupplierContactIdList)
+                            {
+                                var contact = db.Contacts.FirstOrDefault(c => c.ContactName == contactName);
+                                if (contact != null)
+                                {
+                                    db.SupplierContacts.Add(new SupplierContact { SupplierId = supplierId, ContactId = contact.ContactId });
+                                }
+                            }
+                            await db.SaveChangesAsync();
                         }
                     }
-                    await db.SaveChangesAsync();
                 }
-            }
-        }
-        catch (Exception ex)
-        {
-            if (type == "create")
-            {
-                if (!string.IsNullOrEmpty(supplierId))
+                catch (Exception ex)
                 {
-                    Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == supplierId);
-                    if (supplier != null)
+                    if (type == "create")
                     {
-                        db.Suppliers.Remove(supplier);
-                        await db.SaveChangesAsync();
+                        if (!string.IsNullOrEmpty(supplierId))
+                        {
+                            Supplier supplier = db.Suppliers.FirstOrDefault(a => a.SupplierId == supplierId);
+                            if (supplier != null)
+                            {
+                                db.Suppliers.Remove(supplier);
+                                await db.SaveChangesAsync();
+                            }
+                        }
                     }
+                    _logger.LogError(ex, $"{GetType().Name} Controller - {MethodBase.GetCurrentMethod().Name} Method");
+                    return false;
                 }
             }
-            _logger.LogError(ex, $"{GetType().Name} Controller - {MethodBase.GetCurrentMethod().Name} Method");
-            return false;
+            return result;
         }
-    }
-    return result;
-}
 
 
         [CustomAuthorizeFilter(ProjectEnum.ModuleCode.SupplierManagement, "", "", "", "true")]
@@ -522,7 +536,8 @@ namespace BDMPro.Controllers
                                                  .FirstOrDefault();
 
                         supplier.SupplierStatusId = inactiveStatusId;
-
+                        var supplierContacts = db.SupplierContacts.Where(sc => sc.SupplierId == Id);
+                        db.SupplierContacts.RemoveRange(supplierContacts);
                         db.SaveChanges();
                     }
                 }

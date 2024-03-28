@@ -141,6 +141,12 @@
     <data name="AddSupplier" xml:space="preserve">
     <value>Add Supplier</value>
   </data>
+      <data name="AddDeviceType" xml:space="preserve">
+    <value>Add Device Type</value>
+  </data>
+        <data name="AddRepairType" xml:space="preserve">
+    <value>Add Repair Type</value>
+  </data>
   <data name="alreadyexists" xml:space="preserve">
     <value>already exists.</value>
   </data>
@@ -243,14 +249,17 @@
   <data name="DisplayOrder" xml:space="preserve">
     <value>Display Order</value>
   </data>
-  <data name="DeviceTypeManagement" xml:space="preserve">
-    <value>Device Type Management</value>
+  <data name="DeviceType" xml:space="preserve">
+    <value>Device Type</value>
   </data>
   <data name="Device" xml:space="preserve">
     <value>Device</value>
   </data>
-  <data name="RepairTypeManagement" xml:space="preserve">
-    <value>Repair Type Management</value>
+    <data name="OrderCode" xml:space="preserve">
+    <value>OrderCode</value>
+  </data>
+  <data name="RepairType" xml:space="preserve">
+    <value>Repair Type</value>
   </data>
   <data name="RepairManagement" xml:space="preserve">
     <value>Repair Management</value>
@@ -275,6 +284,9 @@
   </data>
   <data name="EmailAddress" xml:space="preserve">
     <value>Email Address</value>
+  </data>
+    <data name="EmailContact" xml:space="preserve">
+    <value>Email Contact</value>
   </data>
   <data name="EmailAddressTaken" xml:space="preserve">
     <value>Email Address already taken. Please try again with other Email Address.</value>
@@ -353,6 +365,18 @@
   </data>
   <data name="FullName" xml:space="preserve">
     <value>Full Name</value>
+  </data>
+    <data name="TypeName" xml:space="preserve">
+    <value>Type Name</value>
+  </data>
+      <data name="TypeSymbol" xml:space="preserve">
+    <value>Type Symbol</value>
+  </data>
+        <data name="DeviceCount" xml:space="preserve">
+    <value>Device Count</value>
+  </data>
+          <data name="RepairCount" xml:space="preserve">
+    <value>Repair Count</value>
   </data>
   <data name="Gender" xml:space="preserve">
     <value>Gender</value>
@@ -636,6 +660,9 @@
   <data name="RoleNameAlreadyExist" xml:space="preserve">
     <value>The role name already exist in the system.</value>
   </data>
+    <data name="RepairTypeNameAlreadyExist" xml:space="preserve">
+    <value>The repair type name already exist in the system.</value>
+  </data>
   <data name="RolePermissionfor" xml:space="preserve">
     <value>Role Permission for</value>
   </data>
@@ -701,6 +728,12 @@
   </data>
   <data name="SystemInformation" xml:space="preserve">
     <value>System Information</value>
+  </data>
+    <data name="DeviceTypeInformation" xml:space="preserve">
+    <value>Device Type Information</value>
+  </data>
+      <data name="RepairTypeInformation" xml:space="preserve">
+    <value>Repair Type Information</value>
   </data>
   <data name="SupplierManagement" xml:space="preserve">
     <value>Supplier Management</value>
@@ -782,6 +815,18 @@
   </data>
   <data name="UserAttachmentTypeNameAlreadyExist" xml:space="preserve">
     <value>The user attachment type name already exist in the system.</value>
+  </data>
+    <data name="DeviceTypeSymbolAlreadyExist" xml:space="preserve">
+    <value>The device type symbol already exist in the system.</value>
+  </data>
+      <data name="RepairTypeSymbolAlreadyExist" xml:space="preserve">
+    <value>The repair type symbol already exist in the system.</value>
+  </data>
+    <data name="DeviceTypeNotesTooLong" xml:space="preserve">
+    <value>The notes for the device type are too long.</value>
+  </data>
+      <data name="RepairTypeNotesTooLong" xml:space="preserve">
+    <value>The notes for the repair type are too long.</value>
   </data>
   <data name="UserbyStatusChart" xml:space="preserve">
     <value>User by Status Chart</value>
@@ -879,11 +924,20 @@
   <data name="ViewSupplier" xml:space="preserve">
     <value>View Supplier</value>
   </data>
-  <data name="Viewsuppliers" xml:space="preserve">
-    <value>View suppliers</value>
+  <data name="ViewDeviceType" xml:space="preserve">
+    <value>View Device Type</value>
+  </data>
+    <data name="ViewRepairType" xml:space="preserve">
+    <value>View Repair Type</value>
   </data>
   <data name="EditSupplier" xml:space="preserve">
     <value>Edit Supplier</value>
+  </data>
+    <data name="EditDeviceType" xml:space="preserve">
+    <value>Edit Device Type</value>
+  </data>
+      <data name="EditRepairType" xml:space="preserve">
+    <value>Edit Repair Type</value>
   </data>
   <data name="SupplierDetails" xml:space="preserve">
     <value>Supplier Details</value>

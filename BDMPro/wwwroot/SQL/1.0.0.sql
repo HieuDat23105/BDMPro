@@ -340,9 +340,9 @@ insert into Module values ('B4E801DA-B661-4923-B74C-42E38DD1DF68','Dashboard','D
 --Extend module
 insert into Module values ('0FA4CC1B-D595-4E10-84EE-A1B6F5C247A2','SupplierManagement','Supplier Management','/supplier/index', null,null,null,null,null,null)
 insert into Module values ('9665B744-17AA-45EA-B59A-C139393A2899','DeviceManagement','Device Management','/device/index', null,null,null,null,null,null)
-insert into Module values ('01FD86C5-B1EF-4AA7-A11A-99A645E2C9DE','DeviceTypeManagement','Device Type Management','devicetype/index', null,null,null,null,null,null)
+insert into Module values ('01FD86C5-B1EF-4AA7-A11A-99A645E2C9DE','DeviceType','Device Type Management','devicetype/index', null,null,null,null,null,null)
 insert into Module values ('1050F5B6-92FE-4B70-BDCB-1D178B4D6A2A','RepairManagement','Repair Management','repair/index', null,null,null,null,null,null)
-insert into Module values ('8E6F0A74-C9C4-4049-872B-9D7D8B712FCC','RepairTypeManagement','Repair Type Management','repairtype/index', null,null,null,null,null,null)
+insert into Module values ('8E6F0A74-C9C4-4049-872B-9D7D8B712FCC','RepairType','Repair Type Management','repairtype/index', null,null,null,null,null,null)
 insert into Module values ('BC26A3F3-5CD3-442C-ABC4-4F03E676FA4A','Statistical','Statistical','statistical/index', null,null,null,null,null,null)
 END
 

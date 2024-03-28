@@ -32,7 +32,7 @@ namespace BDMPro.Controllers
             _logger = logger;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "false", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "true", "", "", "")]
         public IActionResult Index()
         {
             return View();
@@ -54,7 +54,7 @@ namespace BDMPro.Controllers
                     sort = DeviceTypeListConfig.DefaultSortOrder;
                 }
                 headers = ListUtil.GetColumnHeaders(DeviceTypeListConfig.DefaultColumnHeaders, sort);
-                var list = ReadDeviceTypes();
+                var list = ReadDeviceTypeList();
                 string searchMessage = DeviceTypeListConfig.SearchMessage;
                 list = DeviceTypeListConfig.PerformSearch(list, search);
                 list = DeviceTypeListConfig.PerformSort(list, sort);
@@ -75,7 +75,7 @@ namespace BDMPro.Controllers
             return PartialView("~/Views/Shared/Error.cshtml", null);
         }
 
-        public IQueryable<DeviceTypeViewModel> ReadDeviceTypes()
+        public IQueryable<DeviceTypeViewModel> ReadDeviceTypeList()
         {
             var result = from t1 in db.DeviceTypes.AsNoTracking()
                          select new DeviceTypeViewModel
@@ -84,6 +84,9 @@ namespace BDMPro.Controllers
                              TypeName = t1.TypeName,
                              TypeSymbol = t1.TypeSymbol,
                              Notes = t1.Notes,
+                             CreatedOn = t1.CreatedOn,
+                             IsoUtcCreatedOn = t1.IsoUtcCreatedOn,
+                             DeviceCount = db.Devices.Where(a => a.DeviceTypeId == t1.DeviceTypeId).Count(),
                          };
             return result;
         }
@@ -93,15 +96,27 @@ namespace BDMPro.Controllers
             DeviceTypeViewModel model = new DeviceTypeViewModel();
             try
             {
-                DeviceType deviceType = db.DeviceTypes.Where(a => a.DeviceTypeId == Id).FirstOrDefault();
-                model.DeviceTypeId = deviceType.DeviceTypeId;
-                model.TypeSymbol = deviceType.TypeSymbol;
-                model.TypeName = deviceType.TypeName;
-                model.IsoUtcCreatedOn = deviceType.IsoUtcCreatedOn;
-                model.IsoUtcModifiedOn = deviceType.IsoUtcModifiedOn;
+                model = db.DeviceTypes
+                    .Where(t1 => t1.DeviceTypeId == Id)
+                    .Select(t1 => new DeviceTypeViewModel
+                    {
+                        DeviceTypeId = t1.DeviceTypeId,
+                        TypeName = t1.TypeName,
+                        TypeSymbol = t1.TypeSymbol,
+                        Notes = t1.Notes,
+                        CreatedBy = t1.CreatedBy,
+                        ModifiedBy = t1.ModifiedBy,
+                        CreatedOn = t1.CreatedOn,
+                        ModifiedOn = t1.ModifiedOn,
+                        IsoUtcCreatedOn = t1.IsoUtcCreatedOn,
+                        IsoUtcModifiedOn = t1.IsoUtcModifiedOn,
+                        DeviceCount = db.Devices.Count(a => a.DeviceTypeId == t1.DeviceTypeId)
+                    })
+                    .FirstOrDefault();
+
                 if (type == "View")
                 {
-                    model.CreatedAndModified = util.GetCreatedAndModified(deviceType.CreatedBy, deviceType.IsoUtcCreatedOn, deviceType.ModifiedBy, deviceType.IsoUtcModifiedOn);
+                    model.CreatedAndModified = util.GetCreatedAndModified(model.CreatedBy, model.IsoUtcCreatedOn, model.ModifiedBy, model.IsoUtcModifiedOn);
                 }
             }
             catch (Exception ex)
@@ -111,7 +126,7 @@ namespace BDMPro.Controllers
             return model;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "", "false", "false", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "", "true", "true", "")]
         public IActionResult Edit(string Id)
         {
             DeviceTypeViewModel model = new DeviceTypeViewModel();
@@ -121,18 +136,22 @@ namespace BDMPro.Controllers
             }
             else
             {
-                string maxOrder = db.DeviceTypes
-                    .Where(a => a.TypeSymbol.All(char.IsLetter))
-                    .Select(a => a.TypeSymbol)
-                    .OrderByDescending(a => a[0])
+                var maxOrder = db.DeviceTypes
+                    .Where(a => !string.IsNullOrEmpty(a.TypeSymbol))
+                    .Select(a => a.TypeSymbol.Substring(0, 1))
+                    .OrderByDescending(a => a)
                     .FirstOrDefault();
 
-                model.TypeSymbol = maxOrder;
+                if (maxOrder != default(string))
+                {
+                    char nextOrder = (char)(maxOrder[0] + 1);
+                    model.TypeSymbol = nextOrder.ToString();
+                }
             }
             return View(model);
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.UserStatus, "false", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "true", "", "", "")]
         public IActionResult ViewRecord(string Id)
         {
             DeviceTypeViewModel model = new DeviceTypeViewModel();
@@ -144,7 +163,7 @@ namespace BDMPro.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(DeviceTypeViewModel model)
+        public async Task<IActionResult> Edit(DeviceTypeViewModel model)
         {
             try
             {
@@ -155,74 +174,135 @@ namespace BDMPro.Controllers
                     return View(model);
                 }
 
-                SaveRecord(model);
-                TempData["NotifySuccess"] = Resource.RecordSavedSuccessfully;
+                bool result = await SaveRecord(model);
+                if (result == false)
+                {
+                    TempData["NotifyFailed"] = Resource.FailedExceptionError;
+                }
+                else
+                {
+                    TempData["NotifySuccess"] = Resource.RecordSavedSuccessfully;
+                }
             }
             catch (Exception ex)
             {
                 TempData["NotifyFailed"] = Resource.FailedExceptionError;
                 _logger.LogError(ex, $"{GetType().Name} Controller - {MethodBase.GetCurrentMethod().Name} Method");
             }
-            return RedirectToAction("index");
+            return RedirectToAction("index", "devicetype");
         }
 
-public void ValidateModel(DeviceTypeViewModel model)
-{
-    if (model != null)
-    {
-        bool duplicated = false;
-        if (model.DeviceTypeId != null)
-        {
-            duplicated = db.DeviceTypes.Where(a => a.TypeName == model.TypeName && a.DeviceTypeId != model.DeviceTypeId).Any();
-        }
-        else
-        {
-            duplicated = db.DeviceTypes.Where(a => a.TypeName == model.TypeName).Any();
-        }
-
-        if (duplicated == true)
-        {
-            ModelState.AddModelError("TypeName", Resource.DeviceTypeNameAlreadyExist);
-        }
-    }
-}
-
-        public void SaveRecord(DeviceTypeViewModel model)
+        public void ValidateModel(DeviceTypeViewModel model)
         {
             if (model != null)
             {
-                Regex sWhitespace = new Regex(@"\s+");
-                //edit
-                if (model.DeviceTypeId != null)
+                bool duplicatedTypeName = false;
+                if (model.DeviceTypeId == null)
                 {
-                    DeviceType deviceType = db.DeviceTypes.Where(a => a.DeviceTypeId == model.DeviceTypeId).FirstOrDefault();
-                    deviceType.TypeSymbol = sWhitespace.Replace(model.TypeSymbol, "");
-                    deviceType.TypeName = model.TypeName;
-                    deviceType.IsDeleted = false;
-                    deviceType.ModifiedBy = _userManager.GetUserId(User);
-                    deviceType.ModifiedOn = util.GetSystemTimeZoneDateTimeNow();
-                    deviceType.IsoUtcModifiedOn = util.GetIsoUtcNow();
-                    db.Entry(deviceType).State = EntityState.Modified;
-                    db.SaveChanges();
+                    duplicatedTypeName = db.DeviceTypes.Any(a => a.TypeName == model.TypeName);
                 }
-                //bản ghi mới
                 else
                 {
-                    DeviceType deviceType = new DeviceType();
-                    deviceType.DeviceTypeId = Guid.NewGuid().ToString();
-                    deviceType.TypeSymbol = sWhitespace.Replace(model.TypeName, "");
-                    deviceType.TypeName = model.TypeName;
-                    deviceType.IsDeleted = false;
-                    deviceType.CreatedBy = _userManager.GetUserId(User);
-                    deviceType.CreatedOn = util.GetSystemTimeZoneDateTimeNow();
-                    deviceType.IsoUtcCreatedOn = util.GetIsoUtcNow();
-                    db.DeviceTypes.Add(deviceType);
-                    db.SaveChanges();
+                    duplicatedTypeName = db.DeviceTypes.Any(a => a.TypeName == model.TypeName && a.DeviceTypeId != model.DeviceTypeId);
+                }
+                if (duplicatedTypeName == true)
+                {
+                    ModelState.AddModelError("TypeName", Resource.DeviceTypeNameAlreadyExist);
+                }
+
+                bool duplicatedTypeSymbol = false;
+                if (model.DeviceTypeId == null)
+                {
+                    duplicatedTypeSymbol = db.DeviceTypes.Any(a => a.TypeSymbol == model.TypeSymbol);
+                }
+                else
+                {
+                    duplicatedTypeSymbol = db.DeviceTypes.Any(a => a.TypeSymbol == model.TypeSymbol && a.DeviceTypeId != model.DeviceTypeId);
+                }
+                if (duplicatedTypeSymbol == true)
+                {
+                    ModelState.AddModelError("TypeSymbol", Resource.DeviceTypeSymbolAlreadyExist);
+                }
+
+                if (model.Notes != null && model.Notes.Length > 500) //độ dài tối đa là 500
+                {
+                    ModelState.AddModelError("Notes", Resource.DeviceTypeNotesTooLong);
                 }
             }
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "", "", "", "false")]
+        public void AssignDeviceTypeValues(DeviceType deviceType, DeviceTypeViewModel model)
+        {
+            deviceType.TypeName = model.TypeName;
+            deviceType.TypeSymbol = model.TypeSymbol;
+            deviceType.Notes = model.Notes;
+            if (model.DeviceTypeId == null)
+            {
+                deviceType.CreatedBy = model.CreatedBy;
+                deviceType.CreatedOn = util.GetSystemTimeZoneDateTimeNow();
+                deviceType.IsoUtcCreatedOn = util.GetIsoUtcNow();
+            }
+            else
+            {
+                deviceType.ModifiedBy = model.ModifiedBy;
+                deviceType.ModifiedOn = util.GetSystemTimeZoneDateTimeNow();
+                deviceType.IsoUtcModifiedOn = util.GetIsoUtcNow();
+            }
+        }
+
+        public async Task<bool> SaveRecord(DeviceTypeViewModel model)
+        {
+            bool result = true;
+            if (model != null)
+            {
+                string deviceTypeId = "";
+                string type = "";
+                try
+                {
+                    model.CreatedBy = _userManager.GetUserId(User);
+                    model.ModifiedBy = _userManager.GetUserId(User);
+                    if (model.DeviceTypeId != null)
+                    {
+                        type = "update";
+                        DeviceType deviceType = db.DeviceTypes.FirstOrDefault(a => a.DeviceTypeId == model.DeviceTypeId);
+                        AssignDeviceTypeValues(deviceType, model);
+                        db.Entry(deviceType).State = EntityState.Modified;
+                        db.SaveChanges();
+                        deviceTypeId = deviceType.DeviceTypeId;
+                    }
+                    else
+                    {
+                        type = "create";
+                        DeviceType deviceType = new DeviceType();
+                        AssignDeviceTypeValues(deviceType, model);
+                        deviceType.DeviceTypeId = Guid.NewGuid().ToString();
+                        db.DeviceTypes.Add(deviceType);
+                        db.SaveChanges();
+                        deviceTypeId = deviceType.DeviceTypeId;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    if (type == "create")
+                    {
+                        if (!string.IsNullOrEmpty(deviceTypeId))
+                        {
+                            DeviceType deviceType = db.DeviceTypes.FirstOrDefault(a => a.DeviceTypeId == deviceTypeId);
+                            if (deviceType != null)
+                            {
+                                db.DeviceTypes.Remove(deviceType);
+                                await db.SaveChangesAsync();
+                            }
+                        }
+                    }
+                    _logger.LogError(ex, $"{GetType().Name} Controller - {MethodBase.GetCurrentMethod().Name} Method");
+                    return false;
+                }
+            }
+            return result;
+        }
+
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "", "", "", "true")]
         public IActionResult Delete(string Id)
         {
             try

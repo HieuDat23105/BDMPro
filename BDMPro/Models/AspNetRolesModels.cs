@@ -62,12 +62,12 @@ namespace BDMPro.Models
         public Permission SupplierManagementPermission { get; set; } //Supplier Management
         [Display(Name = "DeviceManagement", ResourceType = typeof(Resource))]
         public Permission DeviceManagementPermission { get; set; } //Device Management
-        [Display(Name = "DeviceTypeManagement", ResourceType = typeof(Resource))]
-        public Permission DeviceTypeManagementPermission { get; set; } //Device Type Management
+        [Display(Name = "DeviceType", ResourceType = typeof(Resource))]
+        public Permission DeviceTypePermission { get; set; } //Device Type Management
         [Display(Name = "RepairManagement", ResourceType = typeof(Resource))]
         public Permission RepairManagementPermission { get; set; } //Repair Management
-        [Display(Name = "RepairTypeManagement", ResourceType = typeof(Resource))]
-        public Permission RepairTypeManagementPermission { get; set; } //Repair Type Management
+        [Display(Name = "RepairType", ResourceType = typeof(Resource))]
+        public Permission RepairTypePermission { get; set; } //Repair Type Management
         [Display(Name = "Statistical", ResourceType = typeof(Resource))]
         public Permission StatisticalPermission { get; set; } //Statistical
         [Display(Name = "LoginHistory", ResourceType = typeof(Resource))]

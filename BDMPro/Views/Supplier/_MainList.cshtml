@@ -21,9 +21,7 @@
                 <a class="d-flex justify-content-between align-items-center cursor-pointer" onclick="sortTable('@item.OrderAction')">
                     <span style="@(item.Key == "SupplierName" ? $"min-width:{lockedColumnWidth};max-width:{lockedColumnWidth};"
                     : item.Key == "EmailAddress" ? "min-width:200px;"
-                    : item.Key == "Address" ? "min-width:280px;"
-                    : item.Key == "Contact" ? "min-width:150px;"
-                    : item.Key == "CreatedOn" ? $"min-width:{ListUtil.DateTimeColumnWidth};"
+                    : item.Key == "SupplierContactNameList" ? "min-width:100px;"
                     : "")">@item.Title</span>
                     <i class="fa-solid fs-12 text-muted @(sort.Contains(item.Key.ToString())? sort.Contains("asc")? "fa-arrow-up-wide-short": sort.Contains("desc")? "fa-arrow-down-wide-short": "": "")"></i>
                 </a>
@@ -47,9 +45,20 @@
                             <td class="locked-column"><a class="fw600 color-primarycolor hover-color-secondarycolor locked-column-text" style="max-width:@lockedColumnWidth" href="@Url.Action("ViewRecord", new { Id = item.SupplierId })" title="@item.SupplierName">@item.SupplierName</a></td>
                             <td>@item.EmailAddress</td>
                             <td>@item.PhoneNumber</td>
-                            <td>@item.Address</td>
+                            <td>
+                                @if (item.SupplierContactNameList.Count > 1)
+                                {
+                                    foreach (var contactName in item.SupplierContactNameList)
+                                    {
+                                        <div>@contactName</div>
+                                    }
+                                }
+                                else
+                                {
+                                    @string.Join(", ", item.SupplierContactNameList)
+                                }
+                            </td>
                             <td>@item.SupplierStatusName</td>
-                            <td class="datetimetext">@item.IsoUtcCreatedOn</td>
                             <td>
                                 <div class="d-flex text-breakspaces">
                                     <span class="fs-20 canedit"><a href="@Url.Action("edit", new { Id = @Html.ValueFor(modelItem => item.SupplierId) })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a> &nbsp;</span>

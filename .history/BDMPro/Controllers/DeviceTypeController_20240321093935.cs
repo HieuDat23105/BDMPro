@@ -32,7 +32,7 @@ namespace BDMPro.Controllers
             _logger = logger;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "false", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "false", "", "", "")]
         public IActionResult Index()
         {
             return View();
@@ -106,7 +106,7 @@ namespace BDMPro.Controllers
             return model;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "", "false", "false", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "", "false", "false", "")]
         public IActionResult Edit(string DeviceTypeId)
         {
             DeviceTypeViewModel model = new DeviceTypeViewModel();
@@ -123,7 +123,7 @@ namespace BDMPro.Controllers
             return View(model);
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "false", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "false", "", "", "")]
         public IActionResult ViewRecord(string DeviceTypeId)
         {
             DeviceTypeViewModel model = new DeviceTypeViewModel();
@@ -205,7 +205,7 @@ namespace BDMPro.Controllers
             }
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "", "", "", "false")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "", "", "", "false")]
         public IActionResult Delete(string DeviceTypeId)
         {
             try

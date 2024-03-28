@@ -41,55 +41,38 @@ namespace BDMPro.Models
 
         [StringLength(128)]
         public string IsoUtcModifiedOn { get; set; }
-
-        [Required]
-        public bool IsDeleted { get; set; }
     }
 
 
     public class DeviceTypeViewModel
     {
-        [Required]
-        [StringLength(128)]
         public string DeviceTypeId { get; set; }
-
-        [Required]
-        [StringLength(255)]
+        [Display(Name = "TypeName", ResourceType = typeof(Resource))]
         public string TypeName { get; set; }
-
-        [Required]
-        [StringLength(5)]
+        [Display(Name = "TypeSymbol", ResourceType = typeof(Resource))]
         public string TypeSymbol { get; set; }
-
-        [StringLength(1000)]
+        [Display(Name = "Notes", ResourceType = typeof(Resource))]
         public string Notes { get; set; }
-
-        [StringLength(128)]
-        public string OrderCode { get; set; }
-
-        [StringLength(128)]
-        public string CreatedBy { get; set; }
-
+        [Display(Name = "CreatedOn", ResourceType = typeof(Resource))]
         public DateTime? CreatedOn { get; set; }
-
-        [StringLength(128)]
-        public string ModifiedBy { get; set; }
-
+        [Display(Name = "CreatedOn", ResourceType = typeof(Resource))]
+        public string CreatedOnIsoUtc { get; set; }
+        [Display(Name = "ModifiedOn", ResourceType = typeof(Resource))]
         public DateTime? ModifiedOn { get; set; }
-
-        [StringLength(128)]
+        [Display(Name = "ModifiedOn", ResourceType = typeof(Resource))]
+        public string ModifiedOnIsoUtc { get; set; }
+        [Display(Name = "ModifiedBy", ResourceType = typeof(Resource))]
+        public string ModifiedBy { get; set; }
+        [Display(Name = "CreatedOn", ResourceType = typeof(Resource))]
         public string IsoUtcCreatedOn { get; set; }
-
-        [StringLength(128)]
         public string IsoUtcModifiedOn { get; set; }
-
-        [Required]
-        public bool IsDeleted { get; set; }
-
+        public string CreatedBy { get; set; }
         public string Actions { get; set; }
-
         public CreatedAndModifiedViewModel CreatedAndModified { get; set; }
-
+        [Display(Name = "DeviceCount", ResourceType = typeof(Resource))]
+        public int DeviceCount { get; set; }
+        [Display(Name = "OrderCode", ResourceType = typeof(Resource))]
+        public string OrderCode { get; set; }
     }
     public class DeviceTypeListing
     {

@@ -237,13 +237,13 @@
   <data name="DisplayOrder" xml:space="preserve">
     <value>Display Order</value>
   </data>
-  <data name="DeviceTypeManagement" xml:space="preserve">
+  <data name="DeviceType" xml:space="preserve">
     <value>Device Type Management</value>
   </data>
   <data name="Device" xml:space="preserve">
     <value>Device</value>
   </data>
-  <data name="RepairTypeManagement" xml:space="preserve">
+  <data name="RepairType" xml:space="preserve">
     <value>Repair Type Management</value>
   </data>
   <data name="RepairManagement" xml:space="preserve">

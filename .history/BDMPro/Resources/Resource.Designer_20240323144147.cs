@@ -470,9 +470,9 @@ namespace BDMPro.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Device Type Management.
         /// </summary>
-        public static string DeviceTypeManagement {
+        public static string DeviceType {
             get {
-                return ResourceManager.GetString("DeviceTypeManagement", resourceCulture);
+                return ResourceManager.GetString("DeviceType", resourceCulture);
             }
         }
         
@@ -1557,9 +1557,9 @@ namespace BDMPro.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Repair Type Management.
         /// </summary>
-        public static string RepairTypeManagement {
+        public static string RepairType {
             get {
-                return ResourceManager.GetString("RepairTypeManagement", resourceCulture);
+                return ResourceManager.GetString("RepairType", resourceCulture);
             }
         }
         

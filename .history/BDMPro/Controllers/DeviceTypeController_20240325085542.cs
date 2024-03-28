@@ -32,7 +32,7 @@ namespace BDMPro.Controllers
             _logger = logger;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "true", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "true", "", "", "")]
         public IActionResult Index()
         {
             return View();

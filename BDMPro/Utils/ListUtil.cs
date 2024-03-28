@@ -407,9 +407,8 @@ namespace BDMPro.Utils
                 nameof(SupplierViewModel.SupplierName),
                 nameof(SupplierViewModel.EmailAddress),
                 nameof(SupplierViewModel.PhoneNumber),
-                nameof(SupplierViewModel.Address),
+                nameof(SupplierViewModel.SupplierContactNameList),
                 nameof(SupplierViewModel.SupplierStatusName),
-                nameof(SupplierViewModel.CreatedOn),
                 nameof(SupplierViewModel.Actions)
             };
         public static string SearchMessage = $"{Resource.Search}...";
@@ -420,7 +419,7 @@ namespace BDMPro.Utils
                 list = list.Where(s => s.SupplierName.Contains(search) ||
                                        s.EmailAddress.Contains(search) ||
                                        s.PhoneNumber.Contains(search) ||
-                                       s.Address.Contains(search) ||
+                                       s.SupplierContactNameList.Contains(search) ||
                                        s.SupplierStatusName.Contains(search));
             }
             return list;
@@ -442,7 +441,6 @@ namespace BDMPro.Utils
         public static readonly List<string> TableColumns = new List<string>() {
                 nameof(DeviceTypeViewModel.TypeName),
                 nameof(DeviceTypeViewModel.TypeSymbol),
-                nameof(DeviceTypeViewModel.CreatedOn),
                 nameof(DeviceTypeViewModel.Actions)
             };
         public static string SearchMessage = $"{Resource.Search}...";
@@ -450,12 +448,14 @@ namespace BDMPro.Utils
         {
             if (!string.IsNullOrEmpty(search))
             {
-                list = list.Where(s => s.TypeName.ToString().Contains(search) || s.TypeSymbol.Contains(search));
+                list = list.Where(s => s.TypeName.ToString().Contains(search) || 
+                                       s.TypeSymbol.Contains(search) ||
+                                       s.Notes.Contains(search));
             }
             return list;
         }
 
-        public static string DefaultSortOrder = $"{nameof(DeviceTypeViewModel.TypeName)}-asc";
+        public static string DefaultSortOrder = $"{nameof(DeviceTypeViewModel.TypeSymbol)}-asc";
         public static int? DefaultPageSize = 10;
         public static List<SelectListItem> PageSizeDropDownList = ListUtil.GetPageSizeDropDownList(DefaultPageSize);
         public static readonly ColumnHeader[] DefaultColumnHeaders = ListUtil.GenerateDefaultColumnHeaders<DeviceTypeViewModel>(DefaultSortOrder, TableColumns);
@@ -463,6 +463,37 @@ namespace BDMPro.Utils
         public static IQueryable<DeviceTypeViewModel> PerformSort(IQueryable<DeviceTypeViewModel> list, string sort)
         {
             var result = ListUtil.PerformSort<DeviceTypeViewModel>(list, DefaultSortOrder, sort);
+            return result;
+        }
+    }
+
+     public class RepairTypeListConfig
+    {
+        public static readonly List<string> TableColumns = new List<string>() {
+                nameof(RepairTypeViewModel.RepairTypeName),
+                nameof(RepairTypeViewModel.RepairTypeSymbol),
+                nameof(RepairTypeViewModel.Actions)
+            };
+        public static string SearchMessage = $"{Resource.Search}...";
+        public static IQueryable<RepairTypeViewModel> PerformSearch(IQueryable<RepairTypeViewModel> list, string search)
+        {
+            if (!string.IsNullOrEmpty(search))
+            {
+                list = list.Where(s => s.RepairTypeName.ToString().Contains(search) || 
+                                       s.RepairTypeSymbol.Contains(search) ||
+                                       s.Notes.Contains(search));
+            }
+            return list;
+        }
+
+        public static string DefaultSortOrder = $"{nameof(RepairTypeViewModel.RepairTypeSymbol)}-asc";
+        public static int? DefaultPageSize = 10;
+        public static List<SelectListItem> PageSizeDropDownList = ListUtil.GetPageSizeDropDownList(DefaultPageSize);
+        public static readonly ColumnHeader[] DefaultColumnHeaders = ListUtil.GenerateDefaultColumnHeaders<RepairTypeViewModel>(DefaultSortOrder, TableColumns);
+
+        public static IQueryable<RepairTypeViewModel> PerformSort(IQueryable<RepairTypeViewModel> list, string sort)
+        {
+            var result = ListUtil.PerformSort<RepairTypeViewModel>(list, DefaultSortOrder, sort);
             return result;
         }
     }

@@ -135,20 +135,20 @@ namespace BDMPro.Controllers
                 string userManagementModuleId = db.Modules.Where(a => a.Name == "User Management").Select(a => a.Id).FirstOrDefault();
                 model.UserManagementPermission = GetPermission(roles.Id, userManagementModuleId);
 
-                string supplierManagementModuleId = db.Modules.Where(a => a.Name == "SupplierManagement").Select(a => a.Id).FirstOrDefault();
+                string supplierManagementModuleId = db.Modules.Where(a => a.Name == "Supplier Management").Select(a => a.Id).FirstOrDefault();
                 model.SupplierManagementPermission = GetPermission(roles.Id, supplierManagementModuleId);
 
-                string deviceManagementModuleId = db.Modules.Where(a => a.Name == "DeviceManagement").Select(a => a.Id).FirstOrDefault();
+                string deviceManagementModuleId = db.Modules.Where(a => a.Name == "Device Management").Select(a => a.Id).FirstOrDefault();
                 model.DeviceManagementPermission = GetPermission(roles.Id, deviceManagementModuleId);
 
-                string deviceTypeManagementModuleId = db.Modules.Where(a => a.Name == "DeviceTypeManagement").Select(a => a.Id).FirstOrDefault();
-                model.DeviceTypeManagementPermission = GetPermission(roles.Id, deviceTypeManagementModuleId);
+                string deviceTypeModuleId = db.Modules.Where(a => a.Name == "Device Type").Select(a => a.Id).FirstOrDefault();
+                model.DeviceTypePermission = GetPermission(roles.Id, deviceTypeModuleId);
 
-                string repairManagementModuleId = db.Modules.Where(a => a.Name == "RepairManagement").Select(a => a.Id).FirstOrDefault();
+                string repairManagementModuleId = db.Modules.Where(a => a.Name == "Repair Management").Select(a => a.Id).FirstOrDefault();
                 model.RepairManagementPermission = GetPermission(roles.Id, repairManagementModuleId);
 
-                string repairTypeManagementModuleId = db.Modules.Where(a => a.Name == "RepairTypeManagement").Select(a => a.Id).FirstOrDefault();
-                model.RepairTypeManagementPermission = GetPermission(roles.Id, repairTypeManagementModuleId);
+                string repairTypeModuleId = db.Modules.Where(a => a.Name == "Repair Type").Select(a => a.Id).FirstOrDefault();
+                model.RepairTypePermission = GetPermission(roles.Id, repairTypeModuleId);
 
                 string statisticalModuleId = db.Modules.Where(a => a.Name == "Statistical").Select(a => a.Id).FirstOrDefault();
                 model.StatisticalPermission = GetPermission(roles.Id, statisticalModuleId);
@@ -401,13 +401,13 @@ namespace BDMPro.Controllers
                         SaveRoleModulePermission(model.DeviceManagementPermission, roles.Id, "Device Management", true, false);
                     }
 
-                    if (model.DeviceTypeManagementPermission != null)
+                    if (model.DeviceTypePermission != null)
                     {
-                        SaveRoleModulePermission(model.DeviceTypeManagementPermission, roles.Id, "Device Type Management", false, false);
+                        SaveRoleModulePermission(model.DeviceTypePermission, roles.Id, "Device Type Management", false, false);
                     }
                     else
                     {
-                        SaveRoleModulePermission(model.DeviceTypeManagementPermission, roles.Id, "Device Type Management", true, false);
+                        SaveRoleModulePermission(model.DeviceTypePermission, roles.Id, "Device Type Management", true, false);
                     }
 
                     if (model.RepairManagementPermission != null)
@@ -419,13 +419,13 @@ namespace BDMPro.Controllers
                         SaveRoleModulePermission(model.RepairManagementPermission, roles.Id, "Repair Management", true, false);
                     }
 
-                    if (model.RepairTypeManagementPermission != null)
+                    if (model.RepairTypePermission != null)
                     {
-                        SaveRoleModulePermission(model.RepairTypeManagementPermission, roles.Id, "Repair Type Management", false, false);
+                        SaveRoleModulePermission(model.RepairTypePermission, roles.Id, "Repair Type Management", false, false);
                     }
                     else
                     {
-                        SaveRoleModulePermission(model.RepairTypeManagementPermission, roles.Id, "Repair Type Management", true, false);
+                        SaveRoleModulePermission(model.RepairTypePermission, roles.Id, "Repair Type Management", true, false);
                     }
 
                     if (model.StatisticalPermission != null)
@@ -524,13 +524,13 @@ namespace BDMPro.Controllers
                         SaveRoleModulePermission(model.DeviceManagementPermission, roles.Id, "Device Management", true, true);
                     }
 
-                    if (model.DeviceTypeManagementPermission != null)
+                    if (model.DeviceTypePermission != null)
                     {
-                        SaveRoleModulePermission(model.DeviceTypeManagementPermission, roles.Id, "Device Type Management", false, true);
+                        SaveRoleModulePermission(model.DeviceTypePermission, roles.Id, "Device Type Management", false, true);
                     }
                     else
                     {
-                        SaveRoleModulePermission(model.DeviceTypeManagementPermission, roles.Id, "Device Type Management", true, true);
+                        SaveRoleModulePermission(model.DeviceTypePermission, roles.Id, "Device Type Management", true, true);
                     }
 
                     if (model.RepairManagementPermission != null)
@@ -542,13 +542,13 @@ namespace BDMPro.Controllers
                         SaveRoleModulePermission(model.RepairManagementPermission, roles.Id, "Repair Management", true, true);
                     }
 
-                    if (model.RepairTypeManagementPermission != null)
+                    if (model.RepairTypePermission != null)
                     {
-                        SaveRoleModulePermission(model.RepairTypeManagementPermission, roles.Id, "Repair Type Management", false, true);
+                        SaveRoleModulePermission(model.RepairTypePermission, roles.Id, "Repair Type Management", false, true);
                     }
                     else
                     {
-                        SaveRoleModulePermission(model.RepairTypeManagementPermission, roles.Id, "Repair Type Management", true, true);
+                        SaveRoleModulePermission(model.RepairTypePermission, roles.Id, "Repair Type Management", true, true);
                     }
 
                     if (model.StatisticalPermission != null)

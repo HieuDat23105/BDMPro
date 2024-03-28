@@ -85,12 +85,21 @@
                         @Html.ValidationMessageFor(model => model.SupplierStatusId, "", new { @class = "invalid-message" })
                     </div>
                 </div>
-                <div class="col-md-6">
+                 <div class="col-md-6">
                     <div class="mb-3 text-break">
                         <div class="form-group">
+                            @if (Model.SupplierContactIdList != null && Model.SupplierContactIdList.Any())
+                            {
+                            @Html.LabelFor(model => model.SupplierContactName, htmlAttributes: new { @class = "form-label required fw600" })
+                            @CustomHelper.CustomMultiSelect("SupplierContactIdList", Model.SupplierContactSelectList)
+                            @Html.ValidationMessageFor(model => model.SupplierContactIdList, "", new { @class = "invalid-message" })
+                            }
+                            else
+                            {
                             @Html.LabelFor(model => model.SupplierContactIdList, htmlAttributes: new { @class = "form-label required fw600" }) 
                             @CustomHelper.CustomMultiSelect("SupplierContactIdList", Model.SupplierContactSelectList)
                             @Html.ValidationMessageFor(model => model.SupplierContactIdList, "", new { @class = "invalid-message" })
+                            }
                         </div>
                     </div>
                 </div>

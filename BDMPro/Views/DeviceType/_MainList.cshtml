@@ -1,4 +1,5 @@
-﻿@model PaginatedList<BDMPro.Models.DeviceTypeViewModel>
+@model PaginatedList<BDMPro.Models.DeviceTypeViewModel>
+@using BDMPro.CustomHelper
 @using BDMPro.Resources
 @{
     string sort = ViewData["CurrentSort"].ToString();
@@ -6,52 +7,46 @@
     int calculatedTo = (Model.PageIndex - 1) * Model.PageSize + Model.PageSize;
     int displayFrom = Model.TotalItems == 0 ? 0 : calculatedFrom;
     int displayTo = (calculatedTo) > Model.TotalItems ? Model.TotalItems : (calculatedTo);
+    string lockedColumnWidth = "200px";
 }
+
 <div id="-table-wrapper">
     <div class="table-responsive overflow-auto">
         <table id="-table" class="table table-hover align-middle mb-0">
             <thead class="table-light">
-                <tr>
-                    @foreach (var item in Model.ColumnHeaders)
-                    {
-                        @if (item.Key != "Actions")
-                        {
-                            <th class="thead">
-                                <a class="d-flex justify-content-between align-items-center cursor-pointer" onclick="sortTable('@item.OrderAction')">
-                                    <span>@item.Title</span>
-                                    <i class="fa-solid fs-12 text-muted @(sort.Contains(item.Key.ToString())? sort.Contains("asc")? "fa-arrow-up-wide-short": sort.Contains("desc")? "fa-arrow-down-wide-short": "": "")"></i>
-                                </a>
-                            </th>
-                        }
-                        else
-                        {
-                            <th class="thead notexport">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span>@item.Title</span>
-                                    <i class="fa-solid fa-circle-info text-info ps-2" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.RegisteredUserStatusCannotBeDeletedOrEdited"></i>
-                                </div>
-                            </th>
-                        }
-                    }
-                </tr>
-            </thead>
+    <tr>
+        @foreach (var item in Model.ColumnHeaders)
+        {
+            <th class="thead @(item.Key == "TypeName" ? "locked-column" : "")">
+                <a class="d-flex justify-content-between align-items-center cursor-pointer" onclick="sortTable('@item.OrderAction')">
+                    <span style="@(item.Key == "TypeName" ? $"min-width:{lockedColumnWidth};max-width:{lockedColumnWidth};"
+                    : item.Key == "TypeSymbol" ? "min-width:200px;"
+                    : "")">@item.Title</span>
+                    <i class="fa-solid fs-12 text-muted @(sort.Contains(item.Key.ToString())? sort.Contains("asc")? "fa-arrow-up-wide-short": sort.Contains("desc")? "fa-arrow-down-wide-short": "": "")"></i>
+                </a>
+            </th>
+        }
+    </tr>
+</thead>
+
             <tbody>
                 @if (Model.TotalItems == 0)
                 {
-                        <tr>
-                            <td class="text-center" colspan="@Model.ColumnHeaders.Count">@Resource.NoDataAvailable</td>
-                        </tr>
+                    <tr>
+                        <td class="text-center" colspan="@Model.ColumnHeaders.Count">@Resource.NoDataAvailable</td>
+                    </tr>
                 }
                 else
                 {
-                    foreach (var item in Model)
+                    @foreach (var item in Model)
                     {
-                        <tr>
-                            <td><a class="fw600 color-primarycolor hover-color-secondarycolor" href="@Url.Action("viewrecord", new { Id = @Html.ValueFor(modelItem => item.DeviceTypeId) })">@item.TypeName</a></td>
+                        <tr onclick="openHintToast('@Html.Raw(item.TypeName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))')">
+                            <td class="locked-column"><a class="fw600 color-primarycolor hover-color-secondarycolor locked-column-text" style="max-width:@lockedColumnWidth" href="@Url.Action("ViewRecord", new { Id = item.DeviceTypeId })" title="@item.TypeName">@item.TypeName</a></td>
+                            <td>@item.TypeSymbol</td>
                             <td>
-                                <div class="d-flex text-breakspaces actioncol">
-                                        <span class="fs-20 canedit"><a href="@Url.Action("edit", new { Id = @Html.ValueFor(modelItem => item.DeviceTypeId) })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a> &nbsp;</span>
-                                        <span class="fs-20 candelete" onclick="triggerDeleteConfirmationModal('@Html.Raw(item.TypeName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))','@Url.Action("delete", new { id= item.DeviceTypeId})')"><i class="fa-solid fa-trash-can text-delete hover-color-secondarycolor cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Delete"></i></span>
+                                <div class="d-flex text-breakspaces">
+                                    <span class="fs-20 canedit"><a href="@Url.Action("edit", new { Id = @Html.ValueFor(modelItem => item.DeviceTypeId) })"><i class="fa-solid fa-edit text-edit hover-color-secondarycolor" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Edit"></i></a> &nbsp;</span>
+                                    <span class="fs-20 candelete" onclick="triggerDeleteConfirmationModal('@Html.Raw(item.TypeName.Replace("'", "\\&#39;").Replace("\"", "\\&#34;"))','@Url.Action("delete", new { id = item.DeviceTypeId })')"><i class="fa-solid fa-trash-can text-delete hover-color-secondarycolor cursor-pointer" data-bs-toggle="tooltip" data-bs-placement="top" title="@Resource.Delete"></i></span>
                                 </div>
                             </td>
                         </tr>

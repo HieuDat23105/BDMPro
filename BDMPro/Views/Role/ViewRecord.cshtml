@@ -331,38 +331,38 @@
             </div>
         </div>
 
-        @* DeviceTypeManagementPermission *@
+        @* DeviceTypePermission *@
 
         <div class="row justify-content-start align-items-start py-2">
             <div class="col-md-12 col-xl-4">
-                @Html.LabelFor(m => m.DeviceTypeManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+                @Html.LabelFor(m => m.DeviceTypePermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.ViewPermission.Type)
-                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.DeviceTypePermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypePermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypePermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.AddPermission.Type)
-                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.DeviceTypePermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypePermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypePermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.EditPermission.Type)
-                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.DeviceTypePermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypePermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypePermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.DeviceTypeManagementPermission.DeletePermission.Type)
-                    @Html.CheckBoxFor(m => m.DeviceTypeManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.DeviceTypeManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.DeviceTypePermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.DeviceTypePermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.DeviceTypePermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
         </div>
@@ -403,38 +403,38 @@
             </div>
         </div>
 
-        @* RepairTypeManagementPermission *@
+        @* RepairTypePermission *@
 
         <div class="row justify-content-start align-items-start py-2">
             <div class="col-md-12 col-xl-4">
-                @Html.LabelFor(m => m.RepairTypeManagementPermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
+                @Html.LabelFor(m => m.RepairTypePermission, htmlAttributes: new { @class = "form-label fw600" }) <i class="fa-solid fa-circle-info text-info" data-bs-toggle="tooltip" data-bs-placement="right" title="@Resource.ByDefaultSystemAdminCanManageWhileNormalUserCant"></i>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.ViewPermission.Type)
-                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.RepairTypeManagementPermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.RepairTypePermission.ViewPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypePermission.ViewPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypePermission.ViewPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.AddPermission.Type)
-                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.RepairTypeManagementPermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.RepairTypePermission.AddPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypePermission.AddPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypePermission.AddPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.EditPermission.Type)
-                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.RepairTypeManagementPermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.RepairTypePermission.EditPermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypePermission.EditPermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypePermission.EditPermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
             <div class="col-md-6 col-xl-2">
                 <div class="form-check">
-                    @Html.HiddenFor(m => m.RepairTypeManagementPermission.DeletePermission.Type)
-                    @Html.CheckBoxFor(m => m.RepairTypeManagementPermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
-                    @Html.LabelFor(m => m.RepairTypeManagementPermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
+                    @Html.HiddenFor(m => m.RepairTypePermission.DeletePermission.Type)
+                    @Html.CheckBoxFor(m => m.RepairTypePermission.DeletePermission.IsSelected, htmlAttributes: new { @class = "form-check-input label-fullopacity", @disabled = "disabled" })
+                    @Html.LabelFor(m => m.RepairTypePermission.DeletePermission, htmlAttributes: new { @class = "form-check-label" })
                 </div>
             </div>
         </div>

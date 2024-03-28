@@ -41,10 +41,13 @@ namespace BDMPro.Data
         public DbSet<LoginHistory> LoginHistories { get; set; }
         public DbSet<ErrorLog> ErrorLogs { get; set; }
         public DbSet<Country> Countries { get; set; }
-        public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Device> Devices { get; set; }
         public DbSet<DeviceType> DeviceTypes { get; set; }
+        public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<SupplierContact> SupplierContacts { get; set; }
+        public DbSet<RepairType> RepairTypes { get; set; }
+        public DbSet<RepairDetail> RepairDetails { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -130,7 +130,6 @@ namespace BDMPro.Resources {
             }
         }
         
-
                 /// <summary>
         ///   Looks up a localized string similar to Add User.
         /// </summary>
@@ -139,7 +138,32 @@ namespace BDMPro.Resources {
                 return ResourceManager.GetString("AddSupplier", resourceCulture);
             }
         }
-        
+
+                        /// <summary>
+        ///   Looks up a localized string similar to Add User.
+        /// </summary>
+        public static string AddDeviceType {
+            get {
+                return ResourceManager.GetString("AddDeviceType", resourceCulture);
+            }
+        }
+                                /// <summary>
+        ///   Looks up a localized string similar to Add User.
+        /// </summary>
+        public static string AddRepairType {
+            get {
+                return ResourceManager.GetString("AddRepairType", resourceCulture);
+            }
+        }
+
+                                        /// <summary>
+        ///   Looks up a localized string similar to Add User.
+        /// </summary>
+        public static string ViewRepairType {
+            get {
+                return ResourceManager.GetString("ViewRepairType", resourceCulture);
+            }
+        }
 
         /// <summary>
         ///   Looks up a localized string similar to already exists..
@@ -477,12 +501,19 @@ namespace BDMPro.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Device Type Management.
         /// </summary>
-        public static string DeviceTypeManagement {
+        public static string DeviceType {
             get {
-                return ResourceManager.GetString("DeviceTypeManagement", resourceCulture);
+                return ResourceManager.GetString("DeviceType", resourceCulture);
             }
         }
-        
+                /// <summary>
+        ///   Looks up a localized string similar to Device Type Management.
+        /// </summary>
+        public static string OrderCode {
+            get {
+                return ResourceManager.GetString("OrderCode", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to Display Order.
         /// </summary>
@@ -507,6 +538,24 @@ namespace BDMPro.Resources {
         public static string EditAttachments {
             get {
                 return ResourceManager.GetString("EditAttachments", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to Edit Attachments:.
+        /// </summary>
+        public static string EditDeviceType {
+            get {
+                return ResourceManager.GetString("EditDeviceType", resourceCulture);
+            }
+        }
+
+                        /// <summary>
+        ///   Looks up a localized string similar to Edit Attachments:.
+        /// </summary>
+        public static string EditRepairType {
+            get {
+                return ResourceManager.GetString("EditRepairType", resourceCulture);
             }
         }
         
@@ -1573,9 +1622,9 @@ namespace BDMPro.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Repair Type Management.
         /// </summary>
-        public static string RepairTypeManagement {
+        public static string RepairType {
             get {
-                return ResourceManager.GetString("RepairTypeManagement", resourceCulture);
+                return ResourceManager.GetString("RepairType", resourceCulture);
             }
         }
         
@@ -1650,7 +1699,33 @@ namespace BDMPro.Resources {
                 return ResourceManager.GetString("RoleNameAlreadyExist", resourceCulture);
             }
         }
-        
+
+                /// <summary>
+        ///   Looks up a localized string similar to The role name already exist in the system..
+        /// </summary>
+        public static string RepairTypeNameAlreadyExist {
+            get {
+                return ResourceManager.GetString("RepairTypeNameAlreadyExist", resourceCulture);
+            }
+        }
+
+                        /// <summary>
+        ///   Looks up a localized string similar to The role name already exist in the system..
+        /// </summary>
+        public static string RepairTypeNotesTooLong {
+            get {
+                return ResourceManager.GetString("RepairTypeNotesTooLong", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to The role name already exist in the system..
+        /// </summary>
+        public static string RepairTypeSymbolAlreadyExist {
+            get {
+                return ResourceManager.GetString("RepairTypeSymbolAlreadyExist", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to Role Permission for.
         /// </summary>
@@ -1891,6 +1966,33 @@ namespace BDMPro.Resources {
         public static string SystemInformation {
             get {
                 return ResourceManager.GetString("SystemInformation", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to System Information.
+        /// </summary>
+        public static string DeviceTypeInformation {
+            get {
+                return ResourceManager.GetString("DeviceTypeInformation", resourceCulture);
+            }
+        }
+
+                        /// <summary>
+        ///   Looks up a localized string similar to System Information.
+        /// </summary>
+        public static string RepairTypeInformation {
+            get {
+                return ResourceManager.GetString("RepairTypeInformation", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to System Information.
+        /// </summary>
+        public static string EmailContact {
+            get {
+                return ResourceManager.GetString("EmailContact", resourceCulture);
             }
         }
                 /// <summary>
@@ -2225,14 +2327,6 @@ namespace BDMPro.Resources {
             }
         }
 
-                /// <summary>
-        ///   Looks up a localized string similar to User Status.
-        /// </summary>
-        public static string DeviceType {
-            get {
-                return ResourceManager.GetString("DeviceType", resourceCulture);
-            }
-        }
         
         /// <summary>
         ///   Looks up a localized string similar to The user status name already exist in the system..
@@ -2243,6 +2337,23 @@ namespace BDMPro.Resources {
             }
         }
 
+        /// <summary>
+        ///   Looks up a localized string similar to The user status name already exist in the system..
+        /// </summary>
+        public static string DeviceTypeSymbolAlreadyExist {
+            get {
+                return ResourceManager.GetString("DeviceTypeSymbolAlreadyExist", resourceCulture);
+            }
+        }
+
+                /// <summary>
+        ///   Looks up a localized string similar to The user status name already exist in the system..
+        /// </summary>
+        public static string DeviceTypeNotesTooLong {
+            get {
+                return ResourceManager.GetString("DeviceTypeNotesTooLong", resourceCulture);
+            }
+        }
                 /// <summary>
         ///   Looks up a localized string similar to The user status name already exist in the system..
         /// </summary>
@@ -2278,7 +2389,43 @@ namespace BDMPro.Resources {
                 return ResourceManager.GetString("ViewRole", resourceCulture);
             }
         }
+
+                /// <summary>
+        ///   Looks up a localized string similar to View Role.
+        /// </summary>
+        public static string TypeName {
+            get {
+                return ResourceManager.GetString("TypeName", resourceCulture);
+            }
+        }
         
+                /// <summary>
+        ///   Looks up a localized string similar to View Role.
+        /// </summary>
+        public static string TypeSymbol {
+            get {
+                return ResourceManager.GetString("TypeSymbol", resourceCulture);
+            }
+        }
+        
+                /// <summary>
+        ///   Looks up a localized string similar to View Role.
+        /// </summary>
+        public static string DeviceCount {
+            get {
+                return ResourceManager.GetString("DeviceCount", resourceCulture);
+            }
+        }
+
+                        /// <summary>
+        ///   Looks up a localized string similar to View Role.
+        /// </summary>
+        public static string RepairCount {
+            get {
+                return ResourceManager.GetString("RepairCount", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to View roles.
         /// </summary>
@@ -2300,9 +2447,9 @@ namespace BDMPro.Resources {
         /// <summary>
         ///   Looks up a localized string similar to View suppliers.
         /// </summary>
-        public static string Viewsuppliers {
+        public static string ViewDeviceType {
             get {
-                return ResourceManager.GetString("Viewsuppliers", resourceCulture);
+                return ResourceManager.GetString("ViewDeviceType", resourceCulture);
             }
         }
         

@@ -21,9 +21,9 @@ namespace BDMPro.Models
             UserManagement,
             SupplierManagement,
             DeviceManagement,
-            DeviceTypeManagement,
+            DeviceType,
             RepairManagement,
-            RepairTypeManagement,
+            RepairType,
             Statistical,
             LoginHistory
         }

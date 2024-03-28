@@ -7,7 +7,7 @@
     ViewBag.Title = Resource.DeviceType + " " + Resource.Management;
     Layout = "~/Views/Shared/_LayoutAfterLogin.cshtml";
     ViewBag.TableIdPrefix = "devicetype";
-    CurrentUserPermission permission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceTypeManagement.ToString(), util);
+    CurrentUserPermission permission = User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceType.ToString(), util);
     List<SelectListItem> pageSizeDropDownList = DeviceTypeListConfig.PageSizeDropDownList;
     string defaultPageSizeText = pageSizeDropDownList.Where(a => a.Selected == true).Select(a => a.Text).FirstOrDefault();
     string defaultPageSizeValue = pageSizeDropDownList.Where(a => a.Selected == true).Select(a => a.Value).FirstOrDefault();
@@ -77,12 +77,10 @@
     </div>
 </section>
 
-
 @section scripts{
     <script>
         var tableIdPrefix = "@ViewBag.TableIdPrefix";
-        var fileName = "@Resource.DeviceType"; //the file name for excel and pdf file (Export to excel, pdf feature)
-
+        var fileName = "@Resource.DeviceType";
         var canView = "@permission.ViewRight";
         var canAdd = "@permission.AddRight";
         var canEdit = "@permission.EditRight";
@@ -95,7 +93,6 @@
             if (tableIdPrefix == "@ViewBag.TableIdPrefix") {
                 return "@Url.Action("GetPartialViewDeviceType", "DeviceType")";
             }
-            // if this page contains other tables, add load table value URL configuration here
         }
 
         function getDefaultTableSearchFilter() {
@@ -104,7 +101,7 @@
                 sort: "",
                 size: "",
                 search: "",
-                pg: ""
+                pg: "",
             };
         }
 

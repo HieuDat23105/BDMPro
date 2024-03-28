@@ -81,8 +81,7 @@
 @section scripts{
     <script>
         var tableIdPrefix = "@ViewBag.TableIdPrefix";
-        var fileName = "@Resource.UserStatus"; //the file name for excel and pdf file (Export to excel, pdf feature)
-
+        var fileName = "@Resource.UserStatus";
         var canView = "@permission.ViewRight";
         var canAdd = "@permission.AddRight";
         var canEdit = "@permission.EditRight";
@@ -95,7 +94,6 @@
             if (tableIdPrefix == "@ViewBag.TableIdPrefix") {
                 return "@Url.Action("GetPartialViewUserStatus", "UserStatus")";
             }
-            // if this page contains other tables, add load table value URL configuration here
         }
 
         function getDefaultTableSearchFilter() {

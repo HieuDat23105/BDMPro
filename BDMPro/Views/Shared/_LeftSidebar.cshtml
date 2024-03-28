@@ -16,12 +16,14 @@
     User.Identity.IsAllowed(ProjectEnum.ModuleCode.SupplierManagement.ToString(), util);
     CurrentUserPermission deviceManagementPermission =
     User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceManagement.ToString(), util);
-    CurrentUserPermission deviceTypeManagementPermission =
-    User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceTypeManagement.ToString(), util);
+    CurrentUserPermission deviceTypePermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.DeviceType.ToString(), util);
     CurrentUserPermission repairManagementPermission =
     User.Identity.IsAllowed(ProjectEnum.ModuleCode.RepairManagement.ToString(), util);
-    CurrentUserPermission repairTypeManagementPermission =
-    User.Identity.IsAllowed(ProjectEnum.ModuleCode.RepairTypeManagement.ToString(), util);
+    CurrentUserPermission repairTypePermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.RepairType.ToString(), util);
+    CurrentUserPermission StatisticalPermission =
+    User.Identity.IsAllowed(ProjectEnum.ModuleCode.Statistical.ToString(), util);
     CurrentUserPermission loginHistoryPermission =
     User.Identity.IsAllowed(ProjectEnum.ModuleCode.LoginHistory.ToString(), util);
 }
@@ -83,8 +85,53 @@
             <li class="nav-item">
                 <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "supplier" ? "active" : "")"
                     href="@Url.Action("index","supplier")">
-                    <i class="fa-solid fa-user-plus"></i> <span>Supplier Management</span>
+                    <i class="fa-solid fa-building"></i> <span>Supplier Management</span>
                 </a>
+            </li>
+        }
+        @if (deviceTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "devicetype" ? "active" : "")"
+                    href="@Url.Action("index","devicetype")">
+                    <i class="fa-solid fa-laptop"></i> <span>Device Type</span>
+                </a>
+            </li>
+        }
+        @if (deviceManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "devicemanagement" ? "active" : "")"
+                    href="@Url.Action("index","device")">
+                    <i class="fa-solid fa-computer"></i> <span>Device Management</span>
+                </a>
+            </li>
+        }
+        @if (repairManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repairmanagement" ? "active" : "")"
+                    href="@Url.Action("index","repair")">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> <span>Repair Management</span>
+                </a>
+            </li>
+        }
+        @if (repairTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repairmanagement" ? "active" : "")"
+                    href="@Url.Action("index","repairtype")">
+                    <i class="fa-solid fa-toolbox"></i> <span>Repair Type</span>
+                </a>
+            </li>
+        }
+        @if (StatisticalPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "statistical" ? "active" : "")"
+                    href="@Url.Action("index","statistical")">
+                    <i class="fa-solid fa-chart-pie"></i> <span>Statistical</span>
+                </a>    
             </li>
         }
         @if (loginHistoryPermission.ViewRight == true)
@@ -150,6 +197,66 @@
                     href="@Url.Action("index","user")" data-bs-toggle="tooltip" data-bs-placement="right"
                     title="User Management">
                     <i class="fa-solid fa-user-plus"></i>
+                </a>
+            </li>
+        }
+        @if (supplierManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "supplier" ? "active" : "")"
+                    href="@Url.Action("index","supplier")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Supplier Management">
+                    <i class="fa-solid fa-building"></i>
+                </a>
+            </li>
+        }
+        @if (deviceManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "device" ? "active" : "")"
+                    href="@Url.Action("index","device")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Device Management">
+                    <i class="fa-solid fa-computer"></i>
+                </a>
+            </li>
+        }
+        @if (repairManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repair" ? "active" : "")"
+                    href="@Url.Action("index","repair")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Repair Management">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                </a>
+            </li>
+        }
+        @if (repairTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repairtype" ? "active" : "")"
+                    href="@Url.Action("index","repairtype")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Repair Type">
+                    <i class="fa-solid fa-toolbox"></i>
+                </a>
+            </li>
+        }
+        @if (deviceTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "devicetype" ? "active" : "")"
+                    href="@Url.Action("index","devicetype")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Device Type">
+                    <i class="fa-solid fa-laptop"></i>
+                </a>
+            </li>
+        }
+        @if (StatisticalPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link justify-content-center collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "statistical" ? "active" : "")"
+                    href="@Url.Action("index","statistical")" data-bs-toggle="tooltip" data-bs-placement="right"
+                    title="Statistical">
+                    <i class="fa-solid fa-chart-pie"></i>
                 </a>
             </li>
         }
@@ -222,6 +329,51 @@
                 <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "user" || ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "userattachment" ? "active" : "")"
                     href="@Url.Action("index","user")">
                     <i class="fa-solid fa-user-plus"></i> <span>@Resource.UserManagement</span>
+                </a>
+            </li>
+        }
+        @if (supplierManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "supplier" ? "active" : "")"
+                    href="@Url.Action("index","supplier")">
+                    <i class="fa-solid fa-building"></i> <span>@Resource.SupplierManagement</span>
+                </a>
+            </li>
+        }
+        @if (deviceManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "device" ? "active" : "")"
+                    href="@Url.Action("index","device")">
+                    <i class="fa-solid fa-computer"></i> <span>@Resource.DeviceManagement</span>
+                </a>
+            </li>
+        }
+        @if (repairManagementPermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repair" ? "active" : "")"
+                    href="@Url.Action("index","repair")">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> <span>@Resource.RepairManagement</span>
+                </a>
+            </li>
+        }
+        @if (deviceTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "devicetype" ? "active" : "")"
+                    href="@Url.Action("index","devicetype")">
+                    <i class="fa-solid fa-laptop"></i> <span>@Resource.DeviceType</span>
+                </a>
+            </li>
+        }
+        @if (repairTypePermission.ViewRight == true)
+        {
+            <li class="nav-item">
+                <a class="nav-link collapsed @(ViewContext.RouteData.Values["Controller"].ToString().ToLower() == "repairtype" ? "active" : "")"
+                    href="@Url.Action("index","repairtype")">
+                    <i class="fa-solid fa-toolbox"></i> <span>@Resource.RepairType</span>
                 </a>
             </li>
         }

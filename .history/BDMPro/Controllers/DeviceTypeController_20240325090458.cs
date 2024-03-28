@@ -32,7 +32,7 @@ namespace BDMPro.Controllers
             _logger = logger;
         }
 
-        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "true", "", "", "")]
+        [CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "true", "", "", "")]
         public IActionResult Index()
         {
             return View();
@@ -111,7 +111,7 @@ namespace BDMPro.Controllers
             return model;
         }
 
-[CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceTypeManagement, "", "true", "true", "")]
+[CustomAuthorizeFilter(ProjectEnum.ModuleCode.DeviceType, "", "true", "true", "")]
 public IActionResult Edit(string Id)
 {
     DeviceTypeViewModel model = new DeviceTypeViewModel();

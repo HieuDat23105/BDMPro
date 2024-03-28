@@ -105,6 +105,10 @@ namespace BDMPro.Models
         public string IsoUtcCreatedOn { get; set; }
         public string IsoUtcModifiedOn { get; set; }
         public CreatedAndModifiedViewModel CreatedAndModified { get; set; }
+        [Display(Name = "EmailAddress", ResourceType = typeof(Resource))]
+        public List<string> SupplierContactEmail { get; set; }
+        [Display(Name = "PhoneNumber", ResourceType = typeof(Resource))]
+        public List<string> SupplierContactPhone { get; set; }
     }
 
     public class SupplierListing
